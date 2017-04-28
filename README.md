@@ -11,6 +11,8 @@
 
 ### 課程大綱
 
+- [關於這門課](http://yaojenkuo.io/r-sql-train/chapter00.html)
+
 ### 近期上課錄影
 
 ### 推薦學習資源/書籍
