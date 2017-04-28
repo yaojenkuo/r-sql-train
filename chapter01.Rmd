@@ -1,0 +1,82 @@
+---
+title: "SQL 基礎查詢"
+author: 郭耀仁
+date: "`r Sys.Date()`"
+output:
+  ioslides_presentation:
+    self-contained: true
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# 什麼是 SQL
+
+## SQL 是縮寫
+
+- Structured Query Language
+- 查詢資料庫的語言
+
+## 資料庫系統
+
+- 商業
+    - Microsoft SQL Server
+    - Oracle
+    - IBM DB2
+- 開源
+    - **MySQL**（這門課所使用的）
+    - PostgreSQL
+    - MongoDB
+
+# 如何連結資料庫
+
+## 下載 MySQL Workbench
+
+- 請在這個連結下載：
+
+<https://dev.mysql.com/downloads/workbench/>
+
+## 下載憑證
+
+- [SSL Key](https://storage.googleapis.com/csiersql/client-key.pem)
+- [SSL CERT](https://storage.googleapis.com/csiersql/client-cert.pem)
+- [SSL CA](https://storage.googleapis.com/csiersql/server-ca.pem)
+
+## 設定連線資訊
+
+- 新增連線
+
+![](img/chapter0101.png)
+
+## 設定連線資訊
+
+- Hostname: 35.189.143.131
+- Port: 3306
+- Username: student
+
+![](img/chapter0102.png)
+
+## 設定連線資訊
+
+- 依序將下載的憑證存放路徑輸入
+
+![](img/chapter0103.png)
+
+## 設定連線資訊
+
+- 雙擊連線或按右鍵開啟連線
+
+![](img/chapter0104.png)
+
+## 設定連線資訊
+
+- 輸入密碼
+
+![](img/chapter0105.png)
+
+## 設定連線資訊
+
+- Congrats, we are ALL set!
+
+![](img/chapter0106.png)
