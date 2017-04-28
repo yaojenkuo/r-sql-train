@@ -1,5 +1,5 @@
 ---
-title: "SQL 基礎查詢"
+title: "SQL 基礎"
 author: 郭耀仁
 date: "`r Sys.Date()`"
 output:
