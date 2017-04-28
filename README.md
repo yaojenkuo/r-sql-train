@@ -7,12 +7,16 @@
 ### 評分標準
 
 - 50% 出席率
-- 50% 作業
+- 50% 隨堂練習或作業
 
 ### 課程大綱
 
 - [關於這門課](http://yaojenkuo.io/r-sql-train/chapter00.html)
+- [SQL 基礎](http://yaojenkuo.io/r-sql-train/chapter01.html)
+- [SQL 進階]()
 
 ### 近期上課錄影
 
 ### 推薦學習資源/書籍
+
+- [SQL 深入淺出](http://www.books.com.tw/products/0010391205)
