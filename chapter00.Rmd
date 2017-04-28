@@ -1,5 +1,5 @@
 ---
-title: "SQL 及 R 語言的資料分析實戰"
+title: "關於這門課"
 author: 郭耀仁
 date: "`r Sys.Date()`"
 output:
