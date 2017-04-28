@@ -1,0 +1,117 @@
+---
+title: "SQL 進階"
+author: 郭耀仁
+date: "`r Sys.Date()`"
+output:
+  ioslides_presentation:
+    self-contained: true
+    widescreen: true
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+# 進階的 SQL 查詢
+
+## 一個典型的 SQL 查詢結構
+
+```
+SELECT ...
+  FROM ...
+  WHERE ...
+  GROUP BY ...
+  HAVING ...
+  ORDER BY ...
+```
+
+## `SUM()` 函數
+
+```
+SELECT SUM(population) AS Sum_Pop
+  FROM world.country;
+```
+
+## `DISTINCT()` 函數
+
+- 回傳相異值
+
+```
+SELECT DISTINCT(continent)
+  FROM world.country;
+```
+
+## `COUNT()` 函數
+
+- 計算有多少國家的人口超過 1 億
+
+```
+SELECT COUNT(*)
+  FROM world.country
+  WHERE Population > 100000000;
+```
+
+## `GROUP BY`
+
+- `SUM()` 函數加入 `GROUP BY` 敘述
+- 計算各個 Continent 的人口總數
+
+```
+SELECT Continent
+       ,SUM(population) AS Sum_Pop
+  FROM world.country
+  GROUP BY Continent;
+```
+
+## `GROUP BY`（2）
+
+- `COUNT()` 函數加入 `GROUP BY` 敘述
+- 計算各個 Continent 的國家數
+
+```
+SELECT Continent
+       ,COUNT(*) AS Number_of_Countries
+  FROM world.country
+  GROUP BY Continent;
+```
+
+## `GROUP BY`（3）
+
+- `COUNT()` 函數加入 `GROUP BY` 敘述
+- 計算各個 Region 人口超過 1 千萬的國家數
+
+```
+SELECT Region
+       ,COUNT(*) AS Number_of_Countries
+  FROM world.country
+  WHERE Population > 10000000
+  GROUP BY Region;
+```
+
+## `HAVING`
+
+- 針對聚合函數下條件
+- 找出總人口數超過 1 億的洲（Continent）
+
+```
+/*錯誤*/
+SELECT Continent
+       ,SUM(Population) AS Sum_of_Population
+  FROM world.country
+  GROUP BY Continent
+  WHERE Sum_of_Population > 100000000;
+```
+
+## `HAVING`（2）
+
+- 針對聚合函數下條件
+- 找出總人口數超過 1 億的洲（Continent）
+
+```
+/*正確*/
+SELECT Continent
+       ,SUM(Population) AS Sum_of_Population
+  FROM world.country
+  GROUP BY Continent
+  Having Sum_of_Population > 100000000;
+```
