@@ -148,9 +148,9 @@ SELECT *
 - 選指定的欄位
 
 ```
-SELECT Name,
-       Continent,
-       Population
+SELECT Name
+       ,Continent
+       ,Population
   FROM world.country;
 ```
 
@@ -178,8 +178,8 @@ SELECT COUNT(*)
 - 計算衍生欄位
 
 ```
-SELECT *, 
-    Population/SurfaceArea AS Density
+SELECT *
+       ,Population/SurfaceArea AS Density
   FROM world.country;
 ```
 

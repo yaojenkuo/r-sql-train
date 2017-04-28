@@ -261,9 +261,9 @@ SELECT *
 <li>選指定的欄位</li>
 </ul>
 
-<pre >SELECT Name,
-       Continent,
-       Population
+<pre >SELECT Name
+       ,Continent
+       ,Population
   FROM world.country;</pre>
 
 </article></slide><slide class=''><hgroup><h2><code>SELECT</code> 與 <code>FROM</code>（4）</h2></hgroup><article  id="select--from4">
@@ -291,8 +291,8 @@ SELECT *
 <li>計算衍生欄位</li>
 </ul>
 
-<pre >SELECT *, 
-    Population/SurfaceArea AS Density
+<pre >SELECT *
+       ,Population/SurfaceArea AS Density
   FROM world.country;</pre>
 
 </article></slide><slide class=''><hgroup><h2><code>WHERE</code></h2></hgroup><article  id="where">
