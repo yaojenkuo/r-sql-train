@@ -1,0 +1,55 @@
+---
+title: "SQL 及 R 語言的資料分析實戰"
+author: 郭耀仁
+date: "`r Sys.Date()`"
+output:
+  revealjs::revealjs_presentation:
+    center: true
+---
+
+## 為什麼要開這門課
+
+- From **user** to **power user**
+- 拉近使用者部門與資訊部門的溝通距離
+- 提高工作掌握度
+
+## 誰適合上這門課
+
+- 有**不求人**或者**不委外**的特質
+- 行銷專員、產品經理、金融分析或任何有資料分析需求的從業人員
+
+## 誰不適合上這門課
+
+- 不喜歡自己動手做的特質
+- 已經有能力撰寫 SQL 指令與 R 語言程式的人
+
+## 這門課的目標
+
+- 可以自行撰寫 SQL 指令查詢
+- 填寫更專業的需求單
+- 進行更有效率的需求訪談
+- 可以使用 R 語言進行資料的整理、探索、作圖與報告
+
+## 這門課的涵蓋內容
+
+- SQL 基礎與進階的查詢指令
+- R 語言的資料框應用
+- R 語言的作圖與報告
+
+## 這門課不會涵蓋的內容
+
+- 資料庫的管理
+- R 語言的變數型態與資料結構
+- R 語言的函數型編程
+- R 語言與機器學習
+
+## 課程資源
+
+- [課程專頁](http://yaojenkuo.io/r-sql-train/)
+- [Facebook 社團](https://www.facebook.com/groups/ntucsietrainR/)
+
+## 關於講師
+
+- [郭耀仁](https://www.facebook.com/yaojen.kuo.1)
+- <http://yaojenkuo.io/>
+- <tony@kyosei.ai>
