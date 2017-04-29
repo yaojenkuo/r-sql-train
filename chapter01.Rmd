@@ -32,17 +32,48 @@ knitr::opts_chunk$set(echo = TRUE)
 
 # 如何連結資料庫
 
-## 下載 MySQL Workbench
+## 使用虛擬機器（Virtual Machine）
 
-- 請在這個連結下載：
+- 我們使用 [MySQL Workbench](https://www.mysql.com/products/workbench/)
+- 為避免安裝問題，下載已經建立好的映像檔：
 
-<https://dev.mysql.com/downloads/workbench/>
+<https://storage.googleapis.com/csiersql/r-sql-train.zip>
 
-## 下載憑證
+## 設定虛擬機器
 
-- [SSL Key](https://storage.googleapis.com/csiersql/client-key.pem)
-- [SSL CERT](https://storage.googleapis.com/csiersql/client-cert.pem)
-- [SSL CA](https://storage.googleapis.com/csiersql/server-ca.pem)
+- 開啟桌面上的 Virtual Box 捷徑
+
+![](img/vbox.png)
+
+![](img/chapter0110.png)
+
+## 設定虛擬機器（2）
+
+![](img/chapter0111.png)
+
+## 設定虛擬機器（3）
+
+![](img/chapter0112.png)
+
+## 設定虛擬機器（4）
+
+![](img/chapter0113.png)
+
+## 設定虛擬機器（5）
+
+- 點選啟動
+
+![](img/chapter0114.png)
+
+## 設定虛擬機器（6）
+
+- 輸入密碼
+
+![](img/chapter0115.png)
+
+## 執行 MySQL Workbench
+
+![](img/chapter0116.png)
 
 ## 設定連線資訊
 
@@ -50,7 +81,7 @@ knitr::opts_chunk$set(echo = TRUE)
 
 ![](img/chapter0101.png)
 
-## 設定連線資訊
+## 設定連線資訊（2）
 
 - Hostname: 35.189.143.131
 - Port: 3306
@@ -58,25 +89,25 @@ knitr::opts_chunk$set(echo = TRUE)
 
 ![](img/chapter0102.png)
 
-## 設定連線資訊
+## 設定連線資訊（3）
 
-- 依序將下載的憑證存放路徑輸入
+- 依序輸入已經下載好的憑證路徑
 
 ![](img/chapter0103.png)
 
-## 設定連線資訊
+## 設定連線資訊（4）
 
 - 雙擊連線或按右鍵開啟連線
 
 ![](img/chapter0104.png)
 
-## 設定連線資訊
+## 設定連線資訊（5）
 
 - 輸入密碼
 
 ![](img/chapter0105.png)
 
-## 設定連線資訊
+## 設定連線資訊（6）
 
 - Congrats, we are ALL set!
 
