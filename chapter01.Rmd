@@ -244,7 +244,7 @@ SELECT *
   WHERE Continent NOT IN ('Asia', 'Africa', 'Oceania', 'Europe', 'Antarctica');
 ```
 
-## `WHERE` （4）
+## `WHERE`（4）
 
 - 使用 `>` 來找出人口超過 2 億的國家
 
@@ -254,7 +254,7 @@ SELECT *
   WHERE Population > 200000000;
 ```
 
-## `WHERE` （5）
+## `WHERE`（5）
 
 - 使用 `BETWEEN` 找出人口介於 100 與 1 萬的國家
 
@@ -264,7 +264,7 @@ SELECT *
   WHERE Population BETWEEN 100 AND 10000;
 ```
 
-## `WHERE` （6）
+## `WHERE`（6）
 
 - 使用 `LIKE` 與 `%` 對字串進行模糊比對
 - United 開頭的國家
