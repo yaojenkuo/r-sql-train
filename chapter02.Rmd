@@ -25,6 +25,34 @@ SELECT ...
   ORDER BY ...
 ```
 
+## `ORDER BY` 描述
+
+- 可以選擇依照某一個欄位排序查詢結果
+- 遞增排序：ASC
+- 遞減排序：DESC
+- 找出人口數排名前 10 的國家
+
+```
+SELECT Name
+    ,Population
+  FROM world.country
+  ORDER BY Population DESC
+  LIMIT 10;
+```
+
+## `ORDER BY` 描述（2）
+
+- 找出歐洲土地面積最小的 10 個國家
+
+```
+SELECT Name
+    ,SurfaceArea
+  FROM world.country
+  WHERE Continent = 'Europe'
+  ORDER BY SurfaceArea ASC
+  LIMIT 10;
+```
+
 ## `SUM()` 函數
 
 ```
@@ -50,6 +78,13 @@ SELECT COUNT(*)
   FROM world.country
   WHERE Population > 100000000;
 ```
+
+## 其他常用聚合函數
+
+- `AVG()`
+- `MAX()`
+- `MIN()`
+- ...
 
 ## `GROUP BY`
 
@@ -114,4 +149,69 @@ SELECT Continent
   FROM world.country
   GROUP BY Continent
   Having Sum_of_Population > 100000000;
+```
+
+## 隨堂練習
+
+- 請寫出能夠產出以下結果的 SQL 查詢：
+
+![](img/chapter0201.png)
+
+## 隨堂練習（2）
+
+- 請寫出能夠產出以下結果的 SQL 查詢：
+
+![](img/chapter0202.png)
+
+## 子查詢
+
+- `SELECT` **within** `SELECT`
+- 找出人口數比美國多的國家：
+
+```
+SELECT Name
+  FROM world.country
+  WHERE Population > (
+    SELECT Population
+      FROM world.country
+      WHERE Code = 'USA'
+  );
+```
+
+## 子查詢（2）
+
+- 找出跟 Brazil 屬於同一個洲的國家：
+
+```
+SELECT Name
+  FROM world.country
+  WHERE Continent = (
+    SELECT Continent
+      FROM world.country
+      WHERE Name = 'Brazil'
+  );
+```
+
+## 隨堂練習（3）
+
+- 找出跟阿根廷（Argentina）或澳大利亞（Australia）同一個洲的國家，並以國家名稱排序：
+
+![](img/chapter0203.png)
+
+## `JOIN` 描述
+
+- 也許是關聯式資料庫最重要的技巧！
+- 聯結的種類：
+    - Inner Join（內部聯結）
+    - Left Outer Join（左外部聯結）
+    - Right Outer Join（右外部聯結）
+    - Full Outer Join（全外部聯結）
+
+## 內部聯結
+
+- 取左表格跟右表格的交集
+
+```
+SELECT * FROM world.country
+  WHERE Code IN ('TWN', 'JPN');
 ```
