@@ -13,10 +13,17 @@
 
 - [關於這門課](http://yaojenkuo.io/r-sql-train/chapter00.html)
 - [SQL 基礎](http://yaojenkuo.io/r-sql-train/chapter01.html)
-- [SQL 進階]()
+- [建立 R 語言的開發環境]()
+- [建立 R 語言與資料庫的連結]()
+- [讀取不同的資料格式](http://yaojenkuo.io/r_programming/ch6)
+- [簡單的繪圖（Base plotting system）](http://yaojenkuo.io/r_programming/ch3)
+- [使用 dplyr 套件整理資料](http://yaojenkuo.io/r_programming/ch14)
+- [簡單的繪圖（ggplot2）](http://yaojenkuo.io/r_programming/ch5)
+- [用 RMarkdown 撰寫報告](http://yaojenkuo.io/r_programming/ch10)
 
 ### 近期上課錄影
 
 ### 推薦學習資源/書籍
 
 - [SQL 深入淺出](http://www.books.com.tw/products/0010391205)
+- [輕鬆學習 R 語言](https://www.learn-r-the-easy-way.tw/)
