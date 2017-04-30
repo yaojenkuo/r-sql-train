@@ -39,6 +39,13 @@ knitr::opts_chunk$set(echo = TRUE)
 
 <https://storage.googleapis.com/csiersql/r-sql-train.zip>
 
+## 如果您在自己的電腦成功安裝了 MySQL Workbench
+
+- 下載這三個憑證：
+    - [SSL Key](https://storage.googleapis.com/csiersql/client-key.pem)
+    - [SSL CERT](https://storage.googleapis.com/csiersql/client-cert.pem)
+    - [SSL CA](https://storage.googleapis.com/csiersql/server-ca.pem)
+
 ## 設定虛擬機器
 
 - 開啟桌面上的 Virtual Box 捷徑
