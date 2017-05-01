@@ -2,17 +2,12 @@
 title: "SQL 進階"
 author: 郭耀仁
 date: "`r Sys.Date()`"
-output:
-  ioslides_presentation:
-    self-contained: true
-    widescreen: true
+output: slidy_presentation
 ---
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = FALSE)
 ```
-
-# 進階的 SQL 查詢
 
 ## 一個典型的 SQL 查詢結構
 
