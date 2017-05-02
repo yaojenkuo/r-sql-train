@@ -12081,6 +12081,402 @@ a.anchor-link {
 
 </div>
 </div>
+</div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="SQL-&#25351;&#20196;">SQL &#25351;&#20196;<a class="anchor-link" href="#SQL-&#25351;&#20196;">&#182;</a></h1>
+</div>
+</div>
+</div></section><section>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="SHOW"><code>SHOW</code><a class="anchor-link" href="#SHOW">&#182;</a></h2>
+<pre><code>SHOW DATABASES;</code></pre>
+
+</div>
+</div>
+</div></section><section>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="USE-and-SHOW"><code>USE</code> and <code>SHOW</code><a class="anchor-link" href="#USE-and-SHOW">&#182;</a></h2>
+<pre><code>USE world;
+SHOW TABLES;</code></pre>
+
+</div>
+</div>
+</div></section><section>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="&#38542;&#23652;&#38364;&#20418;">&#38542;&#23652;&#38364;&#20418;<a class="anchor-link" href="#&#38542;&#23652;&#38364;&#20418;">&#182;</a></h2><ul>
+<li>資料庫系統<ul>
+<li>資料庫<ul>
+<li>表格</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+</div>
+</div>
+</div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="&#22522;&#30990;&#30340;-SQL-&#26597;&#35426;">&#22522;&#30990;&#30340; SQL &#26597;&#35426;<a class="anchor-link" href="#&#22522;&#30990;&#30340;-SQL-&#26597;&#35426;">&#182;</a></h1>
+</div>
+</div>
+</div></section><section>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="&#19968;&#20491;&#20856;&#22411;&#30340;-SQL-&#26597;&#35426;&#32080;&#27083;">&#19968;&#20491;&#20856;&#22411;&#30340; SQL &#26597;&#35426;&#32080;&#27083;<a class="anchor-link" href="#&#19968;&#20491;&#20856;&#22411;&#30340;-SQL-&#26597;&#35426;&#32080;&#27083;">&#182;</a></h2>
+<pre><code>SELECT ...
+  FROM ...
+  WHERE ...
+  GROUP BY ...
+  HAVING ...
+  ORDER BY ...</code></pre>
+
+</div>
+</div>
+</div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="SELECT-&#33287;-FROM"><code>SELECT</code> &#33287; <code>FROM</code><a class="anchor-link" href="#SELECT-&#33287;-FROM">&#182;</a></h2><ul>
+<li><code>*</code> 意指<strong>所有的欄位</strong></li>
+</ul>
+
+<pre><code>SELECT *
+  FROM world.country;</code></pre>
+<p>或者</p>
+
+<pre><code>USE world;
+SELECT *
+  FROM country;</code></pre>
+
+</div>
+</div>
+</div></section><section>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="SELECT-&#33287;-FROM&#65288;2&#65289;"><code>SELECT</code> &#33287; <code>FROM</code>&#65288;2&#65289;<a class="anchor-link" href="#SELECT-&#33287;-FROM&#65288;2&#65289;">&#182;</a></h2><ul>
+<li><strong>（重要！）</strong>養成先選幾列出來觀察的好習慣</li>
+</ul>
+
+<pre><code>SELECT *
+  FROM world.country
+  LIMIT 10;</code></pre>
+
+</div>
+</div>
+</div></section><section>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="SELECT-&#33287;-FROM&#65288;3&#65289;"><code>SELECT</code> &#33287; <code>FROM</code>&#65288;3&#65289;<a class="anchor-link" href="#SELECT-&#33287;-FROM&#65288;3&#65289;">&#182;</a></h2><ul>
+<li>選指定的欄位</li>
+</ul>
+
+<pre><code>SELECT Name
+       ,Continent
+       ,Population
+  FROM world.country;</code></pre>
+
+</div>
+</div>
+</div></section><section>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="SELECT-&#33287;-FROM&#65288;4&#65289;"><code>SELECT</code> &#33287; <code>FROM</code>&#65288;4&#65289;<a class="anchor-link" href="#SELECT-&#33287;-FROM&#65288;4&#65289;">&#182;</a></h2><ul>
+<li><code>COUNT(*)</code> 計算表格有幾列</li>
+</ul>
+
+<pre><code>SELECT COUNT(*)
+  FROM world.country;</code></pre>
+
+</div>
+</div>
+</div></section><section>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="SELECT-&#33287;-FROM&#65288;5&#65289;"><code>SELECT</code> &#33287; <code>FROM</code>&#65288;5&#65289;<a class="anchor-link" href="#SELECT-&#33287;-FROM&#65288;5&#65289;">&#182;</a></h2><ul>
+<li>計算表格有幾個欄位</li>
+</ul>
+
+<pre><code>SELECT COUNT(*)
+  FROM information_schema.columns
+  WHERE table_name = 'country';</code></pre>
+
+</div>
+</div>
+</div></section><section>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="SELECT-&#33287;-FROM&#65288;6&#65289;"><code>SELECT</code> &#33287; <code>FROM</code>&#65288;6&#65289;<a class="anchor-link" href="#SELECT-&#33287;-FROM&#65288;6&#65289;">&#182;</a></h2><ul>
+<li>計算衍生欄位</li>
+</ul>
+
+<pre><code>SELECT *
+       ,Population/SurfaceArea AS Density
+  FROM world.country;</code></pre>
+
+</div>
+</div>
+</div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="WHERE"><code>WHERE</code><a class="anchor-link" href="#WHERE">&#182;</a></h2><ul>
+<li>把 <code>Taiwan</code> 選出來</li>
+</ul>
+
+<pre><code>SELECT *
+  FROM world.country
+  WHERE Name = 'Taiwan';</code></pre>
+
+</div>
+</div>
+</div></section><section>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="WHERE&#65288;2&#65289;"><code>WHERE</code>&#65288;2&#65289;<a class="anchor-link" href="#WHERE&#65288;2&#65289;">&#182;</a></h2><ul>
+<li>選擇多個國家，使用 <code>IN</code> 這個關鍵字</li>
+</ul>
+
+<pre><code>SELECT *
+  FROM world.country
+  WHERE Name IN ('Taiwan', 'Japan', 'South Korea');</code></pre>
+
+</div>
+</div>
+</div></section><section>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="WHERE&#65288;3&#65289;"><code>WHERE</code>&#65288;3&#65289;<a class="anchor-link" href="#WHERE&#65288;3&#65289;">&#182;</a></h2><ul>
+<li>負面表列，使用 <code>NOT IN</code> 這個關鍵字</li>
+</ul>
+
+<pre><code>SELECT *
+  FROM world.country
+  WHERE Continent NOT IN ('Asia', 'Africa', 'Oceania', 'Europe', 'Antarctica');</code></pre>
+
+</div>
+</div>
+</div></section><section>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="WHERE&#65288;4&#65289;"><code>WHERE</code>&#65288;4&#65289;<a class="anchor-link" href="#WHERE&#65288;4&#65289;">&#182;</a></h2><ul>
+<li>使用 <code>&gt;</code> 來找出人口超過 2 億的國家</li>
+</ul>
+
+<pre><code>SELECT *
+  FROM world.country
+  WHERE Population &gt; 200000000;</code></pre>
+
+</div>
+</div>
+</div></section><section>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="WHERE&#65288;5&#65289;"><code>WHERE</code>&#65288;5&#65289;<a class="anchor-link" href="#WHERE&#65288;5&#65289;">&#182;</a></h2><ul>
+<li>使用 <code>BETWEEN</code> 找出人口介於 100 與 1 萬的國家</li>
+</ul>
+
+<pre><code>SELECT *
+  FROM world.country
+  WHERE Population BETWEEN 100 AND 10000;</code></pre>
+
+</div>
+</div>
+</div></section><section>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="WHERE&#65288;6&#65289;"><code>WHERE</code>&#65288;6&#65289;<a class="anchor-link" href="#WHERE&#65288;6&#65289;">&#182;</a></h2><ul>
+<li>使用 <code>LIKE</code> 與 <code>%</code> 對字串進行模糊比對</li>
+<li>United 開頭的國家</li>
+</ul>
+
+<pre><code>SELECT *
+  FROM world.country
+  WHERE Name LIKE 'United%';</code></pre>
+
+</div>
+</div>
+</div></section><section>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="WHERE&#65288;7&#65289;"><code>WHERE</code>&#65288;7&#65289;<a class="anchor-link" href="#WHERE&#65288;7&#65289;">&#182;</a></h2><ul>
+<li>使用 <code>LIKE</code> 與 <code>%</code> 對字串進行模糊比對</li>
+<li>land 結尾的國家</li>
+</ul>
+
+<pre><code>SELECT *
+  FROM world.country
+  WHERE Name LIKE '%land';</code></pre>
+
+</div>
+</div>
+</div></section><section>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="WHERE&#65288;8&#65289;"><code>WHERE</code>&#65288;8&#65289;<a class="anchor-link" href="#WHERE&#65288;8&#65289;">&#182;</a></h2><ul>
+<li>使用 <code>LIKE</code> 與 <code>%</code> 對字串進行模糊比對</li>
+<li>T 開頭 n 結尾的國家</li>
+</ul>
+
+<pre><code>SELECT *
+  FROM world.country
+  WHERE Name LIKE 'T%n';</code></pre>
+
+</div>
+</div>
+</div></section><section>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="WHERE&#65288;9&#65289;"><code>WHERE</code>&#65288;9&#65289;<a class="anchor-link" href="#WHERE&#65288;9&#65289;">&#182;</a></h2><ul>
+<li>使用 <code>LIKE</code> 與 <code>_</code> 對字串進行模糊比對</li>
+<li>找出剛好由四個字母組成的國家</li>
+</ul>
+
+<pre><code>SELECT *
+  FROM world.country
+  WHERE Name LIKE '____';</code></pre>
+
+</div>
+</div>
+</div></section><section>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="WHERE&#65288;10&#65289;"><code>WHERE</code>&#65288;10&#65289;<a class="anchor-link" href="#WHERE&#65288;10&#65289;">&#182;</a></h2><ul>
+<li>使用 <code>AND</code> <strong>交集</strong>兩個以上的條件</li>
+</ul>
+
+<pre><code>SELECT *
+  FROM world.country
+  WHERE Name LIKE '____'
+    AND Continent = 'Asia';</code></pre>
+
+</div>
+</div>
+</div></section><section>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="WHERE&#65288;11&#65289;"><code>WHERE</code>&#65288;11&#65289;<a class="anchor-link" href="#WHERE&#65288;11&#65289;">&#182;</a></h2><ul>
+<li>使用 <code>OR</code> <strong>聯集</strong>兩個以上的條件</li>
+</ul>
+
+<pre><code>SELECT *
+  FROM world.country
+  WHERE Population &gt; 200000000
+    OR Population &lt; 100;</code></pre>
+
+</div>
+</div>
+</div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="&#38568;&#22530;&#32244;&#32722;">&#38568;&#22530;&#32244;&#32722;<a class="anchor-link" href="#&#38568;&#22530;&#32244;&#32722;">&#182;</a></h2><ul>
+<li>請寫出能夠產出以下結果的 SQL 查詢：</li>
+</ul>
+<p><img src="img/chapter0107.png" alt=""></p>
+
+</div>
+</div>
+</div></section><section>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="&#38568;&#22530;&#32244;&#32722;&#65288;2&#65289;">&#38568;&#22530;&#32244;&#32722;&#65288;2&#65289;<a class="anchor-link" href="#&#38568;&#22530;&#32244;&#32722;&#65288;2&#65289;">&#182;</a></h2><ul>
+<li>請寫出能夠產出以下結果的 SQL 查詢：</li>
+</ul>
+<p><img src="img/chapter0108.png" alt=""></p>
+
+</div>
+</div>
+</div></section><section>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="&#38568;&#22530;&#32244;&#32722;&#65288;3&#65289;">&#38568;&#22530;&#32244;&#32722;&#65288;3&#65289;<a class="anchor-link" href="#&#38568;&#22530;&#32244;&#32722;&#65288;3&#65289;">&#182;</a></h2><ul>
+<li>請寫出能夠產出以下結果的 SQL 查詢：</li>
+</ul>
+<p><img src="img/chapter0109.png" alt=""></p>
+
+</div>
+</div>
 </div></section></section>
 </div>
 </div>
