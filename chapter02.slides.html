@@ -11941,10 +11941,77 @@ a.anchor-link {
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="&#20854;&#20182;&#24120;&#29992;&#32858;&#21512;&#20989;&#25976;">&#20854;&#20182;&#24120;&#29992;&#32858;&#21512;&#20989;&#25976;<a class="anchor-link" href="#&#20854;&#20182;&#24120;&#29992;&#32858;&#21512;&#20989;&#25976;">&#182;</a></h2><ul>
+<h2 id="&#20854;&#20182;&#24120;&#29992;&#25976;&#20540;&#20989;&#25976;">&#20854;&#20182;&#24120;&#29992;&#25976;&#20540;&#20989;&#25976;<a class="anchor-link" href="#&#20854;&#20182;&#24120;&#29992;&#25976;&#20540;&#20989;&#25976;">&#182;</a></h2><ul>
 <li><code>AVG()</code></li>
 <li><code>MAX()</code></li>
 <li><code>MIN()</code></li>
+<li>...</li>
+</ul>
+
+</div>
+</div>
+</div></section><section>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="SUBSTR()-&#20989;&#25976;"><code>SUBSTR()</code> &#20989;&#25976;<a class="anchor-link" href="#SUBSTR()-&#20989;&#25976;">&#182;</a></h2><ul>
+<li>擷取某部分的文字</li>
+</ul>
+
+<pre><code>SELECT SUBSTR(Name, 1, 3) AS Sub_Name
+    ,Name
+    FROM world.country
+    LIMIT 10;</code></pre>
+
+</div>
+</div>
+</div></section><section>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="CONCAT()-&#20989;&#25976;"><code>CONCAT()</code> &#20989;&#25976;<a class="anchor-link" href="#CONCAT()-&#20989;&#25976;">&#182;</a></h2><ul>
+<li>連結文字</li>
+</ul>
+
+<pre><code>SELECT Name 
+    ,CONCAT(Region, ', ', Continent) AS Reg_Cont
+    FROM world.country
+    LIMIT 10;</code></pre>
+
+</div>
+</div>
+</div></section><section>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="UPPER()-&#20989;&#25976;"><code>UPPER()</code> &#20989;&#25976;<a class="anchor-link" href="#UPPER()-&#20989;&#25976;">&#182;</a></h2><ul>
+<li>轉換文字為大寫</li>
+</ul>
+
+<pre><code>SELECT UPPER(Name) AS Cap_Name
+    , Name
+    FROM world.country
+    LIMIT 10;</code></pre>
+
+</div>
+</div>
+</div></section><section>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="&#20854;&#20182;&#24120;&#29992;&#25991;&#23383;&#20989;&#25976;">&#20854;&#20182;&#24120;&#29992;&#25991;&#23383;&#20989;&#25976;<a class="anchor-link" href="#&#20854;&#20182;&#24120;&#29992;&#25991;&#23383;&#20989;&#25976;">&#182;</a></h2><ul>
+<li><code>TRIM()</code></li>
+<li><code>LENGTH()</code></li>
+<li><code>LOWER()</code></li>
+<li><code>REVERSE()</code></li>
 <li>...</li>
 </ul>
 
