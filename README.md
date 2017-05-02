@@ -12,7 +12,8 @@
 ### 課程大綱
 
 - [關於這門課](http://yaojenkuo.io/r-sql-train/chapter00.html)
-- [SQL 基礎](http://yaojenkuo.io/r-sql-train/chapter01.html)
+- [SQL 基礎](http://yaojenkuo.io/r-sql-train/chapter01.slides.html)
+- [SQL 進階]()
 - [建立 R 語言的開發環境]()
 - [建立 R 語言與資料庫的連結]()
 - [讀取不同的資料格式](http://yaojenkuo.io/r_programming/ch6)
