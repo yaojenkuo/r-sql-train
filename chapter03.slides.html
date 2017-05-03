@@ -11909,7 +11909,7 @@ a.anchor-link {
 
 </div>
 </div>
-</div>
+</div></section></section><section><section>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
@@ -11917,7 +11917,7 @@ a.anchor-link {
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="&#27493;&#39519;">&#27493;&#39519;<a class="anchor-link" href="#&#27493;&#39519;">&#182;</a></h2><ul>
 <li>啟動 Cloud SQL 專案的 API 功能</li>
-<li>下載 Cloud SQL Proxy</li>
+<li>安裝 Cloud SQL Proxy</li>
 <li>建立一個 Service Account</li>
 <li>下載 API 憑證</li>
 <li>啟動代理伺服器</li>
@@ -11929,12 +11929,120 @@ a.anchor-link {
 
 </div>
 </div>
-</div></section></section><section><section>
+</div></section><section>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="&#27493;&#39519;&#65288;2&#65289;">&#27493;&#39519;&#65288;2&#65289;<a class="anchor-link" href="#&#27493;&#39519;&#65288;2&#65289;">&#182;</a></h2><ul>
+<li>啟動 Cloud SQL 專案的 API 功能</li>
+</ul>
+<p><img src="img/chapter0301.png" alt=""></p>
+
+</div>
+</div>
+</div></section><section>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="&#27493;&#39519;&#65288;3&#65289;">&#27493;&#39519;&#65288;3&#65289;<a class="anchor-link" href="#&#27493;&#39519;&#65288;3&#65289;">&#182;</a></h2><ul>
+<li>安裝 Cloud SQL Proxy（以 OS X 64-bit 為例）</li>
+</ul>
+
+<pre><code>curl -o cloud_sql_proxy https://dl.google.com/cloudsql/cloud_sql_proxy.darwin.amd64
+chmod +x cloud_sql_proxy</code></pre>
+
+</div>
+</div>
+</div></section><section>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="&#27493;&#39519;&#65288;4&#65289;">&#27493;&#39519;&#65288;4&#65289;<a class="anchor-link" href="#&#27493;&#39519;&#65288;4&#65289;">&#182;</a></h2><ul>
+<li>建立一個 Service Account</li>
+</ul>
+<p><img src="img/chapter0302.png" alt=""></p>
+
+</div>
+</div>
+</div></section><section>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="&#27493;&#39519;&#65288;5&#65289;">&#27493;&#39519;&#65288;5&#65289;<a class="anchor-link" href="#&#27493;&#39519;&#65288;5&#65289;">&#182;</a></h2><ul>
+<li>下載 API 憑證</li>
+</ul>
+<p><img src="img/chapter0303.png" alt=""></p>
+
+</div>
+</div>
+</div></section><section>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="&#27493;&#39519;&#65288;6&#65289;">&#27493;&#39519;&#65288;6&#65289;<a class="anchor-link" href="#&#27493;&#39519;&#65288;6&#65289;">&#182;</a></h2><ul>
+<li>啟動代理伺服器</li>
+</ul>
+
+<pre><code>./cloud_sql_proxy -instances=&lt;INSTANCE_CONNECTION_NAME&gt;=tcp:3306 -credential_file=&lt;PATH_TO_KEY_FILE&gt;</code></pre>
+<ul>
+<li>以我們的例子來說，INSTANCE_CONNECTION_NAME 為 csie-r-sql:asia-northeast1:csiersql</li>
+<li>PATH_TO_KEY_FILE 為 ~/Downloads/csie-r-sql-4ac752c2eb6d.json</li>
+</ul>
+
+</div>
+</div>
+</div></section><section>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="&#27493;&#39519;&#65288;7&#65289;">&#27493;&#39519;&#65288;7&#65289;<a class="anchor-link" href="#&#27493;&#39519;&#65288;7&#65289;">&#182;</a></h2><ul>
+<li>啟動 RStudio</li>
+<li>安裝 <code>RMySQL</code> 套件</li>
+<li>載入 <code>DBI</code> 套件</li>
+</ul>
+<div class="highlight"><pre><span></span>install.packages<span class="p">(</span><span class="s">&quot;RMySQL&quot;</span><span class="p">)</span>
+<span class="kn">library</span><span class="p">(</span>DBI<span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div></section><section>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="&#27493;&#39519;&#65288;8&#65289;">&#27493;&#39519;&#65288;8&#65289;<a class="anchor-link" href="#&#27493;&#39519;&#65288;8&#65289;">&#182;</a></h2><ul>
+<li>建立與代理伺服器的連線</li>
+</ul>
+<div class="highlight"><pre><span></span>getSqlConnection <span class="o">&lt;-</span> <span class="kr">function</span><span class="p">(){</span>
+    con <span class="o">&lt;-</span> dbConnect<span class="p">(</span>
+        RMySQL<span class="o">::</span>MySQL<span class="p">(),</span>
+        username <span class="o">=</span> <span class="s">&#39;student&#39;</span><span class="p">,</span>
+        password <span class="o">=</span> <span class="s">&#39;student&#39;</span><span class="p">,</span>
+        host <span class="o">=</span> <span class="s">&#39;127.0.0.1&#39;</span><span class="p">,</span> <span class="c1"># 透過本機作為代理伺服器連線</span>
+        dbname <span class="o">=</span> <span class="s">&#39;world&#39;</span>
+    <span class="p">)</span>
+    <span class="kr">return</span><span class="p">(</span>con<span class="p">)</span>
+<span class="p">}</span>
+
+conn <span class="o">&lt;-</span> getSqlConnection<span class="p">()</span>
+res <span class="o">&lt;-</span> dbListTables<span class="p">(</span>conn<span class="p">)</span>
+<span class="kp">print</span><span class="p">(</span>res<span class="p">)</span>
+dbDisconnect<span class="p">(</span>conn<span class="p">)</span> <span class="c1"># 關閉連線</span>
+</pre></div>
 
 </div>
 </div>
