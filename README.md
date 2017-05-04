@@ -16,6 +16,7 @@
 - [SQL 進階](http://yaojenkuo.io/r-sql-train/chapter02.slides.html)
 - [建立你的 R 語言開發環境](http://yaojenkuo.io/r_programming/ch1)
 - [建立 R 語言與資料庫的連結](http://yaojenkuo.io/r-sql-train/chapter03.slides.html)
+- [使用 R 語言讀取資料庫表格](http://yaojenkuo.io/r-sql-train/chapter04.slides.html)
 - [讀取不同的資料格式](http://yaojenkuo.io/r_programming/ch6)
 - [簡單的繪圖（Base plotting system）](http://yaojenkuo.io/r_programming/ch3)
 - [使用 dplyr 套件整理資料](http://yaojenkuo.io/r_programming/ch14)
