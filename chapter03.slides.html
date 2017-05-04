@@ -11951,15 +11951,18 @@ a.anchor-link {
 </div></section><section>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="prompt input_prompt">In&nbsp;[2]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-r"><pre><span></span><span class="c1">## 步驟（4）</span>
 
+<span class="c1"># 載入 DBI</span>
+<span class="kn">library</span><span class="p">(</span>DBI<span class="p">)</span>
+
 <span class="c1"># 利用 `dbConnect()` 建立連線</span>
 con <span class="o">&lt;-</span> dbConnect<span class="p">(</span>RMySQL<span class="o">::</span>MySQL<span class="p">(),</span> 
-                 dbname <span class="o">=</span> <span class="s">&quot;world&quot;</span><span class="p">,</span> 
-                 host <span class="o">=</span> <span class="s">&quot;rsqlclass.ced04jhfjfgi.ap-northeast-1.rds.amazonaws.com&quot;</span><span class="p">,</span> 
+                 dbname <span class="o">=</span> <span class="s">&quot;world&quot;</span><span class="p">,</span>
+                 host <span class="o">=</span> <span class="s">&quot;rsqltrain.ced04jhfjfgi.ap-northeast-1.rds.amazonaws.com&quot;</span><span class="p">,</span>
                  port <span class="o">=</span> <span class="m">3306</span><span class="p">,</span>
                  user <span class="o">=</span> <span class="s">&quot;trainstudent&quot;</span><span class="p">,</span>
                  password <span class="o">=</span> <span class="s">&quot;csietrain&quot;</span><span class="p">)</span>
@@ -11972,7 +11975,7 @@ con <span class="o">&lt;-</span> dbConnect<span class="p">(</span>RMySQL<span cl
 </div></section><section>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="prompt input_prompt">In&nbsp;[3]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-r"><pre><span></span><span class="c1">## 步驟（5）</span>
@@ -11985,6 +11988,34 @@ dbDisconnect<span class="p">(</span>con<span class="p">)</span> <span class="c1"
 </pre></div>
 
 </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt"></div>
+
+<div class="output_html rendered_html output_subarea ">
+<ol class=list-inline>
+	<li>'city'</li>
+	<li>'country'</li>
+	<li>'countrylanguage'</li>
+</ol>
+
+</div>
+
+</div>
+
+<div class="output_area"><div class="prompt"></div>
+
+<div class="output_html rendered_html output_subarea ">
+TRUE
+</div>
+
+</div>
+
 </div>
 </div>
 
