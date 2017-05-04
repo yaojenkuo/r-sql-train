@@ -11839,13 +11839,13 @@ a.anchor-link {
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="&#19968;&#20491;&#20856;&#22411;&#30340;-SQL-&#26597;&#35426;&#32080;&#27083;">&#19968;&#20491;&#20856;&#22411;&#30340; SQL &#26597;&#35426;&#32080;&#27083;<a class="anchor-link" href="#&#19968;&#20491;&#20856;&#22411;&#30340;-SQL-&#26597;&#35426;&#32080;&#27083;">&#182;</a></h2>
-<pre><code>SELECT ...
-  FROM ...
-  WHERE ...
-  GROUP BY ...
-  HAVING ...
-  ORDER BY ...</code></pre>
+<h2 id="&#19968;&#20491;&#20856;&#22411;&#30340;-SQL-&#26597;&#35426;&#32080;&#27083;">&#19968;&#20491;&#20856;&#22411;&#30340; SQL &#26597;&#35426;&#32080;&#27083;<a class="anchor-link" href="#&#19968;&#20491;&#20856;&#22411;&#30340;-SQL-&#26597;&#35426;&#32080;&#27083;">&#182;</a></h2><div class="highlight"><pre><span></span><span class="k">SELECT</span> <span class="p">...</span>
+  <span class="k">FROM</span> <span class="p">...</span>
+  <span class="k">WHERE</span> <span class="p">...</span>
+  <span class="k">GROUP</span> <span class="k">BY</span> <span class="p">...</span>
+  <span class="k">HAVING</span> <span class="p">...</span>
+  <span class="k">ORDER</span> <span class="k">BY</span> <span class="p">...</span>
+</pre></div>
 
 </div>
 </div>
@@ -11861,12 +11861,12 @@ a.anchor-link {
 <li>遞減排序：DESC</li>
 <li>找出人口數排名前 10 的國家</li>
 </ul>
-
-<pre><code>SELECT Name
-    ,Population
-  FROM world.country
-  ORDER BY Population DESC
-  LIMIT 10;</code></pre>
+<div class="highlight"><pre><span></span><span class="k">SELECT</span> <span class="n">Name</span>
+    <span class="p">,</span><span class="n">Population</span>
+  <span class="k">FROM</span> <span class="n">world</span><span class="p">.</span><span class="n">country</span>
+  <span class="k">ORDER</span> <span class="k">BY</span> <span class="n">Population</span> <span class="k">DESC</span>
+  <span class="k">LIMIT</span> <span class="mi">10</span><span class="p">;</span>
+</pre></div>
 
 </div>
 </div>
@@ -11879,13 +11879,13 @@ a.anchor-link {
 <h2 id="ORDER-BY-&#25551;&#36848;&#65288;2&#65289;"><code>ORDER BY</code> &#25551;&#36848;&#65288;2&#65289;<a class="anchor-link" href="#ORDER-BY-&#25551;&#36848;&#65288;2&#65289;">&#182;</a></h2><ul>
 <li>找出歐洲土地面積最小的 10 個國家</li>
 </ul>
-
-<pre><code>SELECT Name
-    ,SurfaceArea
-  FROM world.country
-  WHERE Continent = 'Europe'
-  ORDER BY SurfaceArea ASC
-  LIMIT 10;</code></pre>
+<div class="highlight"><pre><span></span><span class="k">SELECT</span> <span class="n">Name</span>
+    <span class="p">,</span><span class="n">SurfaceArea</span>
+  <span class="k">FROM</span> <span class="n">world</span><span class="p">.</span><span class="n">country</span>
+  <span class="k">WHERE</span> <span class="n">Continent</span> <span class="o">=</span> <span class="s1">&#39;Europe&#39;</span>
+  <span class="k">ORDER</span> <span class="k">BY</span> <span class="n">SurfaceArea</span> <span class="k">ASC</span>
+  <span class="k">LIMIT</span> <span class="mi">10</span><span class="p">;</span>
+</pre></div>
 
 </div>
 </div>
@@ -11898,9 +11898,9 @@ a.anchor-link {
 <h2 id="SUM()-&#20989;&#25976;"><code>SUM()</code> &#20989;&#25976;<a class="anchor-link" href="#SUM()-&#20989;&#25976;">&#182;</a></h2><ul>
 <li>回傳加總值</li>
 </ul>
-
-<pre><code>SELECT SUM(population) AS Sum_Pop
-  FROM world.country;</code></pre>
+<div class="highlight"><pre><span></span><span class="k">SELECT</span> <span class="k">SUM</span><span class="p">(</span><span class="n">population</span><span class="p">)</span> <span class="k">AS</span> <span class="n">Sum_Pop</span>
+  <span class="k">FROM</span> <span class="n">world</span><span class="p">.</span><span class="n">country</span><span class="p">;</span>
+</pre></div>
 
 </div>
 </div>
@@ -11913,9 +11913,9 @@ a.anchor-link {
 <h2 id="DISTINCT()-&#20989;&#25976;"><code>DISTINCT()</code> &#20989;&#25976;<a class="anchor-link" href="#DISTINCT()-&#20989;&#25976;">&#182;</a></h2><ul>
 <li>回傳相異值</li>
 </ul>
-
-<pre><code>SELECT DISTINCT(continent)
-  FROM world.country;</code></pre>
+<div class="highlight"><pre><span></span><span class="k">SELECT</span> <span class="k">DISTINCT</span><span class="p">(</span><span class="n">continent</span><span class="p">)</span>
+  <span class="k">FROM</span> <span class="n">world</span><span class="p">.</span><span class="n">country</span><span class="p">;</span>
+</pre></div>
 
 </div>
 </div>
@@ -11928,10 +11928,10 @@ a.anchor-link {
 <h2 id="COUNT()-&#20989;&#25976;"><code>COUNT()</code> &#20989;&#25976;<a class="anchor-link" href="#COUNT()-&#20989;&#25976;">&#182;</a></h2><ul>
 <li>計算有多少國家的人口超過 1 億</li>
 </ul>
-
-<pre><code>SELECT COUNT(*)
-  FROM world.country
-  WHERE Population &gt; 100000000;</code></pre>
+<div class="highlight"><pre><span></span><span class="k">SELECT</span> <span class="k">COUNT</span><span class="p">(</span><span class="o">*</span><span class="p">)</span>
+  <span class="k">FROM</span> <span class="n">world</span><span class="p">.</span><span class="n">country</span>
+  <span class="k">WHERE</span> <span class="n">Population</span> <span class="o">&gt;</span> <span class="mi">100000000</span><span class="p">;</span>
+</pre></div>
 
 </div>
 </div>
@@ -11959,11 +11959,11 @@ a.anchor-link {
 <h2 id="SUBSTR()-&#20989;&#25976;"><code>SUBSTR()</code> &#20989;&#25976;<a class="anchor-link" href="#SUBSTR()-&#20989;&#25976;">&#182;</a></h2><ul>
 <li>擷取某部分的文字</li>
 </ul>
-
-<pre><code>SELECT SUBSTR(Name, 1, 3) AS Sub_Name
-    ,Name
-    FROM world.country
-    LIMIT 10;</code></pre>
+<div class="highlight"><pre><span></span><span class="k">SELECT</span> <span class="n">SUBSTR</span><span class="p">(</span><span class="n">Name</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span> <span class="k">AS</span> <span class="n">Sub_Name</span>
+    <span class="p">,</span><span class="n">Name</span>
+    <span class="k">FROM</span> <span class="n">world</span><span class="p">.</span><span class="n">country</span>
+    <span class="k">LIMIT</span> <span class="mi">10</span><span class="p">;</span>
+</pre></div>
 
 </div>
 </div>
@@ -11976,11 +11976,11 @@ a.anchor-link {
 <h2 id="CONCAT()-&#20989;&#25976;"><code>CONCAT()</code> &#20989;&#25976;<a class="anchor-link" href="#CONCAT()-&#20989;&#25976;">&#182;</a></h2><ul>
 <li>連結文字</li>
 </ul>
-
-<pre><code>SELECT Name 
-    ,CONCAT(Region, ', ', Continent) AS Reg_Cont
-    FROM world.country
-    LIMIT 10;</code></pre>
+<div class="highlight"><pre><span></span><span class="k">SELECT</span> <span class="n">Name</span> 
+    <span class="p">,</span><span class="n">CONCAT</span><span class="p">(</span><span class="n">Region</span><span class="p">,</span> <span class="s1">&#39;, &#39;</span><span class="p">,</span> <span class="n">Continent</span><span class="p">)</span> <span class="k">AS</span> <span class="n">Reg_Cont</span>
+    <span class="k">FROM</span> <span class="n">world</span><span class="p">.</span><span class="n">country</span>
+    <span class="k">LIMIT</span> <span class="mi">10</span><span class="p">;</span>
+</pre></div>
 
 </div>
 </div>
@@ -11993,11 +11993,11 @@ a.anchor-link {
 <h2 id="UPPER()-&#20989;&#25976;"><code>UPPER()</code> &#20989;&#25976;<a class="anchor-link" href="#UPPER()-&#20989;&#25976;">&#182;</a></h2><ul>
 <li>轉換文字為大寫</li>
 </ul>
-
-<pre><code>SELECT UPPER(Name) AS Cap_Name
-    , Name
-    FROM world.country
-    LIMIT 10;</code></pre>
+<div class="highlight"><pre><span></span><span class="k">SELECT</span> <span class="k">UPPER</span><span class="p">(</span><span class="n">Name</span><span class="p">)</span> <span class="k">AS</span> <span class="n">Cap_Name</span>
+    <span class="p">,</span> <span class="n">Name</span>
+    <span class="k">FROM</span> <span class="n">world</span><span class="p">.</span><span class="n">country</span>
+    <span class="k">LIMIT</span> <span class="mi">10</span><span class="p">;</span>
+</pre></div>
 
 </div>
 </div>
@@ -12027,11 +12027,11 @@ a.anchor-link {
 <li><code>SUM()</code> 函數加入 <code>GROUP BY</code> 敘述</li>
 <li>計算各個 Continent 的人口總數</li>
 </ul>
-
-<pre><code>SELECT Continent
-       ,SUM(population) AS Sum_Pop
-  FROM world.country
-  GROUP BY Continent;</code></pre>
+<div class="highlight"><pre><span></span><span class="k">SELECT</span> <span class="n">Continent</span>
+       <span class="p">,</span><span class="k">SUM</span><span class="p">(</span><span class="n">population</span><span class="p">)</span> <span class="k">AS</span> <span class="n">Sum_Pop</span>
+  <span class="k">FROM</span> <span class="n">world</span><span class="p">.</span><span class="n">country</span>
+  <span class="k">GROUP</span> <span class="k">BY</span> <span class="n">Continent</span><span class="p">;</span>
+</pre></div>
 
 </div>
 </div>
@@ -12045,11 +12045,11 @@ a.anchor-link {
 <li><code>COUNT()</code> 函數加入 <code>GROUP BY</code> 敘述</li>
 <li>計算各個 Continent 的國家數</li>
 </ul>
-
-<pre><code>SELECT Continent
-       ,COUNT(*) AS Number_of_Countries
-  FROM world.country
-  GROUP BY Continent;</code></pre>
+<div class="highlight"><pre><span></span><span class="k">SELECT</span> <span class="n">Continent</span>
+       <span class="p">,</span><span class="k">COUNT</span><span class="p">(</span><span class="o">*</span><span class="p">)</span> <span class="k">AS</span> <span class="n">Number_of_Countries</span>
+  <span class="k">FROM</span> <span class="n">world</span><span class="p">.</span><span class="n">country</span>
+  <span class="k">GROUP</span> <span class="k">BY</span> <span class="n">Continent</span><span class="p">;</span>
+</pre></div>
 
 </div>
 </div>
@@ -12063,12 +12063,12 @@ a.anchor-link {
 <li><code>COUNT()</code> 函數加入 <code>GROUP BY</code> 敘述</li>
 <li>計算各個 Region 人口超過 1 千萬的國家數</li>
 </ul>
-
-<pre><code>SELECT Region
-       ,COUNT(*) AS Number_of_Countries
-  FROM world.country
-  WHERE Population &gt; 10000000
-  GROUP BY Region;</code></pre>
+<div class="highlight"><pre><span></span><span class="k">SELECT</span> <span class="n">Region</span>
+       <span class="p">,</span><span class="k">COUNT</span><span class="p">(</span><span class="o">*</span><span class="p">)</span> <span class="k">AS</span> <span class="n">Number_of_Countries</span>
+  <span class="k">FROM</span> <span class="n">world</span><span class="p">.</span><span class="n">country</span>
+  <span class="k">WHERE</span> <span class="n">Population</span> <span class="o">&gt;</span> <span class="mi">10000000</span>
+  <span class="k">GROUP</span> <span class="k">BY</span> <span class="n">Region</span><span class="p">;</span>
+</pre></div>
 
 </div>
 </div>
@@ -12082,13 +12082,13 @@ a.anchor-link {
 <li>針對聚合函數下條件</li>
 <li>找出總人口數超過 1 億的洲（Continent）</li>
 </ul>
-
-<pre><code>/*錯誤*/
-SELECT Continent
-       ,SUM(Population) AS Sum_of_Population
-  FROM world.country
-  GROUP BY Continent
-  WHERE Sum_of_Population &gt; 100000000;</code></pre>
+<div class="highlight"><pre><span></span><span class="cm">/*錯誤*/</span>
+<span class="k">SELECT</span> <span class="n">Continent</span>
+       <span class="p">,</span><span class="k">SUM</span><span class="p">(</span><span class="n">Population</span><span class="p">)</span> <span class="k">AS</span> <span class="n">Sum_of_Population</span>
+  <span class="k">FROM</span> <span class="n">world</span><span class="p">.</span><span class="n">country</span>
+  <span class="k">GROUP</span> <span class="k">BY</span> <span class="n">Continent</span>
+  <span class="k">WHERE</span> <span class="n">Sum_of_Population</span> <span class="o">&gt;</span> <span class="mi">100000000</span><span class="p">;</span>
+</pre></div>
 
 </div>
 </div>
@@ -12102,13 +12102,13 @@ SELECT Continent
 <li>針對聚合函數下條件</li>
 <li>找出總人口數超過 1 億的洲（Continent）</li>
 </ul>
-
-<pre><code>/*正確*/
-SELECT Continent
-       ,SUM(Population) AS Sum_of_Population
-  FROM world.country
-  GROUP BY Continent
-  Having Sum_of_Population &gt; 100000000;</code></pre>
+<div class="highlight"><pre><span></span><span class="cm">/*正確*/</span>
+<span class="k">SELECT</span> <span class="n">Continent</span>
+       <span class="p">,</span><span class="k">SUM</span><span class="p">(</span><span class="n">Population</span><span class="p">)</span> <span class="k">AS</span> <span class="n">Sum_of_Population</span>
+  <span class="k">FROM</span> <span class="n">world</span><span class="p">.</span><span class="n">country</span>
+  <span class="k">GROUP</span> <span class="k">BY</span> <span class="n">Continent</span>
+  <span class="k">Having</span> <span class="n">Sum_of_Population</span> <span class="o">&gt;</span> <span class="mi">100000000</span><span class="p">;</span>
+</pre></div>
 
 </div>
 </div>
@@ -12148,14 +12148,14 @@ SELECT Continent
 <li><code>SELECT</code> <strong>within</strong> <code>SELECT</code></li>
 <li>找出人口數比美國多的國家：</li>
 </ul>
-
-<pre><code>SELECT Name
-  FROM world.country
-  WHERE Population &gt; (
-    SELECT Population
-      FROM world.country
-      WHERE Code = 'USA'
-  );</code></pre>
+<div class="highlight"><pre><span></span><span class="k">SELECT</span> <span class="n">Name</span>
+  <span class="k">FROM</span> <span class="n">world</span><span class="p">.</span><span class="n">country</span>
+  <span class="k">WHERE</span> <span class="n">Population</span> <span class="o">&gt;</span> <span class="p">(</span>
+    <span class="k">SELECT</span> <span class="n">Population</span>
+      <span class="k">FROM</span> <span class="n">world</span><span class="p">.</span><span class="n">country</span>
+      <span class="k">WHERE</span> <span class="n">Code</span> <span class="o">=</span> <span class="s1">&#39;USA&#39;</span>
+  <span class="p">);</span>
+</pre></div>
 
 </div>
 </div>
@@ -12168,14 +12168,14 @@ SELECT Continent
 <h2 id="&#23376;&#26597;&#35426;&#65288;2&#65289;">&#23376;&#26597;&#35426;&#65288;2&#65289;<a class="anchor-link" href="#&#23376;&#26597;&#35426;&#65288;2&#65289;">&#182;</a></h2><ul>
 <li>找出跟 Brazil 屬於同一個洲的國家：</li>
 </ul>
-
-<pre><code>SELECT Name
-  FROM world.country
-  WHERE Continent = (
-    SELECT Continent
-      FROM world.country
-      WHERE Name = 'Brazil'
-  );</code></pre>
+<div class="highlight"><pre><span></span><span class="k">SELECT</span> <span class="n">Name</span>
+  <span class="k">FROM</span> <span class="n">world</span><span class="p">.</span><span class="n">country</span>
+  <span class="k">WHERE</span> <span class="n">Continent</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="k">SELECT</span> <span class="n">Continent</span>
+      <span class="k">FROM</span> <span class="n">world</span><span class="p">.</span><span class="n">country</span>
+      <span class="k">WHERE</span> <span class="n">Name</span> <span class="o">=</span> <span class="s1">&#39;Brazil&#39;</span>
+  <span class="p">);</span>
+</pre></div>
 
 </div>
 </div>
@@ -12220,28 +12220,28 @@ SELECT Continent
 <h2 id="&#20839;&#37096;&#32879;&#32080;">&#20839;&#37096;&#32879;&#32080;<a class="anchor-link" href="#&#20839;&#37096;&#32879;&#32080;">&#182;</a></h2><ul>
 <li>取左表格（台灣、日本）跟右表格（台灣、南韓）的交集（台灣）</li>
 </ul>
+<div class="highlight"><pre><span></span><span class="cm">/*左表格*/</span>
+<span class="k">SELECT</span> <span class="o">*</span> <span class="k">FROM</span> <span class="n">world</span><span class="p">.</span><span class="n">country</span>
+    <span class="k">WHERE</span> <span class="n">Name</span> <span class="k">IN</span> <span class="p">(</span><span class="s1">&#39;Taiwan&#39;</span><span class="p">,</span> <span class="s1">&#39;Japan&#39;</span><span class="p">);</span>
 
-<pre><code>/*左表格*/
-SELECT * FROM world.country
-    WHERE Name IN ('Taiwan', 'Japan');
+<span class="cm">/*右表格*/</span>
+<span class="k">SELECT</span> <span class="o">*</span> <span class="k">FROM</span> <span class="n">world</span><span class="p">.</span><span class="n">city</span>
+    <span class="k">WHERE</span> <span class="n">CountryCode</span> <span class="k">IN</span> <span class="p">(</span><span class="s1">&#39;TWN&#39;</span><span class="p">,</span> <span class="s1">&#39;KOR&#39;</span><span class="p">);</span>
 
-/*右表格*/
-SELECT * FROM world.city
-    WHERE CountryCode IN ('TWN', 'KOR');
-
-/*內部聯結*/
-SELECT a.*
-      ,b.*
-    FROM (
-        SELECT *
-        FROM world.country
-        WHERE Code IN ('TWN', 'JPN')
-    ) a
-    INNER JOIN (
-        SELECT * FROM world.city
-        WHERE CountryCode IN ('TWN', 'KOR')
-    ) b
-    ON a.Code = b.CountryCode;</code></pre>
+<span class="cm">/*內部聯結*/</span>
+<span class="k">SELECT</span> <span class="n">a</span><span class="p">.</span><span class="o">*</span>
+      <span class="p">,</span><span class="n">b</span><span class="p">.</span><span class="o">*</span>
+    <span class="k">FROM</span> <span class="p">(</span>
+        <span class="k">SELECT</span> <span class="o">*</span>
+        <span class="k">FROM</span> <span class="n">world</span><span class="p">.</span><span class="n">country</span>
+        <span class="k">WHERE</span> <span class="n">Code</span> <span class="k">IN</span> <span class="p">(</span><span class="s1">&#39;TWN&#39;</span><span class="p">,</span> <span class="s1">&#39;JPN&#39;</span><span class="p">)</span>
+    <span class="p">)</span> <span class="n">a</span>
+    <span class="k">INNER</span> <span class="k">JOIN</span> <span class="p">(</span>
+        <span class="k">SELECT</span> <span class="o">*</span> <span class="k">FROM</span> <span class="n">world</span><span class="p">.</span><span class="n">city</span>
+        <span class="k">WHERE</span> <span class="n">CountryCode</span> <span class="k">IN</span> <span class="p">(</span><span class="s1">&#39;TWN&#39;</span><span class="p">,</span> <span class="s1">&#39;KOR&#39;</span><span class="p">)</span>
+    <span class="p">)</span> <span class="n">b</span>
+    <span class="k">ON</span> <span class="n">a</span><span class="p">.</span><span class="n">Code</span> <span class="o">=</span> <span class="n">b</span><span class="p">.</span><span class="n">CountryCode</span><span class="p">;</span>
+</pre></div>
 
 </div>
 </div>
@@ -12254,28 +12254,28 @@ SELECT a.*
 <h2 id="&#24038;&#22806;&#37096;&#32879;&#32080;">&#24038;&#22806;&#37096;&#32879;&#32080;<a class="anchor-link" href="#&#24038;&#22806;&#37096;&#32879;&#32080;">&#182;</a></h2><ul>
 <li>留下所有左表格（台灣、日本）的資料</li>
 </ul>
+<div class="highlight"><pre><span></span><span class="cm">/*左表格*/</span>
+<span class="k">SELECT</span> <span class="o">*</span> <span class="k">FROM</span> <span class="n">world</span><span class="p">.</span><span class="n">country</span>
+    <span class="k">WHERE</span> <span class="n">Name</span> <span class="k">IN</span> <span class="p">(</span><span class="s1">&#39;Taiwan&#39;</span><span class="p">,</span> <span class="s1">&#39;Japan&#39;</span><span class="p">);</span>
 
-<pre><code>/*左表格*/
-SELECT * FROM world.country
-    WHERE Name IN ('Taiwan', 'Japan');
+<span class="cm">/*右表格*/</span>
+<span class="k">SELECT</span> <span class="o">*</span> <span class="k">FROM</span> <span class="n">world</span><span class="p">.</span><span class="n">city</span>
+    <span class="k">WHERE</span> <span class="n">CountryCode</span> <span class="k">IN</span> <span class="p">(</span><span class="s1">&#39;TWN&#39;</span><span class="p">,</span> <span class="s1">&#39;KOR&#39;</span><span class="p">);</span>
 
-/*右表格*/
-SELECT * FROM world.city
-    WHERE CountryCode IN ('TWN', 'KOR');
-
-/*左外部聯結*/
-SELECT a.*
-      ,b.*
-    FROM (
-        SELECT *
-        FROM world.country
-        WHERE Code IN ('TWN', 'JPN')
-    ) a
-    LEFT JOIN (
-        SELECT * FROM world.city
-        WHERE CountryCode IN ('TWN', 'KOR')
-    ) b
-    ON a.Code = b.CountryCode;</code></pre>
+<span class="cm">/*左外部聯結*/</span>
+<span class="k">SELECT</span> <span class="n">a</span><span class="p">.</span><span class="o">*</span>
+      <span class="p">,</span><span class="n">b</span><span class="p">.</span><span class="o">*</span>
+    <span class="k">FROM</span> <span class="p">(</span>
+        <span class="k">SELECT</span> <span class="o">*</span>
+        <span class="k">FROM</span> <span class="n">world</span><span class="p">.</span><span class="n">country</span>
+        <span class="k">WHERE</span> <span class="n">Code</span> <span class="k">IN</span> <span class="p">(</span><span class="s1">&#39;TWN&#39;</span><span class="p">,</span> <span class="s1">&#39;JPN&#39;</span><span class="p">)</span>
+    <span class="p">)</span> <span class="n">a</span>
+    <span class="k">LEFT</span> <span class="k">JOIN</span> <span class="p">(</span>
+        <span class="k">SELECT</span> <span class="o">*</span> <span class="k">FROM</span> <span class="n">world</span><span class="p">.</span><span class="n">city</span>
+        <span class="k">WHERE</span> <span class="n">CountryCode</span> <span class="k">IN</span> <span class="p">(</span><span class="s1">&#39;TWN&#39;</span><span class="p">,</span> <span class="s1">&#39;KOR&#39;</span><span class="p">)</span>
+    <span class="p">)</span> <span class="n">b</span>
+    <span class="k">ON</span> <span class="n">a</span><span class="p">.</span><span class="n">Code</span> <span class="o">=</span> <span class="n">b</span><span class="p">.</span><span class="n">CountryCode</span><span class="p">;</span>
+</pre></div>
 
 </div>
 </div>
@@ -12288,28 +12288,28 @@ SELECT a.*
 <h2 id="&#21491;&#22806;&#37096;&#32879;&#32080;">&#21491;&#22806;&#37096;&#32879;&#32080;<a class="anchor-link" href="#&#21491;&#22806;&#37096;&#32879;&#32080;">&#182;</a></h2><ul>
 <li>留下所有右表格（台灣、南韓）的資料</li>
 </ul>
+<div class="highlight"><pre><span></span><span class="cm">/*左表格*/</span>
+<span class="k">SELECT</span> <span class="o">*</span> <span class="k">FROM</span> <span class="n">world</span><span class="p">.</span><span class="n">country</span>
+    <span class="k">WHERE</span> <span class="n">Name</span> <span class="k">IN</span> <span class="p">(</span><span class="s1">&#39;Taiwan&#39;</span><span class="p">,</span> <span class="s1">&#39;Japan&#39;</span><span class="p">);</span>
 
-<pre><code>/*左表格*/
-SELECT * FROM world.country
-    WHERE Name IN ('Taiwan', 'Japan');
+<span class="cm">/*右表格*/</span>
+<span class="k">SELECT</span> <span class="o">*</span> <span class="k">FROM</span> <span class="n">world</span><span class="p">.</span><span class="n">city</span>
+    <span class="k">WHERE</span> <span class="n">CountryCode</span> <span class="k">IN</span> <span class="p">(</span><span class="s1">&#39;TWN&#39;</span><span class="p">,</span> <span class="s1">&#39;KOR&#39;</span><span class="p">);</span>
 
-/*右表格*/
-SELECT * FROM world.city
-    WHERE CountryCode IN ('TWN', 'KOR');
-
-/*右外部聯結*/
-SELECT a.*
-      ,b.*
-    FROM (
-        SELECT *
-        FROM world.country
-        WHERE Code IN ('TWN', 'JPN')
-    ) a
-    RIGHT JOIN (
-        SELECT * FROM world.city
-        WHERE CountryCode IN ('TWN', 'KOR')
-    ) b
-    ON a.Code = b.CountryCode;</code></pre>
+<span class="cm">/*右外部聯結*/</span>
+<span class="k">SELECT</span> <span class="n">a</span><span class="p">.</span><span class="o">*</span>
+      <span class="p">,</span><span class="n">b</span><span class="p">.</span><span class="o">*</span>
+    <span class="k">FROM</span> <span class="p">(</span>
+        <span class="k">SELECT</span> <span class="o">*</span>
+        <span class="k">FROM</span> <span class="n">world</span><span class="p">.</span><span class="n">country</span>
+        <span class="k">WHERE</span> <span class="n">Code</span> <span class="k">IN</span> <span class="p">(</span><span class="s1">&#39;TWN&#39;</span><span class="p">,</span> <span class="s1">&#39;JPN&#39;</span><span class="p">)</span>
+    <span class="p">)</span> <span class="n">a</span>
+    <span class="k">RIGHT</span> <span class="k">JOIN</span> <span class="p">(</span>
+        <span class="k">SELECT</span> <span class="o">*</span> <span class="k">FROM</span> <span class="n">world</span><span class="p">.</span><span class="n">city</span>
+        <span class="k">WHERE</span> <span class="n">CountryCode</span> <span class="k">IN</span> <span class="p">(</span><span class="s1">&#39;TWN&#39;</span><span class="p">,</span> <span class="s1">&#39;KOR&#39;</span><span class="p">)</span>
+    <span class="p">)</span> <span class="n">b</span>
+    <span class="k">ON</span> <span class="n">a</span><span class="p">.</span><span class="n">Code</span> <span class="o">=</span> <span class="n">b</span><span class="p">.</span><span class="n">CountryCode</span><span class="p">;</span>
+</pre></div>
 
 </div>
 </div>
@@ -12323,14 +12323,14 @@ SELECT a.*
 <li><code>JOIN</code> 是屬於水平合併</li>
 <li><code>UNION</code> 是屬於垂直合併</li>
 </ul>
-
-<pre><code>SELECT Name
-    FROM world.country
-    WHERE Code = 'TWN'
-UNION
-SELECT Name
-    FROM world.city
-    WHERE CountryCode = 'TWN';</code></pre>
+<div class="highlight"><pre><span></span><span class="k">SELECT</span> <span class="n">Name</span>
+    <span class="k">FROM</span> <span class="n">world</span><span class="p">.</span><span class="n">country</span>
+    <span class="k">WHERE</span> <span class="n">Code</span> <span class="o">=</span> <span class="s1">&#39;TWN&#39;</span>
+<span class="k">UNION</span>
+<span class="k">SELECT</span> <span class="n">Name</span>
+    <span class="k">FROM</span> <span class="n">world</span><span class="p">.</span><span class="n">city</span>
+    <span class="k">WHERE</span> <span class="n">CountryCode</span> <span class="o">=</span> <span class="s1">&#39;TWN&#39;</span><span class="p">;</span>
+</pre></div>
 
 </div>
 </div>
