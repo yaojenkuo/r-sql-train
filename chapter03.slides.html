@@ -11850,7 +11850,7 @@ a.anchor-link {
 </ul>
 </li>
 <li>這門課用的資料庫系統與主機<ul>
-<li>MySQL@Cloud SQL(Google Cloud Platform)</li>
+<li>MySQL@AWS RDS</li>
 </ul>
 </li>
 </ul>
@@ -11872,19 +11872,16 @@ a.anchor-link {
 <thead><tr>
 <th>外部應用程式</th>
 <th>連結方式</th>
-<th>認證方式</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td>MySQL Workbench</td>
-<td>IP 位址</td>
-<td>SSL 憑證</td>
+<td>任意 IP 位址</td>
 </tr>
 <tr>
 <td>R Language</td>
-<td>代理伺服器</td>
-<td>API 憑證</td>
+<td>任意 IP 位址</td>
 </tr>
 </tbody>
 </table>
@@ -11898,13 +11895,12 @@ a.anchor-link {
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="&#35264;&#24565;&#65288;3&#65289;">&#35264;&#24565;&#65288;3&#65289;<a class="anchor-link" href="#&#35264;&#24565;&#65288;3&#65289;">&#182;</a></h2><ul>
-<li>Proxy: 代理伺服器</li>
-<li>使用本機 127.0.0.1（or known as localhost）作為一個代理伺服器</li>
-<li>進而將 R 語言與我們的 Cloud SQL 資料庫（35.189.143.131）連結<ul>
-<li>像是這樣：R -&gt; 代理伺服器 -&gt; Cloud SQL</li>
+<li>我們現在所使用的連結方式（任意 IP 位址）<strong>不推薦</strong>在正式環境使用</li>
+<li>公司內的連線設定需要 Case by case，沒有辦法一招打通關<ul>
+<li>商業資料庫系統可以聯繫廠商提供技術支援（Tech Support）</li>
+<li>開源資料庫系統可以查找文件、委請資訊部門或外包</li>
 </ul>
 </li>
-<li>公司內的設定需要 Case by case，沒有辦法一招打通關</li>
 </ul>
 
 </div>
@@ -11916,16 +11912,10 @@ a.anchor-link {
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="&#27493;&#39519;">&#27493;&#39519;<a class="anchor-link" href="#&#27493;&#39519;">&#182;</a></h2><ul>
-<li>啟動 Cloud SQL 專案的 API 功能</li>
-<li>安裝 Cloud SQL Proxy</li>
-<li>建立一個 Service Account</li>
-<li>下載 API 憑證</li>
-<li>啟動代理伺服器</li>
-<li>啟動 RStudio</li>
-<li>安裝 <code>RMySQL</code> 套件</li>
-<li>載入 <code>DBI</code> 套件</li>
-<li>建立與代理伺服器的連線</li>
+<li>調整 AWS RDS 的 Inbound Rule</li>
+<li>0.0.0.0/0 指的是任意 IPv4 位址</li>
 </ul>
+<p><img src="img/chapter0304.png" alt=""></p>
 
 </div>
 </div>
@@ -11936,80 +11926,7 @@ a.anchor-link {
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="&#27493;&#39519;&#65288;2&#65289;">&#27493;&#39519;&#65288;2&#65289;<a class="anchor-link" href="#&#27493;&#39519;&#65288;2&#65289;">&#182;</a></h2><ul>
-<li>啟動 Cloud SQL 專案的 API 功能</li>
-</ul>
-<p><img src="img/chapter0301.png" alt=""></p>
-
-</div>
-</div>
-</div></section><section>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="&#27493;&#39519;&#65288;3&#65289;">&#27493;&#39519;&#65288;3&#65289;<a class="anchor-link" href="#&#27493;&#39519;&#65288;3&#65289;">&#182;</a></h2><ul>
-<li>安裝 Cloud SQL Proxy（以 OS X 64-bit 為例）</li>
-</ul>
-<div class="highlight"><pre><span></span>curl -o cloud_sql_proxy https://dl.google.com/cloudsql/cloud_sql_proxy.darwin.amd64
-chmod +x cloud_sql_proxy
-</pre></div>
-
-</div>
-</div>
-</div></section><section>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="&#27493;&#39519;&#65288;4&#65289;">&#27493;&#39519;&#65288;4&#65289;<a class="anchor-link" href="#&#27493;&#39519;&#65288;4&#65289;">&#182;</a></h2><ul>
-<li>建立一個 Service Account</li>
-</ul>
-<p><img src="img/chapter0302.png" alt=""></p>
-
-</div>
-</div>
-</div></section><section>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="&#27493;&#39519;&#65288;5&#65289;">&#27493;&#39519;&#65288;5&#65289;<a class="anchor-link" href="#&#27493;&#39519;&#65288;5&#65289;">&#182;</a></h2><ul>
-<li>下載 API 憑證</li>
-</ul>
-<p><img src="img/chapter0303.png" alt=""></p>
-
-</div>
-</div>
-</div></section><section>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="&#27493;&#39519;&#65288;6&#65289;">&#27493;&#39519;&#65288;6&#65289;<a class="anchor-link" href="#&#27493;&#39519;&#65288;6&#65289;">&#182;</a></h2><ul>
-<li>啟動代理伺服器</li>
-</ul>
-<div class="highlight"><pre><span></span>./cloud_sql_proxy -instances<span class="o">=</span>&lt;INSTANCE_CONNECTION_NAME&gt;<span class="o">=</span>tcp:3306 -credential_file<span class="o">=</span>&lt;PATH_TO_KEY_FILE&gt;
-</pre></div>
-<ul>
-<li>以我們的例子來說，INSTANCE_CONNECTION_NAME 為 csie-r-sql:asia-northeast1:csiersql</li>
-<li>PATH_TO_KEY_FILE 為 ~/Downloads/csie-r-sql-4ac752c2eb6d.json</li>
-</ul>
-
-</div>
-</div>
-</div></section><section>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="&#27493;&#39519;&#65288;7&#65289;">&#27493;&#39519;&#65288;7&#65289;<a class="anchor-link" href="#&#27493;&#39519;&#65288;7&#65289;">&#182;</a></h2><ul>
-<li>啟動 RStudio</li>
-<li>安裝 <code>RMySQL</code> 套件</li>
+<li>打開 RStudio，下載 <code>RMySQL</code> 套件</li>
 <li>載入 <code>DBI</code> 套件</li>
 </ul>
 <div class="highlight"><pre><span></span>install.packages<span class="p">(</span><span class="s">&quot;RMySQL&quot;</span><span class="p">)</span>
@@ -12024,35 +11941,62 @@ chmod +x cloud_sql_proxy
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="&#27493;&#39519;&#65288;8&#65289;">&#27493;&#39519;&#65288;8&#65289;<a class="anchor-link" href="#&#27493;&#39519;&#65288;8&#65289;">&#182;</a></h2><ul>
-<li>建立與代理伺服器的連線</li>
+<h2 id="&#27493;&#39519;&#65288;3&#65289;">&#27493;&#39519;&#65288;3&#65289;<a class="anchor-link" href="#&#27493;&#39519;&#65288;3&#65289;">&#182;</a></h2><ul>
+<li>下載套件跟載入套件有什麼不一樣？</li>
+<li>下載套件好比是從書店買書；載入套件好比是從書櫃上將書拿下來看</li>
 </ul>
-<div class="highlight"><pre><span></span>getSqlConnection <span class="o">&lt;-</span> <span class="kr">function</span><span class="p">(){</span>
-    con <span class="o">&lt;-</span> dbConnect<span class="p">(</span>
-        RMySQL<span class="o">::</span>MySQL<span class="p">(),</span>
-        username <span class="o">=</span> <span class="s">&#39;student&#39;</span><span class="p">,</span>
-        password <span class="o">=</span> <span class="s">&#39;student&#39;</span><span class="p">,</span>
-        host <span class="o">=</span> <span class="s">&#39;127.0.0.1&#39;</span><span class="p">,</span> <span class="c1"># 透過本機作為代理伺服器連線</span>
-        dbname <span class="o">=</span> <span class="s">&#39;world&#39;</span>
-    <span class="p">)</span>
-    <span class="kr">return</span><span class="p">(</span>con<span class="p">)</span>
-<span class="p">}</span>
 
-conn <span class="o">&lt;-</span> getSqlConnection<span class="p">()</span>
-res <span class="o">&lt;-</span> dbListTables<span class="p">(</span>conn<span class="p">)</span>
-<span class="kp">print</span><span class="p">(</span>res<span class="p">)</span>
-dbDisconnect<span class="p">(</span>conn<span class="p">)</span> <span class="c1"># 關閉連線</span>
+</div>
+</div>
+</div></section><section>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-r"><pre><span></span><span class="c1">## 步驟（4）</span>
+
+<span class="c1"># 利用 `dbConnect()` 建立連線</span>
+con <span class="o">&lt;-</span> dbConnect<span class="p">(</span>RMySQL<span class="o">::</span>MySQL<span class="p">(),</span> 
+                 dbname <span class="o">=</span> <span class="s">&quot;world&quot;</span><span class="p">,</span> 
+                 host <span class="o">=</span> <span class="s">&quot;rsqlclass.ced04jhfjfgi.ap-northeast-1.rds.amazonaws.com&quot;</span><span class="p">,</span> 
+                 port <span class="o">=</span> <span class="m">3306</span><span class="p">,</span>
+                 user <span class="o">=</span> <span class="s">&quot;trainstudent&quot;</span><span class="p">,</span>
+                 password <span class="o">=</span> <span class="s">&quot;csietrain&quot;</span><span class="p">)</span>
 </pre></div>
 
 </div>
 </div>
-</div></section></section><section><section>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-r"><pre><span></span><span class="c1">## 步驟（5）</span>
+
+<span class="c1"># 列出資料庫中所有的表格</span>
+dbListTables<span class="p">(</span>con<span class="p">)</span>
+
+<span class="c1"># 中斷連線</span>
+dbDisconnect<span class="p">(</span>con<span class="p">)</span> <span class="c1"># 重要！</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div></section><section>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="&#21443;&#32771;&#36899;&#32080;">&#21443;&#32771;&#36899;&#32080;<a class="anchor-link" href="#&#21443;&#32771;&#36899;&#32080;">&#182;</a></h2><ul>
+<li><a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_GettingStarted.CreatingConnecting.MySQL.html">Creating a MySQL DB Instance and Connecting to a Database on a MySQL DB Instance</a></li>
+<li><a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html">Working with an Amazon RDS DB Instance in a VPC</a></li>
 <li><a href="https://cloud.google.com/sql/docs/mysql/connect-admin-proxy">Connecting mysql Client Using the Cloud SQL Proxy</a></li>
 <li><a href="https://cloud.google.com/blog/big-data/2017/03/google-cloud-platform-for-data-scientists-using-r-with-google-cloud-sql-for-mysql">Google Cloud Platform for Data Scientists: Using R with Google Cloud SQL for MySQL</a></li>
 </ul>
