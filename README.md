@@ -26,6 +26,8 @@
 
 ### 近期上課錄影
 
+- [281 期](https://www.youtube.com/playlist?list=PLEq7iw5uOtuW8Baw4NYZc6VjKBt7kySXH)
+
 ### 推薦學習資源/書籍
 
 - [SQL 深入淺出](http://www.books.com.tw/products/0010391205)
