@@ -1,7 +1,6 @@
 ---
 title: "關於這門課"
 author: 郭耀仁
-date: "`r Sys.Date()`"
 output:
   revealjs::revealjs_presentation:
     center: true
