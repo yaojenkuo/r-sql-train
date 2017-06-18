@@ -26,7 +26,8 @@
 
 ### 近期上課錄影
 
-- [281 期](https://www.youtube.com/playlist?list=PLEq7iw5uOtuW8Baw4NYZc6VjKBt7kySXH)
+- [282 期假日專題班](https://www.youtube.com/playlist?list=PLEq7iw5uOtuUe-CQMzCK7us5_rRHgEhPe)
+- [281 期假日專題班](https://www.youtube.com/playlist?list=PLEq7iw5uOtuW8Baw4NYZc6VjKBt7kySXH)
 
 ### 推薦學習資源/書籍
 
