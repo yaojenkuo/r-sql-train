@@ -12118,32 +12118,6 @@ a.anchor-link {
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="&#38568;&#22530;&#32244;&#32722;">&#38568;&#22530;&#32244;&#32722;<a class="anchor-link" href="#&#38568;&#22530;&#32244;&#32722;">&#182;</a></h2><ul>
-<li>請寫出能夠產出以下結果的 SQL 查詢：</li>
-</ul>
-<p><img src="img/chapter0201.png" alt=""></p>
-
-</div>
-</div>
-</div></section><section>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="&#38568;&#22530;&#32244;&#32722;&#65288;2&#65289;">&#38568;&#22530;&#32244;&#32722;&#65288;2&#65289;<a class="anchor-link" href="#&#38568;&#22530;&#32244;&#32722;&#65288;2&#65289;">&#182;</a></h2><ul>
-<li>請寫出能夠產出以下結果的 SQL 查詢：</li>
-</ul>
-<p><img src="img/chapter0202.png" alt=""></p>
-
-</div>
-</div>
-</div></section></section><section><section>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="&#23376;&#26597;&#35426;">&#23376;&#26597;&#35426;<a class="anchor-link" href="#&#23376;&#26597;&#35426;">&#182;</a></h2><ul>
 <li><code>SELECT</code> <strong>within</strong> <code>SELECT</code></li>
 <li>找出人口數比美國多的國家：</li>
@@ -12176,19 +12150,6 @@ a.anchor-link {
       <span class="k">WHERE</span> <span class="n">Name</span> <span class="o">=</span> <span class="s1">&#39;Brazil&#39;</span>
   <span class="p">);</span>
 </pre></div>
-
-</div>
-</div>
-</div></section><section>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="&#38568;&#22530;&#32244;&#32722;&#65288;3&#65289;">&#38568;&#22530;&#32244;&#32722;&#65288;3&#65289;<a class="anchor-link" href="#&#38568;&#22530;&#32244;&#32722;&#65288;3&#65289;">&#182;</a></h2><ul>
-<li>找出跟阿根廷（Argentina）或澳大利亞（Australia）同一個洲的國家，並以國家名稱排序：</li>
-</ul>
-<p><img src="img/chapter0203.png" alt=""></p>
 
 </div>
 </div>
@@ -12227,20 +12188,32 @@ a.anchor-link {
 <span class="cm">/*右表格*/</span>
 <span class="k">SELECT</span> <span class="o">*</span> <span class="k">FROM</span> <span class="n">world</span><span class="p">.</span><span class="n">city</span>
     <span class="k">WHERE</span> <span class="n">CountryCode</span> <span class="k">IN</span> <span class="p">(</span><span class="s1">&#39;TWN&#39;</span><span class="p">,</span> <span class="s1">&#39;KOR&#39;</span><span class="p">);</span>
+</pre></div>
 
-<span class="cm">/*內部聯結*/</span>
-<span class="k">SELECT</span> <span class="n">a</span><span class="p">.</span><span class="o">*</span>
-      <span class="p">,</span><span class="n">b</span><span class="p">.</span><span class="o">*</span>
+</div>
+</div>
+</div></section><section>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="&#20839;&#37096;&#32879;&#32080;&#65288;2&#65289;">&#20839;&#37096;&#32879;&#32080;&#65288;2&#65289;<a class="anchor-link" href="#&#20839;&#37096;&#32879;&#32080;&#65288;2&#65289;">&#182;</a></h2><ul>
+<li>取左表格（台灣、日本）跟右表格（台灣、南韓）的交集（台灣）</li>
+</ul>
+<div class="highlight"><pre><span></span><span class="cm">/*內部聯結*/</span>
+<span class="k">SELECT</span> <span class="n">left_tbl</span><span class="p">.</span><span class="o">*</span>
+      <span class="p">,</span><span class="n">right_tbl</span><span class="p">.</span><span class="o">*</span>
     <span class="k">FROM</span> <span class="p">(</span>
         <span class="k">SELECT</span> <span class="o">*</span>
         <span class="k">FROM</span> <span class="n">world</span><span class="p">.</span><span class="n">country</span>
         <span class="k">WHERE</span> <span class="n">Code</span> <span class="k">IN</span> <span class="p">(</span><span class="s1">&#39;TWN&#39;</span><span class="p">,</span> <span class="s1">&#39;JPN&#39;</span><span class="p">)</span>
-    <span class="p">)</span> <span class="n">a</span>
+    <span class="p">)</span> <span class="n">left_tbl</span>
     <span class="k">INNER</span> <span class="k">JOIN</span> <span class="p">(</span>
         <span class="k">SELECT</span> <span class="o">*</span> <span class="k">FROM</span> <span class="n">world</span><span class="p">.</span><span class="n">city</span>
         <span class="k">WHERE</span> <span class="n">CountryCode</span> <span class="k">IN</span> <span class="p">(</span><span class="s1">&#39;TWN&#39;</span><span class="p">,</span> <span class="s1">&#39;KOR&#39;</span><span class="p">)</span>
-    <span class="p">)</span> <span class="n">b</span>
-    <span class="k">ON</span> <span class="n">a</span><span class="p">.</span><span class="n">Code</span> <span class="o">=</span> <span class="n">b</span><span class="p">.</span><span class="n">CountryCode</span><span class="p">;</span>
+    <span class="p">)</span> <span class="n">right_tbl</span>
+    <span class="k">ON</span> <span class="n">left_tbl</span><span class="p">.</span><span class="n">Code</span> <span class="o">=</span> <span class="n">right_tbl</span><span class="p">.</span><span class="n">CountryCode</span><span class="p">;</span>
 </pre></div>
 
 </div>
@@ -12261,20 +12234,32 @@ a.anchor-link {
 <span class="cm">/*右表格*/</span>
 <span class="k">SELECT</span> <span class="o">*</span> <span class="k">FROM</span> <span class="n">world</span><span class="p">.</span><span class="n">city</span>
     <span class="k">WHERE</span> <span class="n">CountryCode</span> <span class="k">IN</span> <span class="p">(</span><span class="s1">&#39;TWN&#39;</span><span class="p">,</span> <span class="s1">&#39;KOR&#39;</span><span class="p">);</span>
+</pre></div>
 
-<span class="cm">/*左外部聯結*/</span>
-<span class="k">SELECT</span> <span class="n">a</span><span class="p">.</span><span class="o">*</span>
-      <span class="p">,</span><span class="n">b</span><span class="p">.</span><span class="o">*</span>
+</div>
+</div>
+</div></section><section>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="&#24038;&#22806;&#37096;&#32879;&#32080;&#65288;2&#65289;">&#24038;&#22806;&#37096;&#32879;&#32080;&#65288;2&#65289;<a class="anchor-link" href="#&#24038;&#22806;&#37096;&#32879;&#32080;&#65288;2&#65289;">&#182;</a></h2><ul>
+<li>留下所有左表格（台灣、日本）的資料</li>
+</ul>
+<div class="highlight"><pre><span></span><span class="cm">/*左外部聯結*/</span>
+<span class="k">SELECT</span> <span class="n">left_tbl</span><span class="p">.</span><span class="o">*</span>
+      <span class="p">,</span><span class="n">right_tbl</span><span class="p">.</span><span class="o">*</span>
     <span class="k">FROM</span> <span class="p">(</span>
         <span class="k">SELECT</span> <span class="o">*</span>
         <span class="k">FROM</span> <span class="n">world</span><span class="p">.</span><span class="n">country</span>
         <span class="k">WHERE</span> <span class="n">Code</span> <span class="k">IN</span> <span class="p">(</span><span class="s1">&#39;TWN&#39;</span><span class="p">,</span> <span class="s1">&#39;JPN&#39;</span><span class="p">)</span>
-    <span class="p">)</span> <span class="n">a</span>
+    <span class="p">)</span> <span class="n">left_tbl</span>
     <span class="k">LEFT</span> <span class="k">JOIN</span> <span class="p">(</span>
         <span class="k">SELECT</span> <span class="o">*</span> <span class="k">FROM</span> <span class="n">world</span><span class="p">.</span><span class="n">city</span>
         <span class="k">WHERE</span> <span class="n">CountryCode</span> <span class="k">IN</span> <span class="p">(</span><span class="s1">&#39;TWN&#39;</span><span class="p">,</span> <span class="s1">&#39;KOR&#39;</span><span class="p">)</span>
-    <span class="p">)</span> <span class="n">b</span>
-    <span class="k">ON</span> <span class="n">a</span><span class="p">.</span><span class="n">Code</span> <span class="o">=</span> <span class="n">b</span><span class="p">.</span><span class="n">CountryCode</span><span class="p">;</span>
+    <span class="p">)</span> <span class="n">right_tbl</span>
+    <span class="k">ON</span> <span class="n">left_tbl</span><span class="p">.</span><span class="n">Code</span> <span class="o">=</span> <span class="n">right_tbl</span><span class="p">.</span><span class="n">CountryCode</span><span class="p">;</span>
 </pre></div>
 
 </div>
@@ -12295,20 +12280,32 @@ a.anchor-link {
 <span class="cm">/*右表格*/</span>
 <span class="k">SELECT</span> <span class="o">*</span> <span class="k">FROM</span> <span class="n">world</span><span class="p">.</span><span class="n">city</span>
     <span class="k">WHERE</span> <span class="n">CountryCode</span> <span class="k">IN</span> <span class="p">(</span><span class="s1">&#39;TWN&#39;</span><span class="p">,</span> <span class="s1">&#39;KOR&#39;</span><span class="p">);</span>
+</pre></div>
 
-<span class="cm">/*右外部聯結*/</span>
-<span class="k">SELECT</span> <span class="n">a</span><span class="p">.</span><span class="o">*</span>
-      <span class="p">,</span><span class="n">b</span><span class="p">.</span><span class="o">*</span>
+</div>
+</div>
+</div></section><section>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="&#21491;&#22806;&#37096;&#32879;&#32080;&#65288;2&#65289;">&#21491;&#22806;&#37096;&#32879;&#32080;&#65288;2&#65289;<a class="anchor-link" href="#&#21491;&#22806;&#37096;&#32879;&#32080;&#65288;2&#65289;">&#182;</a></h2><ul>
+<li>留下所有右表格（台灣、南韓）的資料</li>
+</ul>
+<div class="highlight"><pre><span></span><span class="cm">/*右外部聯結*/</span>
+<span class="k">SELECT</span> <span class="n">left_tbl</span><span class="p">.</span><span class="o">*</span>
+      <span class="p">,</span><span class="n">right_tbl</span><span class="p">.</span><span class="o">*</span>
     <span class="k">FROM</span> <span class="p">(</span>
         <span class="k">SELECT</span> <span class="o">*</span>
         <span class="k">FROM</span> <span class="n">world</span><span class="p">.</span><span class="n">country</span>
         <span class="k">WHERE</span> <span class="n">Code</span> <span class="k">IN</span> <span class="p">(</span><span class="s1">&#39;TWN&#39;</span><span class="p">,</span> <span class="s1">&#39;JPN&#39;</span><span class="p">)</span>
-    <span class="p">)</span> <span class="n">a</span>
+    <span class="p">)</span> <span class="n">left_tbl</span>
     <span class="k">RIGHT</span> <span class="k">JOIN</span> <span class="p">(</span>
         <span class="k">SELECT</span> <span class="o">*</span> <span class="k">FROM</span> <span class="n">world</span><span class="p">.</span><span class="n">city</span>
         <span class="k">WHERE</span> <span class="n">CountryCode</span> <span class="k">IN</span> <span class="p">(</span><span class="s1">&#39;TWN&#39;</span><span class="p">,</span> <span class="s1">&#39;KOR&#39;</span><span class="p">)</span>
-    <span class="p">)</span> <span class="n">b</span>
-    <span class="k">ON</span> <span class="n">a</span><span class="p">.</span><span class="n">Code</span> <span class="o">=</span> <span class="n">b</span><span class="p">.</span><span class="n">CountryCode</span><span class="p">;</span>
+    <span class="p">)</span> <span class="n">right_tbl</span>
+    <span class="k">ON</span> <span class="n">left_tbl</span><span class="p">.</span><span class="n">Code</span> <span class="o">=</span> <span class="n">right_tbl</span><span class="p">.</span><span class="n">CountryCode</span><span class="p">;</span>
 </pre></div>
 
 </div>
@@ -12335,6 +12332,45 @@ a.anchor-link {
 </div>
 </div>
 </div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="&#38568;&#22530;&#32244;&#32722;">&#38568;&#22530;&#32244;&#32722;<a class="anchor-link" href="#&#38568;&#22530;&#32244;&#32722;">&#182;</a></h2><ul>
+<li>請寫出能夠產出以下結果的 SQL 查詢：</li>
+</ul>
+<p><img src="img/chapter0201.png" alt=""></p>
+
+</div>
+</div>
+</div></section><section>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="&#38568;&#22530;&#32244;&#32722;&#65288;2&#65289;">&#38568;&#22530;&#32244;&#32722;&#65288;2&#65289;<a class="anchor-link" href="#&#38568;&#22530;&#32244;&#32722;&#65288;2&#65289;">&#182;</a></h2><ul>
+<li>請寫出能夠產出以下結果的 SQL 查詢：</li>
+</ul>
+<p><img src="img/chapter0202.png" alt=""></p>
+
+</div>
+</div>
+</div></section><section>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="&#38568;&#22530;&#32244;&#32722;&#65288;3&#65289;">&#38568;&#22530;&#32244;&#32722;&#65288;3&#65289;<a class="anchor-link" href="#&#38568;&#22530;&#32244;&#32722;&#65288;3&#65289;">&#182;</a></h2><ul>
+<li>找出跟阿根廷（Argentina）或澳大利亞（Australia）同一個洲的國家，並以國家名稱排序：</li>
+</ul>
+<p><img src="img/chapter0203.png" alt=""></p>
+
+</div>
+</div>
+</div></section><section>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
