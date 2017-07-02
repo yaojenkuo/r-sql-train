@@ -20,9 +20,9 @@
 - [讀取不同的資料格式](http://yaojenkuo.io/r_programming/ch6)
 - [活用資料框](http://yaojenkuo.io/r_programming/ch7)
 - [簡單的繪圖（Base plotting system）](http://yaojenkuo.io/r_programming/ch3)
+- [用 RMarkdown 撰寫報告](http://yaojenkuo.io/r_programming/ch10)
 - [使用 dplyr 套件整理資料](http://yaojenkuo.io/r_programming/ch14)
 - [簡單的繪圖（ggplot2）](http://yaojenkuo.io/r_programming/ch5)
-- [用 RMarkdown 撰寫報告](http://yaojenkuo.io/r_programming/ch10)
 
 ### 近期上課錄影
 
