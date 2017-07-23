@@ -24,6 +24,10 @@
 - [使用 dplyr 套件整理資料](http://yaojenkuo.io/r_programming/ch14)
 - [簡單的繪圖（ggplot2）](http://yaojenkuo.io/r_programming/ch5)
 
+### 學習資源
+
+- [InstaCode](http://instacode.live/channel/tony)
+
 ### 近期上課錄影
 
 - [282 期假日專題班](https://www.youtube.com/playlist?list=PLEq7iw5uOtuUe-CQMzCK7us5_rRHgEhPe)
