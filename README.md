@@ -38,3 +38,5 @@
 
 - [SQL 深入淺出](http://www.books.com.tw/products/0010391205)
 - [輕鬆學習 R 語言](https://www.learn-r-the-easy-way.tw/)
+- [Learn SQL - Codecademy](https://www.codecademy.com/learn/learn-sql)
+- [SQLZOO](https://sqlzoo.net/)
