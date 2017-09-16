@@ -18,7 +18,7 @@
 - [建立 R 語言與資料庫的連結](http://yaojenkuo.io/r-sql-train/chapter03.slides.html)
 - [使用 R 語言讀取資料庫表格](http://yaojenkuo.io/r-sql-train/chapter04.slides.html)
 - [讀取不同的資料格式](http://yaojenkuo.io/r_programming/ch6)
-- [使用 dplyr 套件整理資料](http://yaojenkuo.io/r-sql-train/chapter04)
+- [使用 dplyr 套件整理資料](http://yaojenkuo.io/r-sql-train/chapter05)
 - [簡單的繪圖（Base plotting system）](http://yaojenkuo.io/r_programming/ch3)
 - [用 RMarkdown 撰寫報告](http://yaojenkuo.io/r_programming/ch10)
 - [活用資料框](http://yaojenkuo.io/r_programming/ch7)
@@ -38,6 +38,7 @@
 ### 推薦學習資源/書籍
 
 - [SQL 深入淺出](http://www.books.com.tw/products/0010391205)
+- [輕鬆學習 R 語言 - 紙本書](http://www.books.com.tw/products/0010763975)
 - [輕鬆學習 R 語言](https://www.learn-r-the-easy-way.tw/)
 - [Learn SQL - Codecademy](https://www.codecademy.com/learn/learn-sql)
 - [SQLZOO](https://sqlzoo.net/)
