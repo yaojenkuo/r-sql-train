@@ -1,10 +1,15 @@
 ---
 title: "關於這門課"
 author: 郭耀仁
-output:
+date: "`r Sys.Date()`"
+output: 
   revealjs::revealjs_presentation:
+    theme: black
+    highlight: zenburn
     center: true
 ---
+
+# 關於課程
 
 ## 為什麼要開這門課
 
@@ -19,7 +24,7 @@ output:
 
 ## 誰不適合上這門課
 
-- 不喜歡自己動手做的特質
+- 不喜歡自己動手做
 - 已經有能力撰寫 SQL 指令與 R 語言程式的人
 
 ## 這門課的目標
@@ -32,23 +37,64 @@ output:
 ## 這門課的涵蓋內容
 
 - SQL 基礎與進階的查詢指令
-- R 語言的資料框應用
-- R 語言的作圖與報告
+- 從 Tidyverse 開始學習 R 語言
 
 ## 這門課不會涵蓋的內容
 
 - 資料庫的管理
-- R 語言的變數型態與資料結構
-- R 語言的函數型編程
-- R 語言與機器學習
+- Base R
+- R 的函數編程
 
 ## 課程資源
 
 - [課程專頁](http://yaojenkuo.io/r-sql-train/)
 - [Facebook 社團](https://www.facebook.com/groups/ntucsietrainR/)
 
-## 關於講師
+# 關於講師
 
-- [郭耀仁](https://www.facebook.com/yaojen.kuo.1)
-- <http://yaojenkuo.io/>
-- <tony@kyosei.ai>
+## 我叫郭耀仁
+
+```js
+var yaoJenKuo = {
+	"name": "郭耀仁",
+	"organization": "Kyosei.ai",
+	"loves": [
+		"Data Science",
+		"Marathon",
+		"Ping pong"
+	]
+};
+```
+
+---
+
+<a href="http://www.learn-r-the-easy-way.tw/" target="_blank">![](https://storage.googleapis.com/dsc_2017_img/r_book_s.jpg)</a>
+
+---
+
+<a href="https://ithelp.ithome.com.tw/2017ironman/8th_winner" target="_blank">![](https://storage.googleapis.com/dsc_2017_img/ithelp_s.png)</a>
+
+## 講師經歷
+
+- 資料科學系列課程，台大資工系統訓練班（2016 - 現在）
+- Being a Unicorn in Data Science through Problem Solving，2017 資料科學年會講師
+- R 語言與資料視覺化應用，國立台北商業大學（2017 秋）
+- Python 與機器學習，玉山商業銀行（2017 夏）
+
+## 輕鬆學習 R 語言
+
+- [博客來](http://www.books.com.tw/products/0010763975)
+- [天瓏網路書店](https://www.tenlong.com.tw/products/9789864764822)
+- [網頁版](http://www.learn-r-the-easy-way.tw/)
+
+## Udemy 教學影片
+
+[R 語言輕鬆學習：基礎篇](https://www.udemy.com/learn-r-the-easy-way-1/?couponCode=LEARNR)
+
+## Medium
+
+[DataInPoint](https://medium.com/datainpoint)
+
+## 與我聯絡
+
+<tony@kyosei.ai>
