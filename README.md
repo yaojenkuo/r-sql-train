@@ -18,8 +18,9 @@
 - [建立 R 語言與資料庫的連結](http://yaojenkuo.io/r-sql-train/chapter03.slides.html)
 - [使用 R 語言讀取資料庫表格](http://yaojenkuo.io/r-sql-train/chapter04.slides.html)
 - [讀取不同的資料格式](http://yaojenkuo.io/r_programming/ch6)
-- [Tidyverse 簡介：dplyr]()
-- [Tidyverse 簡介：ggplot2]()
+- [Tidyverse 簡介]()
+- [利用 dplyr 套件整理資料]()
+- [利用 ggplot2 套件繪圖]()
 - [RMarkdown]()
 - [Exploratory Data Analysis: Case Explained]()
 
@@ -27,17 +28,21 @@
 
 - [InstaCode](http://instacode.live/channel/tony)
 
+### 延伸閱讀
+
+- [R 語言輕鬆學習：基礎篇](https://www.udemy.com/learn-r-the-easy-way-1/?couponCode=LEARNR)
+- [輕鬆學習 R 語言 - 紙本書](http://www.books.com.tw/products/0010763975)
+- [輕鬆學習 R 語言 - 網頁版](https://www.learn-r-the-easy-way.tw/)
+
+---
+
+- [SQL 深入淺出](http://www.books.com.tw/products/0010391205)
+- [Learn SQL - Codecademy](https://www.codecademy.com/learn/learn-sql)
+- [SQLZOO](https://sqlzoo.net/)
+
 ### 近期上課錄影
 
 - [289 期假日專題班](https://www.youtube.com/playlist?list=PLEq7iw5uOtuXEWJm9TADaFDcInLmbc48K)
 - [283 期假日專題班](https://www.youtube.com/playlist?list=PLEq7iw5uOtuX5pQmw0xGzsCmyIolwJGRk)
 - [282 期假日專題班](https://www.youtube.com/playlist?list=PLEq7iw5uOtuUe-CQMzCK7us5_rRHgEhPe)
 - [281 期假日專題班](https://www.youtube.com/playlist?list=PLEq7iw5uOtuW8Baw4NYZc6VjKBt7kySXH)
-
-### 推薦學習資源/書籍
-
-- [SQL 深入淺出](http://www.books.com.tw/products/0010391205)
-- [輕鬆學習 R 語言 - 紙本書](http://www.books.com.tw/products/0010763975)
-- [輕鬆學習 R 語言](https://www.learn-r-the-easy-way.tw/)
-- [Learn SQL - Codecademy](https://www.codecademy.com/learn/learn-sql)
-- [SQLZOO](https://sqlzoo.net/)
