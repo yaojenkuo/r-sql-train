@@ -1,34 +1,19 @@
 ---
-title: "使用 dplyr 套件整理資料"
+title: "利用 dplyr 套件整理資料"
 author: "郭耀仁"
 date: "`r Sys.Date()`"
-output: slidy_presentation
+output: 
+  revealjs::revealjs_presentation:
+    theme: black
+    highlight: zenburn
+    center: true
 ---
 
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE, message = FALSE, warning = FALSE)
+## 載入 tidyverser
+
+```{r message=FALSE}
+library(tidyverse)
 ```
-
-## 安裝與載入
-
-```
-install.packages("dplyr")
-```
-
-```{r}
-library(dplyr)
-```
-
-## 不同的函數
-
-|函數|用途|
-|:----|:----|
-|`filter()`|觀測值（列）選擇|
-|`select()`|變數（欄）選擇|
-|`mutate()`|新增變數（欄）|
-|`arrange()`|排序|
-|`summarise()`|聚合|
-|`group_by()`|分組|
 
 ## 將 country 讀入 R
 
@@ -46,40 +31,47 @@ country <- dbReadTable(con, "country")
 dbDisconnect(con)
 ```
 
-## `filter()`
+# dplyr 套件的函數
 
-- 將台灣的國家資料選出來
+## 不同的函數
+
+|函數|用途|
+|:----|:----|
+|`filter()`|觀測值（列）選擇|
+|`select()`|變數（欄）選擇|
+|`mutate()`|新增變數（欄）|
+|`arrange()`|排序|
+|`summarise()`|聚合|
+|`group_by()`|分組|
+
+## `filter`
+
+將台灣的國家資料選出來
 
 ```{r}
 taiwan <- filter(country, Code == "TWN")
 ```
 
-## `filter()`（2）
+## `filter` 練習
 
-- 練習：
-    - 選出位於亞洲並且人口大於 1 億人的國家
+- 選出位於亞洲並且人口大於 1 億人的國家
 
 ```{r echo = FALSE}
 big_asian_countries <- filter(country, Continent == "Asia" & Population > 100000000)
 big_asian_countries
 ```
 
-## `select()`
+## `select`
 
-- 選擇資料框中的變數
+選擇資料框中的變數
 
 ```{r}
 country_names <- select(country, Name)
 ```
 
-## 使用 `%>%` 運算
+## 使用 `%>%` 操作成像是 SQL 的查詢指令
 
-- 什麼是 `%>%` 運算子？
-
-## 使用 `%>%` 運算子（2）
-
-- 可以操作成像是 SQL 的查詢指令
-- 將台灣的國家資料選出來，保留 `Name` 與 `Population
+將台灣的國家資料選出來，保留 `Name` 與 `Population
 
 ```{r}
 taiwan <- country %>%
@@ -87,15 +79,20 @@ taiwan <- country %>%
   select(Name, Population)
 ```
 
-## 使用 `%>%` 運算子（3）
+## 練習使用 `%>%` 運算子
 
-- 練習：
-    - 選出位於亞洲並且人口大於 1 億人的資料
-    - 選出 `Name` 與 `Population` 這兩個欄位
+- 選出位於亞洲並且人口大於 1 億人的資料
+- 選出 `Name` 與 `Population` 這兩個欄位
 
-## `mutate()`
+```{r echo = FALSE}
+big_asian_countries <- country %>%
+  filter(Continent == "Asia", Population > 100000000) %>%
+  select(Name, Population)
+```
 
-- 新增人口密度（`Pop_Density`）變數
+## `mutate`
+
+新增人口密度 `Pop_Density` 變數
 
 ```{r}
 country %>%
@@ -104,7 +101,7 @@ country %>%
   )
 ```
 
-## `arrange()`
+## `arrange`
 
 - 選出位於亞洲並且人口大於 1 億人的國家
 - 保留 `Name` 與 `Population` 變數
@@ -117,9 +114,9 @@ country %>%
   arrange(desc(Population))
 ```
 
-## `summarise()`
+## `summarise`
 
-- 計算全球人口數
+計算全球人口數
 
 ```{r}
 country %>% summarise(Ttl_Pop = sum(as.numeric(Population)))
@@ -127,7 +124,7 @@ country %>% summarise(Ttl_Pop = sum(as.numeric(Population)))
 
 ## `group_by()`
 
-- 依照洲別計算人口數
+依照洲別計算人口數
 
 ```{r}
 country %>%
@@ -136,10 +133,12 @@ country %>%
   arrange(desc(Ttl_Pop))
 ```
 
-## `join` 系列函數
+# 資料框聯結
+
+## 不同的聯結方式
 
 |種類|函數|
-|----|----|
+|:----|:----|
 |內部連結|`inner_join()`|
 |左外部連結|`left_join()`|
 |右外部連結|`right_join()`|
@@ -192,12 +191,4 @@ joined_df <- full_join(twn_jpn_country, twn_kor_city, by = c("Code" = "CountryCo
 
 ## 在 R 裡頭寫 SQL 查詢
 
-- 使用 `sqldf` 套件
-
-```
-install.packagea("sqldf")
-```
-
-```{r}
-library(sqldf)
-```
+使用 `sqldf` 套件
