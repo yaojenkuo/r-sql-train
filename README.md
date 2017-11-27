@@ -18,11 +18,10 @@
 - [建立 R 語言與資料庫的連結](http://yaojenkuo.io/r-sql-train/chapter03.slides.html)
 - [使用 R 語言讀取資料庫表格](http://yaojenkuo.io/r-sql-train/chapter04.slides.html)
 - [讀取不同的資料格式](http://yaojenkuo.io/r_programming/ch6)
-- [Tidyverse 簡介]()
-- [利用 dplyr 套件整理資料]()
+- [Tidyverse 簡介](http://yaojenkuo.io/r-sql-train/intro_2_tidyverse.html)
+- [利用 dplyr 套件整理資料](http://yaojenkuo.io/r-sql-train/chapter05.html)
 - [利用 ggplot2 套件繪圖]()
-- [RMarkdown]()
-- [Exploratory Data Analysis: Case Explained]()
+- [Exploratory Data Analysis: Case Study]()
 
 ### 學習資源
 
