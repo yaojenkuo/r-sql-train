@@ -14,14 +14,13 @@
 - [關於這門課](http://yaojenkuo.io/r-sql-train/chapter00.html)
 - [SQL 基礎](http://yaojenkuo.io/r-sql-train/chapter01.slides.html)
 - [SQL 進階](http://yaojenkuo.io/r-sql-train/chapter02.slides.html)
-- [建立你的 R 語言開發環境](http://yaojenkuo.io/r_programming/ch1)
 - [建立 R 語言與資料庫的連結](http://yaojenkuo.io/r-sql-train/chapter03.slides.html)
 - [使用 R 語言讀取資料庫表格](http://yaojenkuo.io/r-sql-train/chapter04.slides.html)
 - [讀取不同的資料格式](http://yaojenkuo.io/r_programming/ch6)
 - [Tidyverse 簡介](http://yaojenkuo.io/r-sql-train/intro_2_tidyverse.html)
 - [利用 dplyr 套件整理資料](http://yaojenkuo.io/r-sql-train/chapter05.html)
 - [利用 ggplot2 套件繪圖]()
-- [Exploratory Data Analysis: Case Study]()
+- [Exploratory Data Analysis: Electric Power Consumption](http://yaojenkuo.io/r-sql-train/jhu_edu_w1.html)
 
 ### 學習資源
 
