@@ -20,7 +20,7 @@
 - [Tidyverse 簡介](http://yaojenkuo.io/r-sql-train/intro_2_tidyverse.html)
 - [利用 dplyr 套件整理資料](http://yaojenkuo.io/r-sql-train/chapter05.html)
 - [利用 ggplot2 套件繪圖]()
-- [Exploratory Data Analysis: Electric Power Consumption](http://yaojenkuo.io/r-sql-train/jhu_edu_w1.html)
+- [Exploratory Data Analysis: Electric Power Consumption](http://yaojenkuo.io/r-sql-train/jhu_eda_w1.html)
 
 ### 學習資源
 
