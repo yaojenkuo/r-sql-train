@@ -1,0 +1,157 @@
+---
+title: "利用 ggplot2 套件繪圖"
+author: 郭耀仁
+date: "`r Sys.Date()`"
+output: 
+  revealjs::revealjs_presentation:
+    theme: black
+    highlight: zenburn
+    center: true
+---
+
+# ggplot2
+
+## 載入 `tidyverse` 與 `gapminder`
+
+```{r message=FALSE}
+library(tidyverse)
+library(gapminder)
+```
+
+## The best stats you've ever seen
+
+<https://youtu.be/jbkSRLYSojo>
+
+# 相關：數值 vs. 數值
+
+## `ggplot() + geom_point()` 繪製散佈圖
+
+```{r}
+gapminder_2007 <- gapminder %>%
+  filter(year == 2007)
+ggplot(gapminder_2007, aes(x = gdpPercap, y = lifeExp)) +
+  geom_point()
+```
+
+## `aes()` 中加入 `color = `
+
+```{r}
+ggplot(gapminder_2007, aes(x = gdpPercap, y = lifeExp, color = continent)) +
+  geom_point()
+```
+
+## log_scale
+
+```{r}
+ggplot(gapminder_2007, aes(x = gdpPercap, y = lifeExp, color = continent)) +
+  geom_point() +
+  scale_x_log10()
+```
+
+# 線圖：時間 vs. 數值
+
+## `ggplot() + geom_line()` 繪製線圖
+
+```{r}
+gapminder_tw <- gapminder %>%
+  filter(country == "Taiwan")
+ggplot(gapminder_tw, aes(x = year, y = lifeExp)) +
+  geom_line()
+```
+
+## 多個線條
+
+```{r}
+gapminder_na <- gapminder %>%
+  filter(country %in% c("China", "Hong Kong, China", "Japan", "Korea, Rep.", "Taiwan"))
+ggplot(gapminder_na, aes(x = year, y = lifeExp, color = country)) +
+  geom_line()
+```
+
+# 散佈
+
+## `ggplot() + geom_histogram()` 繪製直方圖
+
+```{r}
+ggplot(gapminder_2007, aes(x = lifeExp)) +
+  geom_histogram(bins = 40)
+```
+
+## `ggplot() + geom_boxplot()` 繪製盒鬚圖
+
+```{r}
+ggplot(gapminder_2007, aes(x = continent, y = lifeExp)) +
+  geom_boxplot()
+```
+
+## 直方圖加入 `facet_wrap()`
+
+```{r}
+ggplot(gapminder_2007, aes(x = lifeExp, fill = continent)) +
+  geom_histogram(bins = 20) +
+  facet_wrap(~continent, nrow = 2)
+```
+
+# 排名（類別 vs. 數值）
+
+## 垂直長條圖 `ggplot() + geom_bar(stat = "identity")`
+
+```{r}
+gapminder_2007_na <- gapminder_2007 %>%
+  filter(country %in% c("China", "Hong Kong, China", "Japan", "Korea, Rep.", "Taiwan"))
+ggplot(gapminder_2007_na, aes(x = country, y = gdpPercap)) +
+  geom_bar(stat = "identity")
+```
+
+## 水平長條圖 `+ coord_flip()`
+
+```{r}
+ggplot(gapminder_2007_na, aes(x = country, y = gdpPercap)) +
+  geom_bar(stat = "identity")+ 
+  coord_flip()
+```
+
+## 在一個畫布上畫多個圖形
+
+- 使用 `gridExtra` 套件來幫忙
+- `grid.arrange()` 函數
+
+```
+install.packages("gridExtra")
+```
+
+```{r message=FALSE}
+library(gridExtra)
+
+gg1 <- ggplot(gapminder_2007_na, aes(x = country, y = gdpPercap)) +
+  geom_bar(stat = "identity")
+gg2 <- ggplot(gapminder_2007_na, aes(x = country, y = gdpPercap)) +
+  geom_bar(stat = "identity")+ 
+  coord_flip()
+grid.arrange(gg1, gg2, nrow = 2)
+```
+
+## `ggplotly()` 加入互動性
+
+- 使用 `plotly` 套件的 `ggplotly()` 函數
+
+```
+install.packages("plotly")
+```
+
+```{r message=FALSE}
+library(plotly)
+static_gg <- ggplot(gapminder_2007, aes(x = gdpPercap, y = lifeExp, color = continent)) +
+  geom_point() +
+  scale_x_log10()
+ggplotly(static_gg)
+```
+
+## R 語言的互動性解法
+
+- [Plotly](https://plot.ly/)
+- [Shiny](https://shiny.rstudio.com/)
+
+## 文件
+
+- <http://docs.ggplot2.org/current/index.html>
