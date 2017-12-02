@@ -19,7 +19,7 @@
 - [讀取不同的資料格式](http://yaojenkuo.io/r_programming/ch6)
 - [Tidyverse 簡介](http://yaojenkuo.io/r-sql-train/intro_2_tidyverse.html)
 - [利用 dplyr 套件整理資料](http://yaojenkuo.io/r-sql-train/chapter05.html)
-- [利用 ggplot2 套件繪圖]()
+- [利用 ggplot2 套件繪圖](http://yaojenkuo.io/r-sql-train/intro_2_ggplot2.html)
 - [Exploratory Data Analysis: Electric Power Consumption](http://yaojenkuo.io/r-sql-train/jhu_eda_w1.html)
 
 ### 學習資源
