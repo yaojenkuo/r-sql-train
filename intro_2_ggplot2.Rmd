@@ -29,23 +29,41 @@ library(gapminder)
 ```{r}
 gapminder_2007 <- gapminder %>%
   filter(year == 2007)
-ggplot(gapminder_2007, aes(x = gdpPercap, y = lifeExp)) +
+scatter <- ggplot(gapminder_2007, aes(x = gdpPercap, y = lifeExp)) +
   geom_point()
+```
+
+## 顯示散佈圖
+
+```{r}
+scatter
 ```
 
 ## `aes()` 中加入 `color = `
 
 ```{r}
-ggplot(gapminder_2007, aes(x = gdpPercap, y = lifeExp, color = continent)) +
+scatter <- ggplot(gapminder_2007, aes(x = gdpPercap, y = lifeExp, color = continent)) +
   geom_point()
+```
+
+## 不同的洲別有不同的顏色
+
+```{r}
+scatter
 ```
 
 ## log_scale
 
 ```{r}
-ggplot(gapminder_2007, aes(x = gdpPercap, y = lifeExp, color = continent)) +
+scatter <- ggplot(gapminder_2007, aes(x = gdpPercap, y = lifeExp, color = continent)) +
   geom_point() +
   scale_x_log10()
+```
+
+## 顯示 log 數值
+
+```{r}
+scatter
 ```
 
 # 線圖：時間 vs. 數值
@@ -55,8 +73,14 @@ ggplot(gapminder_2007, aes(x = gdpPercap, y = lifeExp, color = continent)) +
 ```{r}
 gapminder_tw <- gapminder %>%
   filter(country == "Taiwan")
-ggplot(gapminder_tw, aes(x = year, y = lifeExp)) +
+line <- ggplot(gapminder_tw, aes(x = year, y = lifeExp)) +
   geom_line()
+```
+
+## 顯示線圖
+
+```{r}
+line
 ```
 
 ## 多個線條
@@ -64,8 +88,14 @@ ggplot(gapminder_tw, aes(x = year, y = lifeExp)) +
 ```{r}
 gapminder_na <- gapminder %>%
   filter(country %in% c("China", "Hong Kong, China", "Japan", "Korea, Rep.", "Taiwan"))
-ggplot(gapminder_na, aes(x = year, y = lifeExp, color = country)) +
+multi_lines <- ggplot(gapminder_na, aes(x = year, y = lifeExp, color = country)) +
   geom_line()
+```
+
+## 顯示多組線圖
+
+```{r}
+multi_lines
 ```
 
 # 散佈
@@ -73,23 +103,41 @@ ggplot(gapminder_na, aes(x = year, y = lifeExp, color = country)) +
 ## `ggplot() + geom_histogram()` 繪製直方圖
 
 ```{r}
-ggplot(gapminder_2007, aes(x = lifeExp)) +
+hist <- ggplot(gapminder_2007, aes(x = lifeExp)) +
   geom_histogram(bins = 40)
+```
+
+## 顯示直方圖
+
+```{r}
+hist
 ```
 
 ## `ggplot() + geom_boxplot()` 繪製盒鬚圖
 
 ```{r}
-ggplot(gapminder_2007, aes(x = continent, y = lifeExp)) +
+box <- ggplot(gapminder_2007, aes(x = continent, y = lifeExp)) +
   geom_boxplot()
+```
+
+## 顯示盒鬚圖
+
+```{r}
+box
 ```
 
 ## 直方圖加入 `facet_wrap()`
 
 ```{r}
-ggplot(gapminder_2007, aes(x = lifeExp, fill = continent)) +
+multi_hists <- ggplot(gapminder_2007, aes(x = lifeExp, fill = continent)) +
   geom_histogram(bins = 20) +
   facet_wrap(~continent, nrow = 2)
+```
+
+## 顯示多個直方圖
+
+```{r}
+multi_hists
 ```
 
 # 排名（類別 vs. 數值）
@@ -99,16 +147,28 @@ ggplot(gapminder_2007, aes(x = lifeExp, fill = continent)) +
 ```{r}
 gapminder_2007_na <- gapminder_2007 %>%
   filter(country %in% c("China", "Hong Kong, China", "Japan", "Korea, Rep.", "Taiwan"))
-ggplot(gapminder_2007_na, aes(x = country, y = gdpPercap)) +
+barv <- ggplot(gapminder_2007_na, aes(x = country, y = gdpPercap)) +
   geom_bar(stat = "identity")
+```
+
+## 顯示垂直長條圖
+
+```{r}
+barv
 ```
 
 ## 水平長條圖 `+ coord_flip()`
 
 ```{r}
-ggplot(gapminder_2007_na, aes(x = country, y = gdpPercap)) +
+barh <- ggplot(gapminder_2007_na, aes(x = country, y = gdpPercap)) +
   geom_bar(stat = "identity")+ 
   coord_flip()
+```
+
+## 顯示水平長條圖
+
+```{r}
+barh
 ```
 
 ## 在一個畫布上畫多個圖形
@@ -128,6 +188,11 @@ gg1 <- ggplot(gapminder_2007_na, aes(x = country, y = gdpPercap)) +
 gg2 <- ggplot(gapminder_2007_na, aes(x = country, y = gdpPercap)) +
   geom_bar(stat = "identity")+ 
   coord_flip()
+```
+
+## 顯示網格畫布
+
+```
 grid.arrange(gg1, gg2, nrow = 2)
 ```
 
@@ -144,6 +209,11 @@ library(plotly)
 static_gg <- ggplot(gapminder_2007, aes(x = gdpPercap, y = lifeExp, color = continent)) +
   geom_point() +
   scale_x_log10()
+```
+
+## 顯示 ggplotly 圖形
+
+```{r message=FALSE}
 ggplotly(static_gg)
 ```
 
@@ -152,6 +222,14 @@ ggplotly(static_gg)
 - [Plotly](https://plot.ly/)
 - [Shiny](https://shiny.rstudio.com/)
 
-## 文件
+## Plotly + Shiny App
 
-- <http://docs.ggplot2.org/current/index.html>
+[Gapminder Replica](https://yaojenkuo.shinyapps.io/gapminder_replica/)
+
+## 如何做出來
+
+[R 語言動態視覺化的 Hello World - 利用 RSelenium、plotly 與 shiny 模仿 Hans Rosling 的視覺化大作](https://medium.com/datainpoint/r-%E8%AA%9E%E8%A8%80%E5%8B%95%E6%85%8B%E8%A6%96%E8%A6%BA%E5%8C%96%E7%9A%84-hello-world-bcb628876847)
+
+## ggplot2 文件
+
+<http://docs.ggplot2.org/current/index.html>
