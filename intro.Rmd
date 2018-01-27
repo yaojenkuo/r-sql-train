@@ -1,0 +1,140 @@
+---
+title: "SQL 及 R 語言的資料分析"
+author: "郭耀仁"
+output: 
+  revealjs::revealjs_presentation:
+    theme: black
+    highlight: zenburn
+    center: true
+---
+
+# ![](https://pics.me.me/rwant-to-have-a-job-that-you-love-not-statistical-4629803.png)
+
+## 你在咖啡廳做什麼？
+
+## 準備明天開會的材料
+
+## 連個資料庫
+
+## 撈個資料
+
+```
+SELECT continent
+      ,sum(pop)
+      FROM gapminder.gapminder
+      WHERE year = 2007
+      GROUP BY continent;
+```
+
+## 將資料庫查詢的結果輸出成為 csv
+
+## 把 csv 匯入到 Excel 中作整理與分析
+
+## 表格與圖貼到 Powerpoint 上
+
+## 簡報大展身手
+
+![](http://images2.wikia.nocookie.net/__cb20100426233455/simpsons/images/9/93/SpineOCylinder.png)
+
+## 主管、客戶覺得你的提案好棒棒
+
+![](img/reason_5.jpeg)
+
+## 將分析用的程式與圖表整理成文件存參
+
+![](http://s2.quickmeme.com/img/30/30f5a13889831bf082e6bad323ad808216eec1bad83af69ba375cff4987bd577.jpg)
+
+## {data-background="http://www.telegraph.co.uk/content/dam/food-and-drink/2016/05/04/96970564cafeworking-xlarge_trans_NvBQzQNjv4BqZgEkZX3M936N5BQK4Va8RWtT0gK_6EfZT336f62EI5U.jpg"}
+
+## 如果是 Chandler Bing 會怎麼做？
+
+## 設定 R 與資料庫的介接
+
+```{r eval=FALSE}
+library(DBI)
+
+# 利用 `dbConnect()` 建立連線
+con <- dbConnect(RMySQL::MySQL(), 
+                 dbname = "gapminder",
+                 host = "rsqltrain.ced04jhfjfgi.ap-northeast-1.rds.amazonaws.com",
+                 port = 3306,
+                 user = "trainstudent",
+                 password = "csietrain")
+```
+
+## 將資料匯入 R 語言
+
+```{r eval=FALSE}
+gapminder_df <- dbReadTable(con, "gapminder")
+dbDisconnect(con)
+```
+
+## 作整理與分析
+
+```{r eval=FALSE}
+library(dplyr)
+library(ggplot2)
+
+plot_df <- gapminder_df %>%
+  filter(year == 2007) %>%
+  group_by(continent) %>%
+  summarise(ttl_pop = sum(as.numeric(pop))) %>%
+  arrange(ttl_pop)
+
+plot_df$continent <- factor(plot_df$continent, levels = plot_df$continent)
+bar_plot <- ggplot(plot_df, aes(x = continent, y = ttl_pop, fill = continent)) +
+  geom_bar(stat = "identity", alpha = 0.5) +
+  xlab("") +
+  ylab("") +
+  theme_minimal() +
+  coord_flip() +
+  ggtitle("Population across different continents")
+```
+
+## 直接輸出簡報
+
+## 簡報也是好棒棒
+
+![](img/reason_5.jpeg)
+
+## 改輸出格式成為文件
+
+## {data-background="https://nirvanaseeker.files.wordpress.com/2012/10/youve_got_mail_393.jpeg"}
+
+# Why R?
+
+## 免費又好裝
+
+## 不強調物件導向
+
+![](img/reason_1.jpg)
+
+## 內外兼修
+
+![](img/reason_2.gif)
+
+## 溝通、溝通、還是溝通
+
+![](img/reason_6.jpg)
+
+## 活躍的社群支援
+
+![](img/reason_3.jpg)
+
+# {data-background="http://www.onepiecegold.com/wp-content/uploads/2016/03/AuML130.jpg"}
+
+## 到底有多容易安裝？
+
+- https://cran.r-project.org/
+- https://www.rstudio.com/products/rstudio/download/
+
+## 一起輕鬆學習 R 與資料科學
+
+- [台大資工系統訓練班](https://train.csie.ntu.edu.tw/train/teacher.php?id=103)
+- [輕鬆學習 R 語言](http://www.books.com.tw/products/0010763975)
+- [Udemy](https://www.udemy.com/learn-r-the-easy-way-1/?couponCode=LEARNR)
+- [DataInPoint](https://medium.com/datainpoint)
+
+---
+
+![](img/fattest.jpeg)
