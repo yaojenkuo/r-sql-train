@@ -19,11 +19,10 @@ output:
 ## 撈個資料
 
 ```
-SELECT continent
-      ,sum(pop)
-      FROM gapminder.gapminder
-      WHERE year = 2007
-      GROUP BY continent;
+SELECT Continent
+      ,sum(Population)
+      FROM world.country
+      GROUP BY Continent;
 ```
 
 ## 將資料庫查詢的結果輸出成為 csv
@@ -55,7 +54,7 @@ library(DBI)
 
 # 利用 `dbConnect()` 建立連線
 con <- dbConnect(RMySQL::MySQL(), 
-                 dbname = "gapminder",
+                 dbname = "world",
                  host = "rsqltrain.ced04jhfjfgi.ap-northeast-1.rds.amazonaws.com",
                  port = 3306,
                  user = "trainstudent",
@@ -65,7 +64,7 @@ con <- dbConnect(RMySQL::MySQL(),
 ## 將資料匯入 R 語言
 
 ```{r eval=FALSE}
-gapminder_df <- dbReadTable(con, "gapminder")
+country <- dbReadTable(con, "country")
 dbDisconnect(con)
 ```
 
@@ -75,20 +74,19 @@ dbDisconnect(con)
 library(dplyr)
 library(ggplot2)
 
-plot_df <- gapminder_df %>%
-  filter(year == 2007) %>%
-  group_by(continent) %>%
-  summarise(ttl_pop = sum(as.numeric(pop))) %>%
+query_df <- country %>%
+  group_by(Continent) %>%
+  summarise(ttl_pop = sum(as.numeric(Population))) %>%
   arrange(ttl_pop)
 
-plot_df$continent <- factor(plot_df$continent, levels = plot_df$continent)
-bar_plot <- ggplot(plot_df, aes(x = continent, y = ttl_pop, fill = continent)) +
+query_df$Continent <- factor(query_df$Continent, levels = query_df$Continent)
+bar_plot <- ggplot(query_df, aes(x = Continent, y = ttl_pop, fill = Continent)) +
   geom_bar(stat = "identity", alpha = 0.5) +
   xlab("") +
   ylab("") +
   theme_minimal() +
   coord_flip() +
-  ggtitle("Population across different continents")
+  ggtitle("Population across continents")
 ```
 
 ## 直接輸出簡報
@@ -104,6 +102,8 @@ bar_plot <- ggplot(plot_df, aes(x = continent, y = ttl_pop, fill = continent)) +
 # Why R?
 
 ## 免費又好裝
+
+![](https://i.ytimg.com/vi/SokPisUVpG4/maxresdefault.jpg)
 
 ## 不強調物件導向
 
@@ -121,12 +121,18 @@ bar_plot <- ggplot(plot_df, aes(x = continent, y = ttl_pop, fill = continent)) +
 
 ![](img/reason_3.jpg)
 
-# {data-background="http://www.onepiecegold.com/wp-content/uploads/2016/03/AuML130.jpg"}
+# {data-background="https://goodmenproject.com/wp-content/uploads/2013/09/Screen-Shot-2013-09-19-at-4.39.57-PM.png"}
 
-## 到底有多容易安裝？
+## 課程目標
 
-- https://cran.r-project.org/
-- https://www.rstudio.com/products/rstudio/download/
+- 拉近使用者與資訊人員的距離
+- 提高使用者的工作掌握度
+
+## 課程結束後你將能夠
+
+- 自行撰寫 SQL 指令查詢
+- 進行更有效率的需求訪談
+- 應用 R 語言於資料探索、作圖與報告
 
 ## 一起輕鬆學習 R 與資料科學
 

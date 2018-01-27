@@ -6,25 +6,27 @@
 
 ### 評分標準
 
-- 50% 出席率
-- 50% 隨堂練習或作業
+- 70 分即可獲得證書，作業請寄至 tony@kyosei.ai，註明班別與姓名
+- 作業繳交期限為課程結束後一週內，如遇長假期（春節、連假）則順延
+
+|編號|連結|分數|
+|作業 1|[SQL 基礎](http://yaojenkuo.io/r-sql-train/sql_basic.slides#/7)|30|
+|作業 2|[SQL 進階](http://yaojenkuo.io/r-sql-train/chapter02.slides.html#/9)|50|
+|作業 3||[Tidyverse: dplyr]()|40|
+|作業 4||[Tidyverse: ggplot2]()|40|
 
 ### 課程大綱
 
-- [關於這門課](http://yaojenkuo.io/r-sql-train/chapter00.html)
-- [SQL 基礎](http://yaojenkuo.io/r-sql-train/chapter01.slides.html)
+- [SQL 及 R 語言的資料分析](http://yaojenkuo.io/r-sql-train/intro.html)
+- [SQL 基礎](http://yaojenkuo.io/r-sql-train/sql_basic.slides.html)
 - [SQL 進階](http://yaojenkuo.io/r-sql-train/chapter02.slides.html)
 - [建立 R 語言與資料庫的連結](http://yaojenkuo.io/r-sql-train/chapter03.slides.html)
 - [使用 R 語言讀取資料庫表格](http://yaojenkuo.io/r-sql-train/chapter04.slides.html)
 - [讀取不同的資料格式](http://yaojenkuo.io/r_programming/ch6)
 - [Tidyverse 簡介](http://yaojenkuo.io/r-sql-train/intro_2_tidyverse.html)
-- [利用 dplyr 套件整理資料](http://yaojenkuo.io/r-sql-train/chapter05.html)
-- [利用 ggplot2 套件繪圖](http://yaojenkuo.io/r-sql-train/intro_2_ggplot2.html)
+- [Tidyverse: dplyr](http://yaojenkuo.io/r-sql-train/chapter05.html)
+- [Tidyverse: ggplot2](http://yaojenkuo.io/r-sql-train/intro_2_ggplot2.html)
 - [Exploratory Data Analysis: Electric Power Consumption](http://yaojenkuo.io/r-sql-train/jhu_eda_w1.html)
-
-### 學習資源
-
-- [InstaCode](http://instacode.live/channel/tony)
 
 ### 延伸閱讀
 
