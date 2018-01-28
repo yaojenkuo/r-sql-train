@@ -12,8 +12,8 @@
 |編號|連結|分數|
 |作業 1|[SQL 基礎](http://yaojenkuo.io/r-sql-train/sql_basic.slides#/7)|30|
 |作業 2|[SQL 進階](http://yaojenkuo.io/r-sql-train/chapter02.slides.html#/9)|50|
-|作業 3||[Tidyverse: dplyr]()|40|
-|作業 4||[Tidyverse: ggplot2]()|40|
+|作業 3|[Tidyverse: dplyr]()|40|
+|作業 4|[Tidyverse: ggplot2]()|40|
 
 ### 課程大綱
 
