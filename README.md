@@ -11,7 +11,7 @@
 
 |編號|連結|分數|
 |作業 1|[SQL 基礎](http://yaojenkuo.io/r-sql-train/sql_basic.slides#/7)|30|
-|作業 2|[SQL 進階](http://yaojenkuo.io/r-sql-train/chapter02.slides.html#/9)|50|
+|作業 2|[SQL 進階](http://yaojenkuo.io/r-sql-train/sql_advanced.slides.html#/9)|50|
 |作業 3|[Tidyverse: dplyr]()|40|
 |作業 4|[Tidyverse: ggplot2]()|40|
 
@@ -19,12 +19,12 @@
 
 - [SQL 及 R 語言的資料分析](http://yaojenkuo.io/r-sql-train/intro.html)
 - [SQL 基礎](http://yaojenkuo.io/r-sql-train/sql_basic.slides.html)
-- [SQL 進階](http://yaojenkuo.io/r-sql-train/chapter02.slides.html)
+- [SQL 進階](http://yaojenkuo.io/r-sql-train/sql_advanced.slides.html)
 - [建立 R 語言與資料庫的連結](http://yaojenkuo.io/r-sql-train/chapter03.slides.html)
 - [使用 R 語言讀取資料庫表格](http://yaojenkuo.io/r-sql-train/chapter04.slides.html)
-- [讀取不同的資料格式](http://yaojenkuo.io/r_programming/ch6)
+- [載入與寫出資料](http://yaojenkuo.io/r_programming/import_export.html)
 - [Tidyverse 簡介](http://yaojenkuo.io/r-sql-train/intro_2_tidyverse.html)
-- [Tidyverse: dplyr](http://yaojenkuo.io/r-sql-train/chapter05.html)
+- [Tidyverse: dplyr](http://yaojenkuo.io/r-sql-train/intro_2_dplyr.html)
 - [Tidyverse: ggplot2](http://yaojenkuo.io/r-sql-train/intro_2_ggplot2.html)
 - [Exploratory Data Analysis: Electric Power Consumption](http://yaojenkuo.io/r-sql-train/jhu_eda_w1.html)
 
@@ -32,7 +32,7 @@
 
 - [R 語言輕鬆學習：基礎篇](https://www.udemy.com/learn-r-the-easy-way-1/?couponCode=LEARNR)
 - [輕鬆學習 R 語言 - 紙本書](http://www.books.com.tw/products/0010763975)
-- [輕鬆學習 R 語言 - 網頁版](https://www.learn-r-the-easy-way.tw/)
+- [輕鬆學習 R 語言 - 網頁版](http://www.learn-r-the-easy-way.tw/)
 - [SQL 深入淺出](http://www.books.com.tw/products/0010391205)
 - [Learn SQL - Codecademy](https://www.codecademy.com/learn/learn-sql)
 - [SQLZOO](https://sqlzoo.net/)
