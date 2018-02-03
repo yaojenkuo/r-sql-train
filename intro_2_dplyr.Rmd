@@ -1,0 +1,235 @@
+---
+title: "tidyverse: dplyr"
+author: "郭耀仁"
+output: 
+  revealjs::revealjs_presentation:
+    theme: black
+    highlight: zenburn
+    center: true
+---
+
+## 載入 tidyverse
+
+```{r message=FALSE}
+library(tidyverse)
+```
+
+## 將 country 讀入 R
+
+```{r}
+library(DBI)
+
+con <- dbConnect(RMySQL::MySQL(), 
+                 dbname = "world",
+                 host = "rsqltrain.ced04jhfjfgi.ap-northeast-1.rds.amazonaws.com",
+                 port = 3306,
+                 user = "trainstudent",
+                 password = "csietrain")
+
+country <- dbReadTable(con, "country")
+dbDisconnect(con)
+```
+
+# dplyr 套件的函數
+
+## 不同的函數
+
+|函數|用途|
+|:----|:----|
+|`filter()`|觀測值（列）選擇|
+|`select()`|變數（欄）選擇|
+|`mutate()`|新增變數（欄）|
+|`arrange()`|排序|
+|`summarise()`|聚合|
+|`group_by()`|分組|
+
+## `filter`
+
+將台灣的國家資料選出來
+
+```{r}
+taiwan <- filter(country, Code == "TWN")
+```
+
+## `filter` 練習
+
+- 選出位於亞洲並且人口大於 1 億人的國家
+
+```{r echo = FALSE}
+big_asian_countries <- filter(country, Continent == "Asia" & Population > 100000000)
+big_asian_countries
+```
+
+## `select`
+
+選擇資料框中的變數
+
+```{r}
+country_names <- select(country, Name)
+```
+
+## 使用 `%>%` 操作成像是 SQL 的查詢指令
+
+將台灣的國家資料選出來，保留 `Name` 與 `Population
+
+```{r}
+taiwan <- country %>%
+  filter(Code == "TWN") %>%
+  select(Name, Population)
+```
+
+## 練習使用 `%>%` 運算子
+
+- 選出位於亞洲並且人口大於 1 億人的資料
+- 選出 `Name` 與 `Population` 這兩個欄位
+
+```{r echo = FALSE}
+big_asian_countries <- country %>%
+  filter(Continent == "Asia", Population > 100000000) %>%
+  select(Name, Population)
+```
+
+## `mutate`
+
+新增人口密度 `Pop_Density` 變數
+
+```{r}
+country %>%
+  mutate(
+    Pop_Density = Population / SurfaceArea
+  )
+```
+
+## `arrange`
+
+- 選出位於亞洲並且人口大於 1 億人的國家
+- 保留 `Name` 與 `Population` 變數
+- 以 `Population` 排序
+
+```{r}
+country %>%
+  filter(Continent == 'Asia', Population > 100000000) %>%
+  select(Name, Population) %>%
+  arrange(desc(Population))
+```
+
+## `summarise`
+
+計算全球人口數
+
+```{r}
+country %>% summarise(Ttl_Pop = sum(as.numeric(Population)))
+```
+
+## `group_by()`
+
+依照洲別計算人口數
+
+```{r}
+country %>%
+  group_by(Continent) %>%
+  summarise(Ttl_Pop = sum(as.numeric(Population))) %>%
+  arrange(desc(Ttl_Pop))
+```
+
+# 資料框聯結
+
+## 不同的聯結方式
+
+|種類|函數|
+|:----|:----|
+|內部連結|`inner_join()`|
+|左外部連結|`left_join()`|
+|右外部連結|`right_join()`|
+|全外部連結|`full_join()`|
+
+## 左表格與右表格
+
+```{r}
+library(DBI)
+
+con <- dbConnect(RMySQL::MySQL(), 
+                 dbname = "world",
+                 host = "rsqltrain.ced04jhfjfgi.ap-northeast-1.rds.amazonaws.com",
+                 port = 3306,
+                 user = "trainstudent",
+                 password = "csietrain")
+
+# 左表格 
+twn_jpn_country <- dbGetQuery(con, statement = "SELECT * FROM country WHERE Code in ('TWN', 'JPN')")
+
+# 右表格
+twn_kor_city <- dbGetQuery(con, statement = "SELECT * FROM city WHERE CountryCode in ('TWN', 'KOR')")
+
+dbDisconnect(con)
+```
+
+## 內部連結
+
+```{r}
+joined_df <- inner_join(twn_jpn_country, twn_kor_city, by = c("Code" = "CountryCode"))
+```
+
+## 左外部連結
+
+```{r}
+joined_df <- left_join(twn_jpn_country, twn_kor_city, by = c("Code" = "CountryCode"))
+```
+
+## 右外部連結
+
+```{r}
+joined_df <- right_join(twn_jpn_country, twn_kor_city, by = c("Code" = "CountryCode"))
+```
+
+## 全外部連結
+
+```{r}
+joined_df <- full_join(twn_jpn_country, twn_kor_city, by = c("Code" = "CountryCode"))
+```
+
+## 在 R 裡頭寫 SQL 查詢
+
+使用 `sqldf` 套件
+
+# 作業
+
+## 依照洲別統計各洲最多的人口數遞減排序，並將人口數為零的結果刪去
+
+```{r echo=FALSE}
+country %>%
+  group_by(Continent) %>%
+  summarise(maxPop = max(Population)) %>%
+  arrange(desc(maxPop)) %>%
+  filter(maxPop > 0)
+```
+
+## 將 world.country 刪除南極洲後依照洲別計算 GNP 中位數並遞減排序
+
+```{r echo=FALSE}
+country %>%
+  filter(Continent != 'Antarctica') %>%
+  group_by(Continent) %>%
+  summarise(median_gnp = median(GNP)) %>%
+  arrange(desc(median_gnp))
+```
+
+## 顯示這幾個國家的首都人口數，遞增排序
+
+```{r echo=FALSE, message=FALSE}
+con <- dbConnect(RMySQL::MySQL(), 
+                 dbname = "world",
+                 host = "rsqltrain.ced04jhfjfgi.ap-northeast-1.rds.amazonaws.com",
+                 port = 3306,
+                 user = "trainstudent",
+                 password = "csietrain")
+city <- dbReadTable(con, "city")
+dbDisconnect(con)
+filtered_countries <- country %>%
+  filter(Name %in% c('China', 'Japan', 'Taiwan', 'South Korea')) %>%
+  select(Country = Name, Capital)
+filtered_countries %>%
+  left_join(city, by = c('Capital' = 'ID')) %>%
+  select(Country, Capital = Name, Population) %>%
+  arrange(Population)
+```
