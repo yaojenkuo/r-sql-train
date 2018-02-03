@@ -1,7 +1,6 @@
 ---
 title: "Exploratory Data Analysis: Electric Power Consumption"
 author: 郭耀仁
-date: "`r Sys.Date()`"
 output: 
   revealjs::revealjs_presentation:
     theme: black
