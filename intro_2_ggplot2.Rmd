@@ -1,7 +1,6 @@
 ---
-title: "利用 ggplot2 套件繪圖"
+title: "tidyverse: ggplot2"
 author: 郭耀仁
-date: "`r Sys.Date()`"
 output: 
   revealjs::revealjs_presentation:
     theme: black
@@ -11,11 +10,26 @@ output:
 
 # ggplot2
 
-## 載入 `tidyverse` 與 `gapminder`
+## 載入 `tidyverse`
 
 ```{r message=FALSE}
 library(tidyverse)
-library(gapminder)
+```
+
+## 將 gapminder 資料讀入 R
+
+```{r}
+library(DBI)
+
+con <- dbConnect(RMySQL::MySQL(), 
+                 dbname = "gapminder",
+                 host = "rsqltrain.ced04jhfjfgi.ap-northeast-1.rds.amazonaws.com",
+                 port = 3306,
+                 user = "trainstudent",
+                 password = "csietrain")
+
+gapminder <- dbReadTable(con, "gapminder")
+dbDisconnect(con)
 ```
 
 ## The best stats you've ever seen
@@ -233,3 +247,28 @@ ggplotly(static_gg)
 ## ggplot2 文件
 
 <http://docs.ggplot2.org/current/index.html>
+
+# 作業
+
+## 作業一
+
+- 繪製 2007 年的氣泡圖（size 設為 pop）
+
+```{r echo=FALSE}
+gapminder_2007 <- gapminder %>%
+  filter(year == 2007)
+ggplot(gapminder_2007, aes(x = gdpPercap, y = lifeExp, size = pop, colour = continent)) +
+  geom_point() +
+  theme(legend.position="none")
+```
+
+## 作業二
+
+- 繪製東北亞國家 gdpPercap 的線圖
+
+```{r echo=FALSE}
+gapminder_na <- gapminder %>%
+  filter(country %in% c("China", "Japan", "Korea, Rep.", "Taiwan"))
+ggplot(gapminder_na, aes(x = year, y = gdpPercap, colour = country)) +
+  geom_line()
+```
