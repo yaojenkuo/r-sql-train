@@ -12,8 +12,8 @@
 |編號|連結|分數|
 |作業 1|[SQL 基礎](http://yaojenkuo.io/r-sql-train/sql_basic.slides#/7)|30|
 |作業 2|[SQL 進階](http://yaojenkuo.io/r-sql-train/sql_advanced.slides.html#/9)|50|
-|作業 3|[Tidyverse: dplyr]()|40|
-|作業 4|[Tidyverse: ggplot2]()|40|
+|作業 3|[Tidyverse: dplyr](http://yaojenkuo.io/r-sql-train/intro_2_dplyr.html#/5)|60|
+|作業 4|[Tidyverse: ggplot2](http://yaojenkuo.io/r-sql-train/intro_2_ggplot2.html#/6)|40|
 
 ### 課程大綱
 
@@ -26,6 +26,7 @@
 - [Tidyverse 簡介](http://yaojenkuo.io/r-sql-train/intro_2_tidyverse.html)
 - [Tidyverse: dplyr](http://yaojenkuo.io/r-sql-train/intro_2_dplyr.html)
 - [Tidyverse: ggplot2](http://yaojenkuo.io/r-sql-train/intro_2_ggplot2.html)
+- [Exploratory Data Analysis: PM2.5](http://yaojenkuo.io/r-sql-train/jhu_eda_w4.html)
 - [Exploratory Data Analysis: Electric Power Consumption](http://yaojenkuo.io/r-sql-train/jhu_eda_w1.html)
 
 ### 延伸閱讀
