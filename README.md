@@ -22,7 +22,7 @@
 - [SQL 進階](http://yaojenkuo.io/r-sql-train/sql_advanced.slides.html)
 - [建立 R 語言與資料庫的連結](http://yaojenkuo.io/r-sql-train/chapter03.slides.html)
 - [使用 R 語言讀取資料庫表格](http://yaojenkuo.io/r-sql-train/chapter04.slides.html)
-- [載入與寫出資料](http://yaojenkuo.io/r_programming/import_export.html)
+- [載入與寫出資料](http://yaojenkuo.io/r-sql-train/import_export.html)
 - [Tidyverse 簡介](http://yaojenkuo.io/r-sql-train/intro_2_tidyverse.html)
 - [Tidyverse: dplyr](http://yaojenkuo.io/r-sql-train/intro_2_dplyr.html)
 - [Tidyverse: ggplot2](http://yaojenkuo.io/r-sql-train/intro_2_ggplot2.html)
