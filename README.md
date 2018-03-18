@@ -31,6 +31,7 @@
 
 ### 延伸閱讀
 
+- [認識 R 的美好：入門篇](https://yaojenkuo.shinyapps.io/eloquentr-start/)
 - [R 語言輕鬆學習：基礎篇](https://www.udemy.com/learn-r-the-easy-way-1/?couponCode=LEARNR)
 - [輕鬆學習 R 語言 - 天瓏](https://www.tenlong.com.tw/products/9789864764822)
 - [輕鬆學習 R 語言 - 博客來](http://www.books.com.tw/products/0010763975)
