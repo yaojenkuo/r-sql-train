@@ -11971,6 +11971,23 @@ a.anchor-link {
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="&#20351;&#29992;&#20989;&#25976;">&#20351;&#29992;&#20989;&#25976;<a class="anchor-link" href="#&#20351;&#29992;&#20989;&#25976;">&#182;</a></h2><ul>
+<li><code>CONCAT()</code> 函數可以連結文字</li>
+</ul>
+<div class="highlight"><pre><span></span><span class="k">SELECT</span> <span class="n">name</span><span class="p">,</span>
+       <span class="n">CONCAT</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="s1">&#39; &#39;</span><span class="p">,</span> <span class="n">continent</span><span class="p">)</span>
+    <span class="k">FROM</span> <span class="n">world</span>
+    <span class="k">LIMIT</span> <span class="mi">10</span><span class="p">;</span>
+</pre></div>
+
+</div>
+</div>
+</div></section><section>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="WHERE-&#25944;&#36848;&#65306;&#19981;&#31561;&#26044;">WHERE &#25944;&#36848;&#65306;&#19981;&#31561;&#26044;<a class="anchor-link" href="#WHERE-&#25944;&#36848;&#65306;&#19981;&#31561;&#26044;">&#182;</a></h2><ul>
 <li>使用 <code>&lt;&gt;</code> 比較運算子</li>
 </ul>
@@ -11978,7 +11995,7 @@ a.anchor-link {
        <span class="n">continent</span>
     <span class="k">FROM</span> <span class="n">world</span>
     <span class="k">WHERE</span> <span class="n">continent</span> <span class="o">&lt;&gt;</span> <span class="s1">&#39;Asia&#39;</span> <span class="k">OR</span>
-          <span class="n">continent</span> <span class="o">&lt;&gt;</span> <span class="s1">&#39;America&#39;</span><span class="p">;</span>
+          <span class="n">continent</span> <span class="o">&lt;&gt;</span> <span class="s1">&#39;North America&#39;</span><span class="p">;</span>
 </pre></div>
 
 </div>
@@ -12024,7 +12041,7 @@ a.anchor-link {
 <div class="highlight"><pre><span></span><span class="k">SELECT</span> <span class="n">name</span><span class="p">,</span>
        <span class="n">continent</span>
     <span class="k">FROM</span> <span class="n">world</span>
-    <span class="k">WHERE</span> <span class="n">continent</span> <span class="k">NOT</span> <span class="k">IN</span> <span class="p">(</span><span class="s1">&#39;Asia&#39;</span><span class="p">,</span> <span class="s1">&#39;Europe&#39;</span><span class="p">,</span> <span class="s1">&#39;America&#39;</span><span class="p">);</span>
+    <span class="k">WHERE</span> <span class="n">continent</span> <span class="k">NOT</span> <span class="k">IN</span> <span class="p">(</span><span class="s1">&#39;Asia&#39;</span><span class="p">,</span> <span class="s1">&#39;Europe&#39;</span><span class="p">,</span> <span class="s1">&#39;North America&#39;</span><span class="p">);</span>
 </pre></div>
 
 </div>
@@ -12049,13 +12066,194 @@ a.anchor-link {
 
 </div>
 </div>
-</div></section></section><section><section>
+</div></section><section>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="&#23436;&#25104;-13-&#20491;-SQLZOO-&#32244;&#32722;">&#23436;&#25104; 13 &#20491; SQLZOO &#32244;&#32722;<a class="anchor-link" href="#&#23436;&#25104;-13-&#20491;-SQLZOO-&#32244;&#32722;">&#182;</a></h2><p><a href="https://sqlzoo.net/wiki/SELECT_from_WORLD_Tutorial">https://sqlzoo.net/wiki/SELECT_from_WORLD_Tutorial</a></p>
+
+</div>
+</div>
+</div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="ORDER-BY-&#25551;&#36848;"><code>ORDER BY</code> &#25551;&#36848;<a class="anchor-link" href="#ORDER-BY-&#25551;&#36848;">&#182;</a></h2><ul>
+<li>可以選擇依照某一個欄位排序查詢結果</li>
+<li>遞減排序：DESC</li>
+<li>找出人口數最多的前 10 個國家</li>
+</ul>
+<div class="highlight"><pre><span></span><span class="k">SELECT</span> <span class="n">name</span><span class="p">,</span>
+       <span class="n">population</span>
+  <span class="k">FROM</span> <span class="n">world</span>
+  <span class="k">ORDER</span> <span class="k">BY</span> <span class="n">population</span> <span class="k">DESC</span>
+  <span class="k">LIMIT</span> <span class="mi">10</span><span class="p">;</span>
+</pre></div>
+
+</div>
+</div>
+</div></section><section>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="ORDER-BY-&#25551;&#36848;&#65288;2&#65289;"><code>ORDER BY</code> &#25551;&#36848;&#65288;2&#65289;<a class="anchor-link" href="#ORDER-BY-&#25551;&#36848;&#65288;2&#65289;">&#182;</a></h2><ul>
+<li>找出歐洲土地面積最小的 10 個國家</li>
+<li>預設為遞增排序：ASC</li>
+</ul>
+<div class="highlight"><pre><span></span><span class="k">SELECT</span> <span class="n">name</span><span class="p">,</span>
+       <span class="n">area</span>
+  <span class="k">FROM</span> <span class="n">world</span>
+  <span class="k">WHERE</span> <span class="n">continent</span> <span class="o">=</span> <span class="s1">&#39;Europe&#39;</span>
+  <span class="k">ORDER</span> <span class="k">BY</span> <span class="n">area</span>
+  <span class="k">LIMIT</span> <span class="mi">10</span><span class="p">;</span>
+</pre></div>
+
+</div>
+</div>
+</div></section><section>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="&#23376;&#26597;&#35426;">&#23376;&#26597;&#35426;<a class="anchor-link" href="#&#23376;&#26597;&#35426;">&#182;</a></h2><ul>
+<li><code>SELECT</code> <strong>within</strong> <code>SELECT</code></li>
+<li>找出人口數比俄國多的國家</li>
+</ul>
+<div class="highlight"><pre><span></span><span class="cm">/*先知道俄國人口有多少*/</span>
+<span class="k">SELECT</span> <span class="n">population</span>
+<span class="k">FROM</span> <span class="n">world</span>
+<span class="k">WHERE</span> <span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;Russia&#39;</span><span class="p">;</span> <span class="cm">/*146000000*/</span>
+
+<span class="cm">/*然後再寫一個查詢*/</span>
+<span class="k">SELECT</span> <span class="n">name</span>
+<span class="k">FROM</span> <span class="n">world</span>
+<span class="k">WHERE</span> <span class="n">population</span> <span class="o">&gt;</span> <span class="mi">146000000</span><span class="p">;</span>
+</pre></div>
+
+</div>
+</div>
+</div></section><section>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="&#23376;&#26597;&#35426;&#65288;2&#65289;">&#23376;&#26597;&#35426;&#65288;2&#65289;<a class="anchor-link" href="#&#23376;&#26597;&#35426;&#65288;2&#65289;">&#182;</a></h2><ul>
+<li>把兩個查詢寫在一個查詢中，這個就是 <strong>子查詢 Sub-query</strong></li>
+</ul>
+<div class="highlight"><pre><span></span><span class="k">SELECT</span> <span class="n">name</span>
+<span class="k">FROM</span> <span class="n">world</span>
+<span class="k">WHERE</span> <span class="n">population</span> <span class="o">&gt;</span> <span class="p">(</span>
+    <span class="k">SELECT</span> <span class="n">population</span>
+        <span class="k">FROM</span> <span class="n">world</span>
+        <span class="k">WHERE</span> <span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;Russia&#39;</span>
+<span class="p">);</span>
+</pre></div>
+
+</div>
+</div>
+</div></section><section>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="&#23376;&#26597;&#35426;&#65288;3&#65289;">&#23376;&#26597;&#35426;&#65288;3&#65289;<a class="anchor-link" href="#&#23376;&#26597;&#35426;&#65288;3&#65289;">&#182;</a></h2><ul>
+<li>找出人均 gdp 比英國高的<strong>歐洲</strong>國家</li>
+</ul>
+<div class="highlight"><pre><span></span><span class="cm">/*先知道英國人均 GDP 多少*/</span>
+<span class="k">SELECT</span> <span class="n">gdp</span><span class="o">/</span><span class="n">population</span>
+<span class="k">FROM</span> <span class="n">world</span>
+<span class="k">WHERE</span> <span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;United Kingdom&#39;</span><span class="p">;</span> <span class="cm">/*38555.0739*/</span>
+
+<span class="cm">/*然後再寫一個查詢*/</span>
+<span class="k">SELECT</span> <span class="n">name</span>
+<span class="k">FROM</span> <span class="n">world</span>
+<span class="k">WHERE</span> <span class="n">continent</span> <span class="o">=</span> <span class="s1">&#39;Europe&#39;</span> <span class="k">AND</span>
+      <span class="n">gdp</span><span class="o">/</span><span class="n">population</span> <span class="o">&gt;</span> <span class="mi">38555</span><span class="p">.</span><span class="mi">0739</span><span class="p">;</span>
+</pre></div>
+
+</div>
+</div>
+</div></section><section>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="&#23376;&#26597;&#35426;&#65288;4&#65289;">&#23376;&#26597;&#35426;&#65288;4&#65289;<a class="anchor-link" href="#&#23376;&#26597;&#35426;&#65288;4&#65289;">&#182;</a></h2><ul>
+<li>把兩個查詢寫在一個查詢中，這個就是 <strong>子查詢 Sub-query</strong></li>
+</ul>
+<div class="highlight"><pre><span></span><span class="k">SELECT</span> <span class="n">name</span>
+<span class="k">FROM</span> <span class="n">world</span>
+<span class="k">WHERE</span> <span class="n">continent</span> <span class="o">=</span> <span class="s1">&#39;Europe&#39;</span> <span class="k">AND</span>
+      <span class="n">gdp</span><span class="o">/</span><span class="n">population</span> <span class="o">&gt;</span> <span class="p">(</span>
+      <span class="k">SELECT</span> <span class="n">gdp</span><span class="o">/</span><span class="n">population</span>
+          <span class="k">FROM</span> <span class="n">world</span>
+          <span class="k">WHERE</span> <span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;United Kingdom&#39;</span>
+      <span class="p">);</span>
+</pre></div>
+
+</div>
+</div>
+</div></section><section>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="&#23376;&#26597;&#35426;&#65288;5&#65289;">&#23376;&#26597;&#35426;&#65288;5&#65289;<a class="anchor-link" href="#&#23376;&#26597;&#35426;&#65288;5&#65289;">&#182;</a></h2><ul>
+<li>找出與阿根廷、澳洲同洲的國家、洲別</li>
+</ul>
+<div class="highlight"><pre><span></span><span class="cm">/*先知道阿根廷、澳洲在哪個洲*/</span>
+<span class="k">SELECT</span> <span class="n">continent</span>
+<span class="k">FROM</span> <span class="n">world</span>
+<span class="k">WHERE</span> <span class="n">name</span> <span class="k">IN</span> <span class="p">(</span><span class="s1">&#39;Argentina&#39;</span><span class="p">,</span> <span class="s1">&#39;Australia&#39;</span><span class="p">);</span> <span class="cm">/*South America, Oceania*/</span>
+
+<span class="cm">/*然後再寫一個查詢*/</span>
+<span class="k">SELECT</span> <span class="n">name</span><span class="p">,</span>
+       <span class="n">continent</span>
+<span class="k">FROM</span> <span class="n">world</span>
+<span class="k">WHERE</span> <span class="n">continent</span> <span class="k">IN</span> <span class="p">(</span><span class="s1">&#39;South America&#39;</span><span class="p">,</span> <span class="s1">&#39;Oceania&#39;</span><span class="p">);</span>
+</pre></div>
+
+</div>
+</div>
+</div></section><section>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="&#23376;&#26597;&#35426;&#65288;6&#65289;">&#23376;&#26597;&#35426;&#65288;6&#65289;<a class="anchor-link" href="#&#23376;&#26597;&#35426;&#65288;6&#65289;">&#182;</a></h2><ul>
+<li>把兩個查詢寫在一個查詢中，這個就是 <strong>子查詢 Sub-query</strong></li>
+</ul>
+<div class="highlight"><pre><span></span><span class="k">SELECT</span> <span class="n">name</span><span class="p">,</span>
+       <span class="n">continent</span>
+<span class="k">FROM</span> <span class="n">world</span>
+<span class="k">WHERE</span> <span class="n">continent</span> <span class="k">IN</span> <span class="p">(</span>
+    <span class="k">SELECT</span> <span class="n">continent</span>
+        <span class="k">FROM</span> <span class="n">world</span>
+        <span class="k">WHERE</span> <span class="n">name</span> <span class="k">IN</span> <span class="p">(</span><span class="s1">&#39;Argentina&#39;</span><span class="p">,</span> <span class="s1">&#39;Australia&#39;</span><span class="p">)</span>
+<span class="p">);</span>
+</pre></div>
+
+</div>
+</div>
+</div></section><section>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="&#23436;&#25104;-5-&#20491;-SQLZOO-&#32244;&#32722;&#65288;1~5&#65289;">&#23436;&#25104; 5 &#20491; SQLZOO &#32244;&#32722;&#65288;1~5&#65289;<a class="anchor-link" href="#&#23436;&#25104;-5-&#20491;-SQLZOO-&#32244;&#32722;&#65288;1~5&#65289;">&#182;</a></h2><p><a href="https://sqlzoo.net/wiki/SELECT_within_SELECT_Tutorial">https://sqlzoo.net/wiki/SELECT_within_SELECT_Tutorial</a></p>
 
 </div>
 </div>
