@@ -11839,35 +11839,7 @@ a.anchor-link {
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="&#19968;&#20491;&#20856;&#22411;&#30340;-SQL-&#26597;&#35426;&#32080;&#27083;">&#19968;&#20491;&#20856;&#22411;&#30340; SQL &#26597;&#35426;&#32080;&#27083;<a class="anchor-link" href="#&#19968;&#20491;&#20856;&#22411;&#30340;-SQL-&#26597;&#35426;&#32080;&#27083;">&#182;</a></h2><div class="highlight"><pre><span></span><span class="k">SELECT</span> <span class="p">...</span>
-  <span class="k">FROM</span> <span class="p">...</span>
-  <span class="k">WHERE</span> <span class="p">...</span>
-  <span class="k">GROUP</span> <span class="k">BY</span> <span class="p">...</span>
-  <span class="k">HAVING</span> <span class="p">...</span>
-  <span class="k">ORDER</span> <span class="k">BY</span> <span class="p">...</span>
-</pre></div>
-
-</div>
-</div>
-</div></section></section><section><section>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="ORDER-BY-&#25551;&#36848;"><code>ORDER BY</code> &#25551;&#36848;<a class="anchor-link" href="#ORDER-BY-&#25551;&#36848;">&#182;</a></h2><ul>
-<li>可以選擇依照某一個欄位排序查詢結果</li>
-<li>遞增排序：ASC</li>
-<li>遞減排序：DESC</li>
-<li>找出人口數排名前 10 的國家</li>
-</ul>
-<div class="highlight"><pre><span></span><span class="k">SELECT</span> <span class="n">Name</span>
-    <span class="p">,</span><span class="n">Population</span>
-  <span class="k">FROM</span> <span class="n">world</span><span class="p">.</span><span class="n">country</span>
-  <span class="k">ORDER</span> <span class="k">BY</span> <span class="n">Population</span> <span class="k">DESC</span>
-  <span class="k">LIMIT</span> <span class="mi">10</span><span class="p">;</span>
-</pre></div>
-
+<h2 id="&#32858;&#21512;&#20989;&#25976;&#65288;Aggregate-Functions&#65289;">&#32858;&#21512;&#20989;&#25976;&#65288;Aggregate Functions&#65289;<a class="anchor-link" href="#&#32858;&#21512;&#20989;&#25976;&#65288;Aggregate-Functions&#65289;">&#182;</a></h2>
 </div>
 </div>
 </div></section><section>
@@ -11876,30 +11848,11 @@ a.anchor-link {
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="ORDER-BY-&#25551;&#36848;&#65288;2&#65289;"><code>ORDER BY</code> &#25551;&#36848;&#65288;2&#65289;<a class="anchor-link" href="#ORDER-BY-&#25551;&#36848;&#65288;2&#65289;">&#182;</a></h2><ul>
-<li>找出歐洲土地面積最小的 10 個國家</li>
-</ul>
-<div class="highlight"><pre><span></span><span class="k">SELECT</span> <span class="n">Name</span>
-    <span class="p">,</span><span class="n">SurfaceArea</span>
-  <span class="k">FROM</span> <span class="n">world</span><span class="p">.</span><span class="n">country</span>
-  <span class="k">WHERE</span> <span class="n">Continent</span> <span class="o">=</span> <span class="s1">&#39;Europe&#39;</span>
-  <span class="k">ORDER</span> <span class="k">BY</span> <span class="n">SurfaceArea</span> <span class="k">ASC</span>
-  <span class="k">LIMIT</span> <span class="mi">10</span><span class="p">;</span>
-</pre></div>
-
-</div>
-</div>
-</div></section></section><section><section>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="SUM()-&#20989;&#25976;"><code>SUM()</code> &#20989;&#25976;<a class="anchor-link" href="#SUM()-&#20989;&#25976;">&#182;</a></h2><ul>
-<li>回傳加總值</li>
+<li>回傳加總值：全世界總人口數為多少？</li>
 </ul>
-<div class="highlight"><pre><span></span><span class="k">SELECT</span> <span class="k">SUM</span><span class="p">(</span><span class="n">population</span><span class="p">)</span> <span class="k">AS</span> <span class="n">Sum_Pop</span>
-  <span class="k">FROM</span> <span class="n">world</span><span class="p">.</span><span class="n">country</span><span class="p">;</span>
+<div class="highlight"><pre><span></span><span class="k">SELECT</span> <span class="k">SUM</span><span class="p">(</span><span class="n">population</span><span class="p">)</span>
+  <span class="k">FROM</span> <span class="n">world</span><span class="p">;</span>
 </pre></div>
 
 </div>
@@ -11911,10 +11864,10 @@ a.anchor-link {
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="DISTINCT()-&#20989;&#25976;"><code>DISTINCT()</code> &#20989;&#25976;<a class="anchor-link" href="#DISTINCT()-&#20989;&#25976;">&#182;</a></h2><ul>
-<li>回傳相異值</li>
+<li>回傳相異值：全世界的洲別為何，顯示一次即可</li>
 </ul>
 <div class="highlight"><pre><span></span><span class="k">SELECT</span> <span class="k">DISTINCT</span><span class="p">(</span><span class="n">continent</span><span class="p">)</span>
-  <span class="k">FROM</span> <span class="n">world</span><span class="p">.</span><span class="n">country</span><span class="p">;</span>
+  <span class="k">FROM</span> <span class="n">world</span><span class="p">;</span>
 </pre></div>
 
 </div>
@@ -11926,62 +11879,11 @@ a.anchor-link {
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="COUNT()-&#20989;&#25976;"><code>COUNT()</code> &#20989;&#25976;<a class="anchor-link" href="#COUNT()-&#20989;&#25976;">&#182;</a></h2><ul>
-<li>計算有多少國家的人口超過 1 億</li>
+<li>計算有多少國家的土地面積超過 100 萬平方公里</li>
 </ul>
 <div class="highlight"><pre><span></span><span class="k">SELECT</span> <span class="k">COUNT</span><span class="p">(</span><span class="o">*</span><span class="p">)</span>
-  <span class="k">FROM</span> <span class="n">world</span><span class="p">.</span><span class="n">country</span>
-  <span class="k">WHERE</span> <span class="n">Population</span> <span class="o">&gt;</span> <span class="mi">100000000</span><span class="p">;</span>
-</pre></div>
-
-</div>
-</div>
-</div></section><section>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="SUBSTR()-&#20989;&#25976;"><code>SUBSTR()</code> &#20989;&#25976;<a class="anchor-link" href="#SUBSTR()-&#20989;&#25976;">&#182;</a></h2><ul>
-<li>擷取某部分的文字</li>
-</ul>
-<div class="highlight"><pre><span></span><span class="k">SELECT</span> <span class="n">SUBSTR</span><span class="p">(</span><span class="n">Name</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span> <span class="k">AS</span> <span class="n">Sub_Name</span>
-    <span class="p">,</span><span class="n">Name</span>
-    <span class="k">FROM</span> <span class="n">world</span><span class="p">.</span><span class="n">country</span>
-    <span class="k">LIMIT</span> <span class="mi">10</span><span class="p">;</span>
-</pre></div>
-
-</div>
-</div>
-</div></section><section>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="CONCAT()-&#20989;&#25976;"><code>CONCAT()</code> &#20989;&#25976;<a class="anchor-link" href="#CONCAT()-&#20989;&#25976;">&#182;</a></h2><ul>
-<li>連結文字</li>
-</ul>
-<div class="highlight"><pre><span></span><span class="k">SELECT</span> <span class="n">Name</span> 
-    <span class="p">,</span><span class="n">CONCAT</span><span class="p">(</span><span class="n">Region</span><span class="p">,</span> <span class="s1">&#39;, &#39;</span><span class="p">,</span> <span class="n">Continent</span><span class="p">)</span> <span class="k">AS</span> <span class="n">Reg_Cont</span>
-    <span class="k">FROM</span> <span class="n">world</span><span class="p">.</span><span class="n">country</span>
-    <span class="k">LIMIT</span> <span class="mi">10</span><span class="p">;</span>
-</pre></div>
-
-</div>
-</div>
-</div></section><section>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="UPPER()-&#20989;&#25976;"><code>UPPER()</code> &#20989;&#25976;<a class="anchor-link" href="#UPPER()-&#20989;&#25976;">&#182;</a></h2><ul>
-<li>轉換文字為大寫</li>
-</ul>
-<div class="highlight"><pre><span></span><span class="k">SELECT</span> <span class="k">UPPER</span><span class="p">(</span><span class="n">Name</span><span class="p">)</span> <span class="k">AS</span> <span class="n">Cap_Name</span>
-    <span class="p">,</span> <span class="n">Name</span>
-    <span class="k">FROM</span> <span class="n">world</span><span class="p">.</span><span class="n">country</span>
-    <span class="k">LIMIT</span> <span class="mi">10</span><span class="p">;</span>
+  <span class="k">FROM</span> <span class="n">world</span>
+  <span class="k">WHERE</span> <span class="n">area</span> <span class="o">&gt;</span> <span class="mi">1000000</span><span class="p">;</span>
 </pre></div>
 
 </div>
@@ -11992,16 +11894,7 @@ a.anchor-link {
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="GROUP-BY"><code>GROUP BY</code><a class="anchor-link" href="#GROUP-BY">&#182;</a></h2><ul>
-<li><code>SUM()</code> 函數加入 <code>GROUP BY</code> 敘述</li>
-<li>計算各個 Continent 的人口總數</li>
-</ul>
-<div class="highlight"><pre><span></span><span class="k">SELECT</span> <span class="n">Continent</span>
-       <span class="p">,</span><span class="k">SUM</span><span class="p">(</span><span class="n">population</span><span class="p">)</span> <span class="k">AS</span> <span class="n">Sum_Pop</span>
-  <span class="k">FROM</span> <span class="n">world</span><span class="p">.</span><span class="n">country</span>
-  <span class="k">GROUP</span> <span class="k">BY</span> <span class="n">Continent</span><span class="p">;</span>
-</pre></div>
-
+<h2 id="GROUP-BY-&#25944;&#36848;">GROUP BY &#25944;&#36848;<a class="anchor-link" href="#GROUP-BY-&#25944;&#36848;">&#182;</a></h2>
 </div>
 </div>
 </div></section><section>
@@ -12010,14 +11903,13 @@ a.anchor-link {
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="GROUP-BY&#65288;2&#65289;"><code>GROUP BY</code>&#65288;2&#65289;<a class="anchor-link" href="#GROUP-BY&#65288;2&#65289;">&#182;</a></h2><ul>
-<li><code>COUNT()</code> 函數加入 <code>GROUP BY</code> 敘述</li>
+<h2 id="COUNT()-&#20989;&#25976;&#21152;&#20837;-GROUP-BY-&#25944;&#36848;">COUNT() &#20989;&#25976;&#21152;&#20837; GROUP BY &#25944;&#36848;<a class="anchor-link" href="#COUNT()-&#20989;&#25976;&#21152;&#20837;-GROUP-BY-&#25944;&#36848;">&#182;</a></h2><ul>
 <li>計算各個 Continent 的國家數</li>
 </ul>
-<div class="highlight"><pre><span></span><span class="k">SELECT</span> <span class="n">Continent</span>
-       <span class="p">,</span><span class="k">COUNT</span><span class="p">(</span><span class="o">*</span><span class="p">)</span> <span class="k">AS</span> <span class="n">Number_of_Countries</span>
-  <span class="k">FROM</span> <span class="n">world</span><span class="p">.</span><span class="n">country</span>
-  <span class="k">GROUP</span> <span class="k">BY</span> <span class="n">Continent</span><span class="p">;</span>
+<div class="highlight"><pre><span></span><span class="k">SELECT</span> <span class="n">continent</span><span class="p">,</span>
+       <span class="k">COUNT</span><span class="p">(</span><span class="o">*</span><span class="p">)</span>
+    <span class="k">FROM</span> <span class="n">world</span>
+    <span class="k">GROUP</span> <span class="k">BY</span> <span class="n">continent</span><span class="p">;</span>
 </pre></div>
 
 </div>
@@ -12028,20 +11920,45 @@ a.anchor-link {
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="GROUP-BY&#65288;3&#65289;"><code>GROUP BY</code>&#65288;3&#65289;<a class="anchor-link" href="#GROUP-BY&#65288;3&#65289;">&#182;</a></h2><ul>
-<li><code>COUNT()</code> 函數加入 <code>GROUP BY</code> 敘述</li>
-<li>計算各個 Region 人口超過 1 千萬的國家數</li>
+<h2 id="COUNT()-&#20989;&#25976;&#21152;&#20837;-GROUP-BY-&#25944;&#36848;">COUNT() &#20989;&#25976;&#21152;&#20837; GROUP BY &#25944;&#36848;<a class="anchor-link" href="#COUNT()-&#20989;&#25976;&#21152;&#20837;-GROUP-BY-&#25944;&#36848;">&#182;</a></h2><ul>
+<li>計算各個 Continent 人口超過 1 千萬的國家數</li>
 </ul>
-<div class="highlight"><pre><span></span><span class="k">SELECT</span> <span class="n">Region</span>
-       <span class="p">,</span><span class="k">COUNT</span><span class="p">(</span><span class="o">*</span><span class="p">)</span> <span class="k">AS</span> <span class="n">Number_of_Countries</span>
-  <span class="k">FROM</span> <span class="n">world</span><span class="p">.</span><span class="n">country</span>
-  <span class="k">WHERE</span> <span class="n">Population</span> <span class="o">&gt;</span> <span class="mi">10000000</span>
-  <span class="k">GROUP</span> <span class="k">BY</span> <span class="n">Region</span><span class="p">;</span>
+<div class="highlight"><pre><span></span><span class="k">SELECT</span> <span class="n">continent</span><span class="p">,</span>
+       <span class="k">COUNT</span><span class="p">(</span><span class="o">*</span><span class="p">)</span>
+    <span class="k">FROM</span> <span class="n">world</span>
+    <span class="k">WHERE</span> <span class="n">population</span> <span class="o">&gt;=</span> <span class="mi">10000000</span>
+    <span class="k">GROUP</span> <span class="k">BY</span> <span class="n">continent</span><span class="p">;</span>
+</pre></div>
+
+</div>
+</div>
+</div></section><section>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="SUM()-&#20989;&#25976;&#21152;&#20837;-GROUP-BY-&#25944;&#36848;"><code>SUM()</code> &#20989;&#25976;&#21152;&#20837; <code>GROUP BY</code> &#25944;&#36848;<a class="anchor-link" href="#SUM()-&#20989;&#25976;&#21152;&#20837;-GROUP-BY-&#25944;&#36848;">&#182;</a></h2><ul>
+<li>計算各個 continent 的人口總數</li>
+</ul>
+<div class="highlight"><pre><span></span><span class="k">SELECT</span> <span class="n">continent</span>
+       <span class="p">,</span><span class="k">SUM</span><span class="p">(</span><span class="n">population</span><span class="p">)</span>
+  <span class="k">FROM</span> <span class="n">world</span>
+  <span class="k">GROUP</span> <span class="k">BY</span> <span class="n">continent</span><span class="p">;</span>
 </pre></div>
 
 </div>
 </div>
 </div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="HAVING-&#25944;&#36848;">HAVING &#25944;&#36848;<a class="anchor-link" href="#HAVING-&#25944;&#36848;">&#182;</a></h2>
+</div>
+</div>
+</div></section><section>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
@@ -12053,10 +11970,9 @@ a.anchor-link {
 </ul>
 <div class="highlight"><pre><span></span><span class="cm">/*錯誤*/</span>
 <span class="k">SELECT</span> <span class="n">Continent</span>
-       <span class="p">,</span><span class="k">SUM</span><span class="p">(</span><span class="n">Population</span><span class="p">)</span> <span class="k">AS</span> <span class="n">Sum_of_Population</span>
-  <span class="k">FROM</span> <span class="n">world</span><span class="p">.</span><span class="n">country</span>
+  <span class="k">FROM</span> <span class="n">world</span>
   <span class="k">GROUP</span> <span class="k">BY</span> <span class="n">Continent</span>
-  <span class="k">WHERE</span> <span class="n">Sum_of_Population</span> <span class="o">&gt;</span> <span class="mi">100000000</span><span class="p">;</span>
+  <span class="k">WHERE</span> <span class="k">SUM</span><span class="p">(</span><span class="n">Population</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">100000000</span><span class="p">;</span>
 </pre></div>
 
 </div>
@@ -12072,11 +11988,10 @@ a.anchor-link {
 <li>找出總人口數超過 1 億的洲（Continent）</li>
 </ul>
 <div class="highlight"><pre><span></span><span class="cm">/*正確*/</span>
-<span class="k">SELECT</span> <span class="n">Continent</span>
-       <span class="p">,</span><span class="k">SUM</span><span class="p">(</span><span class="n">Population</span><span class="p">)</span> <span class="k">AS</span> <span class="n">Sum_of_Population</span>
-  <span class="k">FROM</span> <span class="n">world</span><span class="p">.</span><span class="n">country</span>
-  <span class="k">GROUP</span> <span class="k">BY</span> <span class="n">Continent</span>
-  <span class="k">Having</span> <span class="n">Sum_of_Population</span> <span class="o">&gt;</span> <span class="mi">100000000</span><span class="p">;</span>
+<span class="k">SELECT</span> <span class="n">continent</span>
+  <span class="k">FROM</span> <span class="n">world</span>
+  <span class="k">GROUP</span> <span class="k">BY</span> <span class="n">continent</span>
+  <span class="k">HAVING</span> <span class="k">SUM</span><span class="p">(</span><span class="n">population</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">100000000</span><span class="p">;</span>
 </pre></div>
 
 </div>
@@ -12087,17 +12002,26 @@ a.anchor-link {
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="&#23376;&#26597;&#35426;">&#23376;&#26597;&#35426;<a class="anchor-link" href="#&#23376;&#26597;&#35426;">&#182;</a></h2><ul>
-<li><code>SELECT</code> <strong>within</strong> <code>SELECT</code></li>
-<li>找出人口數比美國多的國家：</li>
+<h2 id="ORDER-BY">ORDER BY<a class="anchor-link" href="#ORDER-BY">&#182;</a></h2>
+</div>
+</div>
+</div></section><section>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="ORDER-BY-&#25551;&#36848;"><code>ORDER BY</code> &#25551;&#36848;<a class="anchor-link" href="#ORDER-BY-&#25551;&#36848;">&#182;</a></h2><ul>
+<li>可以選擇依照某一個欄位排序查詢結果</li>
+<li>遞增排序：ASC</li>
+<li>遞減排序：DESC</li>
+<li>找出人口數排名前 10 的國家</li>
 </ul>
-<div class="highlight"><pre><span></span><span class="k">SELECT</span> <span class="n">Name</span>
-  <span class="k">FROM</span> <span class="n">world</span><span class="p">.</span><span class="n">country</span>
-  <span class="k">WHERE</span> <span class="n">Population</span> <span class="o">&gt;</span> <span class="p">(</span>
-    <span class="k">SELECT</span> <span class="n">Population</span>
-      <span class="k">FROM</span> <span class="n">world</span><span class="p">.</span><span class="n">country</span>
-      <span class="k">WHERE</span> <span class="n">Code</span> <span class="o">=</span> <span class="s1">&#39;USA&#39;</span>
-  <span class="p">);</span>
+<div class="highlight"><pre><span></span><span class="k">SELECT</span> <span class="n">name</span><span class="p">,</span>
+       <span class="n">population</span>
+  <span class="k">FROM</span> <span class="n">world</span>
+  <span class="k">ORDER</span> <span class="k">BY</span> <span class="n">population</span> <span class="k">DESC</span>
+  <span class="k">LIMIT</span> <span class="mi">10</span><span class="p">;</span>
 </pre></div>
 
 </div>
@@ -12108,21 +12032,39 @@ a.anchor-link {
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="&#23376;&#26597;&#35426;&#65288;2&#65289;">&#23376;&#26597;&#35426;&#65288;2&#65289;<a class="anchor-link" href="#&#23376;&#26597;&#35426;&#65288;2&#65289;">&#182;</a></h2><ul>
-<li>找出跟 Andorra 屬於同一個洲的國家：</li>
+<h2 id="ORDER-BY-&#25551;&#36848;&#65288;2&#65289;"><code>ORDER BY</code> &#25551;&#36848;&#65288;2&#65289;<a class="anchor-link" href="#ORDER-BY-&#25551;&#36848;&#65288;2&#65289;">&#182;</a></h2><ul>
+<li>找出歐洲土地面積最小的 10 個國家</li>
 </ul>
-<div class="highlight"><pre><span></span><span class="k">SELECT</span> <span class="n">Name</span>
-  <span class="k">FROM</span> <span class="n">world</span><span class="p">.</span><span class="n">country</span>
-  <span class="k">WHERE</span> <span class="n">Continent</span> <span class="o">=</span> <span class="p">(</span>
-    <span class="k">SELECT</span> <span class="n">Continent</span>
-      <span class="k">FROM</span> <span class="n">world</span><span class="p">.</span><span class="n">country</span>
-      <span class="k">WHERE</span> <span class="n">Name</span> <span class="o">=</span> <span class="s1">&#39;Andorra&#39;</span>
-  <span class="p">);</span>
+<div class="highlight"><pre><span></span><span class="k">SELECT</span> <span class="n">name</span><span class="p">,</span>
+       <span class="n">area</span>
+  <span class="k">FROM</span> <span class="n">world</span>
+  <span class="k">WHERE</span> <span class="n">continent</span> <span class="o">=</span> <span class="s1">&#39;Europe&#39;</span>
+  <span class="k">ORDER</span> <span class="k">BY</span> <span class="n">area</span> <span class="k">ASC</span>
+  <span class="k">LIMIT</span> <span class="mi">10</span><span class="p">;</span>
 </pre></div>
 
 </div>
 </div>
+</div></section><section>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="&#23436;&#25104;-8-&#20491;-SQLZOO-&#32244;&#32722;">&#23436;&#25104; 8 &#20491; SQLZOO &#32244;&#32722;<a class="anchor-link" href="#&#23436;&#25104;-8-&#20491;-SQLZOO-&#32244;&#32722;">&#182;</a></h2><p><a href="https://sqlzoo.net/wiki/SUM_and_COUNT">https://sqlzoo.net/wiki/SUM_and_COUNT</a></p>
+
+</div>
+</div>
 </div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="JOIN-&#25551;&#36848;">JOIN &#25551;&#36848;<a class="anchor-link" href="#JOIN-&#25551;&#36848;">&#182;</a></h2>
+</div>
+</div>
+</div></section><section>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
@@ -12147,16 +12089,73 @@ a.anchor-link {
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="&#20839;&#37096;&#32879;&#32080;">&#20839;&#37096;&#32879;&#32080;<a class="anchor-link" href="#&#20839;&#37096;&#32879;&#32080;">&#182;</a></h2><ul>
-<li>取左表格（台灣、日本）跟右表格（台灣、南韓）的交集（台灣）</li>
-</ul>
-<div class="highlight"><pre><span></span><span class="cm">/*左表格*/</span>
-<span class="k">SELECT</span> <span class="o">*</span> <span class="k">FROM</span> <span class="n">world</span><span class="p">.</span><span class="n">country</span>
-    <span class="k">WHERE</span> <span class="n">Name</span> <span class="k">IN</span> <span class="p">(</span><span class="s1">&#39;Taiwan&#39;</span><span class="p">,</span> <span class="s1">&#39;Japan&#39;</span><span class="p">);</span>
+<h2 id="&#20160;&#40636;&#26159;&#36039;&#26009;&#24235;&#30340;-Schema">&#20160;&#40636;&#26159;&#36039;&#26009;&#24235;&#30340; Schema<a class="anchor-link" href="#&#20160;&#40636;&#26159;&#36039;&#26009;&#24235;&#30340;-Schema">&#182;</a></h2><p><img src="img/schema.png" alt=""></p>
 
-<span class="cm">/*右表格*/</span>
-<span class="k">SELECT</span> <span class="o">*</span> <span class="k">FROM</span> <span class="n">world</span><span class="p">.</span><span class="n">city</span>
-    <span class="k">WHERE</span> <span class="n">CountryCode</span> <span class="k">IN</span> <span class="p">(</span><span class="s1">&#39;TWN&#39;</span><span class="p">,</span> <span class="s1">&#39;KOR&#39;</span><span class="p">);</span>
+</div>
+</div>
+</div></section><section>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="&#37325;&#35201;&#30340;-Schema-&#20803;&#32032;">&#37325;&#35201;&#30340; Schema &#20803;&#32032;<a class="anchor-link" href="#&#37325;&#35201;&#30340;-Schema-&#20803;&#32032;">&#182;</a></h2><ul>
+<li>PK(Primary Key)：一個表格用來標註獨立觀測值的欄位</li>
+<li>FK(Foreign Key)：用來與其他表格連結的欄位</li>
+</ul>
+
+</div>
+</div>
+</div></section><section>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="&#30475;&#30475;&#19981;&#21516;&#34920;&#26684;">&#30475;&#30475;&#19981;&#21516;&#34920;&#26684;<a class="anchor-link" href="#&#30475;&#30475;&#19981;&#21516;&#34920;&#26684;">&#182;</a></h2><ul>
+<li><code>game</code> 表格</li>
+</ul>
+<p><img src="img/game.png" alt=""></p>
+
+</div>
+</div>
+</div></section><section>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="&#30475;&#30475;&#19981;&#21516;&#34920;&#26684;">&#30475;&#30475;&#19981;&#21516;&#34920;&#26684;<a class="anchor-link" href="#&#30475;&#30475;&#19981;&#21516;&#34920;&#26684;">&#182;</a></h2><ul>
+<li><code>goal</code> 表格</li>
+</ul>
+<p><img src="img/goal.png" alt=""></p>
+
+</div>
+</div>
+</div></section><section>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="&#30475;&#30475;&#19981;&#21516;&#34920;&#26684;">&#30475;&#30475;&#19981;&#21516;&#34920;&#26684;<a class="anchor-link" href="#&#30475;&#30475;&#19981;&#21516;&#34920;&#26684;">&#182;</a></h2><ul>
+<li><code>eteam</code> 表格</li>
+</ul>
+<p><img src="img/eteam.png" alt=""></p>
+
+</div>
+</div>
+</div></section><section>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="&#26296;&#35299;&#19968;&#19979;&#34920;&#26684;&#20839;&#23481;">&#26296;&#35299;&#19968;&#19979;&#34920;&#26684;&#20839;&#23481;<a class="anchor-link" href="#&#26296;&#35299;&#19968;&#19979;&#34920;&#26684;&#20839;&#23481;">&#182;</a></h2><p>查詢德國隊進球的 <code>matchid</code> 與 <code>player</code></p>
+<div class="highlight"><pre><span></span><span class="k">SELECT</span> <span class="n">matchid</span><span class="p">,</span>
+       <span class="n">player</span>
+    <span class="k">FROM</span> <span class="n">goal</span>
+    <span class="k">WHERE</span> <span class="n">teamid</span> <span class="o">=</span> <span class="s1">&#39;GER&#39;</span><span class="p">;</span>
 </pre></div>
 
 </div>
@@ -12167,27 +12166,299 @@ a.anchor-link {
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="&#20839;&#37096;&#32879;&#32080;&#65288;2&#65289;">&#20839;&#37096;&#32879;&#32080;&#65288;2&#65289;<a class="anchor-link" href="#&#20839;&#37096;&#32879;&#32080;&#65288;2&#65289;">&#182;</a></h2><ul>
-<li>取左表格（台灣、日本）跟右表格（台灣、南韓）的交集（台灣）</li>
-</ul>
-<div class="highlight"><pre><span></span><span class="cm">/*內部聯結*/</span>
-<span class="k">SELECT</span> <span class="n">left_tbl</span><span class="p">.</span><span class="o">*</span>
-      <span class="p">,</span><span class="n">right_tbl</span><span class="p">.</span><span class="o">*</span>
-    <span class="k">FROM</span> <span class="p">(</span>
-        <span class="k">SELECT</span> <span class="o">*</span>
-        <span class="k">FROM</span> <span class="n">world</span><span class="p">.</span><span class="n">country</span>
-        <span class="k">WHERE</span> <span class="n">Code</span> <span class="k">IN</span> <span class="p">(</span><span class="s1">&#39;TWN&#39;</span><span class="p">,</span> <span class="s1">&#39;JPN&#39;</span><span class="p">)</span>
-    <span class="p">)</span> <span class="n">left_tbl</span>
-    <span class="k">INNER</span> <span class="k">JOIN</span> <span class="p">(</span>
-        <span class="k">SELECT</span> <span class="o">*</span> <span class="k">FROM</span> <span class="n">world</span><span class="p">.</span><span class="n">city</span>
-        <span class="k">WHERE</span> <span class="n">CountryCode</span> <span class="k">IN</span> <span class="p">(</span><span class="s1">&#39;TWN&#39;</span><span class="p">,</span> <span class="s1">&#39;KOR&#39;</span><span class="p">)</span>
-    <span class="p">)</span> <span class="n">right_tbl</span>
-    <span class="k">ON</span> <span class="n">left_tbl</span><span class="p">.</span><span class="n">Code</span> <span class="o">=</span> <span class="n">right_tbl</span><span class="p">.</span><span class="n">CountryCode</span><span class="p">;</span>
+<h2 id="&#26296;&#35299;&#19968;&#19979;&#34920;&#26684;&#20839;&#23481;">&#26296;&#35299;&#19968;&#19979;&#34920;&#26684;&#20839;&#23481;<a class="anchor-link" href="#&#26296;&#35299;&#19968;&#19979;&#34920;&#26684;&#20839;&#23481;">&#182;</a></h2><p>姓氏為 Bender 的球員進球資料</p>
+<div class="highlight"><pre><span></span><span class="k">SELECT</span> <span class="o">*</span>
+    <span class="k">FROM</span> <span class="n">goal</span> 
+    <span class="k">WHERE</span> <span class="n">player</span> <span class="k">LIKE</span> <span class="s1">&#39;%Bender&#39;</span><span class="p">;</span>
 </pre></div>
 
 </div>
 </div>
 </div></section><section>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="&#26296;&#35299;&#19968;&#19979;&#34920;&#26684;&#20839;&#23481;">&#26296;&#35299;&#19968;&#19979;&#34920;&#26684;&#20839;&#23481;<a class="anchor-link" href="#&#26296;&#35299;&#19968;&#19979;&#34920;&#26684;&#20839;&#23481;">&#182;</a></h2><p>查詢 <code>matchid=1012</code> 這場比賽的資訊</p>
+<div class="highlight"><pre><span></span><span class="k">SELECT</span> <span class="o">*</span>
+  <span class="k">FROM</span> <span class="n">game</span>
+  <span class="k">WHERE</span> <span class="n">id</span><span class="o">=</span><span class="s1">&#39;1012&#39;</span><span class="p">;</span>
+</pre></div>
+
+</div>
+</div>
+</div></section><section>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="&#38283;&#22987;&#20351;&#29992;-JOIN-&#25551;&#36848;&#65288;&#20839;&#37096;&#32879;&#32080;&#65289;">&#38283;&#22987;&#20351;&#29992; JOIN &#25551;&#36848;&#65288;&#20839;&#37096;&#32879;&#32080;&#65289;<a class="anchor-link" href="#&#38283;&#22987;&#20351;&#29992;-JOIN-&#25551;&#36848;&#65288;&#20839;&#37096;&#32879;&#32080;&#65289;">&#182;</a></h2><ul>
+<li>查詢德國隊進球的 <code>player</code>, <code>teamid</code>, <code>stadium</code>, <code>mdate</code> 資訊</li>
+<li>由於變數來自兩個表格，養成指定表格名稱的<strong>良好習慣</strong></li>
+</ul>
+<div class="highlight"><pre><span></span><span class="k">SELECT</span> <span class="n">goal</span><span class="p">.</span><span class="n">player</span><span class="p">,</span>
+       <span class="n">goal</span><span class="p">.</span><span class="n">teamid</span><span class="p">,</span>
+       <span class="n">game</span><span class="p">.</span><span class="n">stadium</span><span class="p">,</span>
+       <span class="n">game</span><span class="p">.</span><span class="n">mdate</span>
+    <span class="k">FROM</span> <span class="n">game</span>
+    <span class="k">JOIN</span> <span class="n">goal</span> 
+    <span class="k">ON</span> <span class="p">(</span><span class="n">game</span><span class="p">.</span><span class="n">id</span><span class="o">=</span><span class="n">goal</span><span class="p">.</span><span class="n">matchid</span><span class="p">)</span>
+    <span class="k">WHERE</span> <span class="n">goal</span><span class="p">.</span><span class="n">teamid</span> <span class="o">=</span> <span class="s1">&#39;GER&#39;</span><span class="p">;</span>
+</pre></div>
+
+</div>
+</div>
+</div></section><section>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="&#38283;&#22987;&#20351;&#29992;-JOIN-&#25551;&#36848;&#65288;&#20839;&#37096;&#32879;&#32080;&#65289;">&#38283;&#22987;&#20351;&#29992; JOIN &#25551;&#36848;&#65288;&#20839;&#37096;&#32879;&#32080;&#65289;<a class="anchor-link" href="#&#38283;&#22987;&#20351;&#29992;-JOIN-&#25551;&#36848;&#65288;&#20839;&#37096;&#32879;&#32080;&#65289;">&#182;</a></h2><ul>
+<li>查詢在開賽前 10 分鐘就進球的資訊：<code>player</code>, <code>teamid</code>, <code>coach</code>, <code>gtime</code></li>
+</ul>
+<div class="highlight"><pre><span></span><span class="k">SELECT</span> <span class="n">goal</span><span class="p">.</span><span class="n">player</span><span class="p">,</span>
+       <span class="n">goal</span><span class="p">.</span><span class="n">teamid</span><span class="p">,</span>
+       <span class="n">eteam</span><span class="p">.</span><span class="n">coach</span><span class="p">,</span>
+       <span class="n">goal</span><span class="p">.</span><span class="n">gtime</span>
+    <span class="k">FROM</span> <span class="n">goal</span>
+    <span class="k">JOIN</span> <span class="n">eteam</span>
+    <span class="k">ON</span> <span class="n">goal</span><span class="p">.</span><span class="n">teamid</span><span class="o">=</span><span class="n">eteam</span><span class="p">.</span><span class="n">id</span>
+    <span class="k">WHERE</span> <span class="n">gtime</span><span class="o">&lt;=</span><span class="mi">10</span><span class="p">;</span>
+</pre></div>
+
+</div>
+</div>
+</div></section><section>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="&#38283;&#22987;&#20351;&#29992;-JOIN-&#25551;&#36848;&#65288;&#20839;&#37096;&#32879;&#32080;&#65289;">&#38283;&#22987;&#20351;&#29992; JOIN &#25551;&#36848;&#65288;&#20839;&#37096;&#32879;&#32080;&#65289;<a class="anchor-link" href="#&#38283;&#22987;&#20351;&#29992;-JOIN-&#25551;&#36848;&#65288;&#20839;&#37096;&#32879;&#32080;&#65289;">&#182;</a></h2><ul>
+<li>查詢 <code>team1</code> 教練是 <code>Fernando Santos</code> 的比賽日期 <code>mdate</code> 與隊伍名稱 <code>teamname</code></li>
+</ul>
+<div class="highlight"><pre><span></span><span class="k">SELECT</span> <span class="n">game</span><span class="p">.</span><span class="n">mdate</span><span class="p">,</span>
+       <span class="n">eteam</span><span class="p">.</span><span class="n">teamname</span>
+    <span class="k">FROM</span> <span class="n">game</span>
+    <span class="k">JOIN</span> <span class="n">eteam</span>
+    <span class="k">ON</span> <span class="n">game</span><span class="p">.</span><span class="n">team1</span><span class="o">=</span><span class="n">eteam</span><span class="p">.</span><span class="n">id</span>
+    <span class="k">WHERE</span> <span class="n">eteam</span><span class="p">.</span><span class="n">coach</span><span class="o">=</span><span class="s1">&#39;Fernando Santos&#39;</span><span class="p">;</span>
+</pre></div>
+
+</div>
+</div>
+</div></section><section>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="&#38283;&#22987;&#20351;&#29992;-JOIN-&#25551;&#36848;&#65288;&#20839;&#37096;&#32879;&#32080;&#65289;">&#38283;&#22987;&#20351;&#29992; JOIN &#25551;&#36848;&#65288;&#20839;&#37096;&#32879;&#32080;&#65289;<a class="anchor-link" href="#&#38283;&#22987;&#20351;&#29992;-JOIN-&#25551;&#36848;&#65288;&#20839;&#37096;&#32879;&#32080;&#65289;">&#182;</a></h2><ul>
+<li>查詢有在 'National Stadium, Warsaw' 進球的球員</li>
+</ul>
+<div class="highlight"><pre><span></span><span class="k">SELECT</span> <span class="n">goal</span><span class="p">.</span><span class="n">player</span>
+    <span class="k">FROM</span> <span class="n">game</span>
+    <span class="k">JOIN</span> <span class="n">goal</span>
+    <span class="k">ON</span> <span class="n">game</span><span class="p">.</span><span class="n">id</span><span class="o">=</span><span class="n">goal</span><span class="p">.</span><span class="n">matchid</span>
+    <span class="k">WHERE</span> <span class="n">stadium</span><span class="o">=</span><span class="s1">&#39;National Stadium, Warsaw&#39;</span>
+</pre></div>
+
+</div>
+</div>
+</div></section><section>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="&#23436;&#25104;-7-&#20491;-SQLZOO-&#32244;&#32722;&#65288;1~7&#65289;">&#23436;&#25104; 7 &#20491; SQLZOO &#32244;&#32722;&#65288;1~7&#65289;<a class="anchor-link" href="#&#23436;&#25104;-7-&#20491;-SQLZOO-&#32244;&#32722;&#65288;1~7&#65289;">&#182;</a></h2><p><a href="https://sqlzoo.net/wiki/The_JOIN_operation">https://sqlzoo.net/wiki/The_JOIN_operation</a></p>
+
+</div>
+</div>
+</div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="&#26356;&#22810;-JOIN">&#26356;&#22810; JOIN<a class="anchor-link" href="#&#26356;&#22810;-JOIN">&#182;</a></h2>
+</div>
+</div>
+</div></section><section>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Schema">Schema<a class="anchor-link" href="#Schema">&#182;</a></h2><p><img src="img/schema_join.png" alt=""></p>
+
+</div>
+</div>
+</div></section><section>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="&#26296;&#35299;&#34920;&#26684;">&#26296;&#35299;&#34920;&#26684;<a class="anchor-link" href="#&#26296;&#35299;&#34920;&#26684;">&#182;</a></h2><p>Citizen Kane 何時上映</p>
+<div class="highlight"><pre><span></span><span class="k">SELECT</span> <span class="n">yr</span>
+    <span class="k">FROM</span> <span class="n">movie</span>
+    <span class="k">WHERE</span> <span class="n">title</span><span class="o">=</span><span class="s1">&#39;Citizen Kane&#39;</span><span class="p">;</span>
+</pre></div>
+
+</div>
+</div>
+</div></section><section>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="&#26296;&#35299;&#34920;&#26684;">&#26296;&#35299;&#34920;&#26684;<a class="anchor-link" href="#&#26296;&#35299;&#34920;&#26684;">&#182;</a></h2><p>Star Trek 系列</p>
+<div class="highlight"><pre><span></span><span class="k">SELECT</span> <span class="n">id</span><span class="p">,</span>
+       <span class="n">title</span><span class="p">,</span>
+       <span class="n">yr</span>
+    <span class="k">FROM</span> <span class="n">movie</span>
+    <span class="k">WHERE</span> <span class="n">title</span> <span class="k">LIKE</span> <span class="s1">&#39;%Star Trek%&#39;</span><span class="p">;</span>
+</pre></div>
+
+</div>
+</div>
+</div></section><section>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="&#26296;&#35299;&#34920;&#26684;">&#26296;&#35299;&#34920;&#26684;<a class="anchor-link" href="#&#26296;&#35299;&#34920;&#26684;">&#182;</a></h2><p>Glenn Close 的 id 為何</p>
+<div class="highlight"><pre><span></span><span class="k">SELECT</span> <span class="n">id</span>
+    <span class="k">FROM</span> <span class="n">actor</span>
+    <span class="k">WHERE</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;Glenn Close&#39;</span><span class="p">;</span>
+</pre></div>
+
+</div>
+</div>
+</div></section><section>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="&#26296;&#35299;&#34920;&#26684;">&#26296;&#35299;&#34920;&#26684;<a class="anchor-link" href="#&#26296;&#35299;&#34920;&#26684;">&#182;</a></h2><p>電影 Casablanca 的 id 為何</p>
+<div class="highlight"><pre><span></span><span class="k">SELECT</span> <span class="n">id</span>
+    <span class="k">FROM</span> <span class="n">movie</span>
+    <span class="k">WHERE</span> <span class="n">title</span><span class="o">=</span><span class="s1">&#39;Casablanca&#39;</span><span class="p">;</span>
+</pre></div>
+
+</div>
+</div>
+</div></section><section>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="&#32879;&#32080;&#34920;&#26684;">&#32879;&#32080;&#34920;&#26684;<a class="anchor-link" href="#&#32879;&#32080;&#34920;&#26684;">&#182;</a></h2><p>取得電影 Casablanca 的演員名單</p>
+<div class="highlight"><pre><span></span><span class="k">SELECT</span> <span class="n">name</span>
+    <span class="k">FROM</span> <span class="n">actor</span>
+    <span class="k">JOIN</span> <span class="n">casting</span>
+    <span class="k">ON</span> <span class="n">actor</span><span class="p">.</span><span class="n">id</span> <span class="o">=</span> <span class="n">casting</span><span class="p">.</span><span class="n">actorid</span>
+    <span class="k">JOIN</span> <span class="n">movie</span>
+    <span class="k">ON</span> <span class="n">casting</span><span class="p">.</span><span class="n">movieid</span><span class="o">=</span><span class="n">movie</span><span class="p">.</span><span class="n">id</span>
+    <span class="k">WHERE</span> <span class="n">movie</span><span class="p">.</span><span class="n">title</span><span class="o">=</span><span class="s1">&#39;Casablanca&#39;</span><span class="p">;</span>
+</pre></div>
+
+</div>
+</div>
+</div></section><section>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="&#32879;&#32080;&#34920;&#26684;">&#32879;&#32080;&#34920;&#26684;<a class="anchor-link" href="#&#32879;&#32080;&#34920;&#26684;">&#182;</a></h2><p>取得電影 Alien 的演員名單</p>
+<div class="highlight"><pre><span></span><span class="k">SELECT</span> <span class="n">actor</span><span class="p">.</span><span class="n">name</span>
+    <span class="k">FROM</span> <span class="n">actor</span>
+    <span class="k">JOIN</span> <span class="n">casting</span>
+    <span class="k">ON</span> <span class="n">actor</span><span class="p">.</span><span class="n">id</span> <span class="o">=</span> <span class="n">casting</span><span class="p">.</span><span class="n">actorid</span>
+    <span class="k">JOIN</span> <span class="n">movie</span>
+    <span class="k">ON</span> <span class="n">casting</span><span class="p">.</span><span class="n">movieid</span><span class="o">=</span><span class="n">movie</span><span class="p">.</span><span class="n">id</span>
+    <span class="k">WHERE</span> <span class="n">movie</span><span class="p">.</span><span class="n">title</span><span class="o">=</span><span class="s1">&#39;Alien&#39;</span><span class="p">;</span>
+</pre></div>
+
+</div>
+</div>
+</div></section><section>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="&#32879;&#32080;&#34920;&#26684;">&#32879;&#32080;&#34920;&#26684;<a class="anchor-link" href="#&#32879;&#32080;&#34920;&#26684;">&#182;</a></h2><p>尋找 Harrison Ford 有出演的電影</p>
+<div class="highlight"><pre><span></span><span class="k">SELECT</span> <span class="n">movie</span><span class="p">.</span><span class="n">title</span>
+    <span class="k">FROM</span> <span class="n">movie</span>
+    <span class="k">JOIN</span> <span class="n">casting</span>
+    <span class="k">ON</span> <span class="n">movie</span><span class="p">.</span><span class="n">id</span> <span class="o">=</span> <span class="n">casting</span><span class="p">.</span><span class="n">movieid</span>
+    <span class="k">JOIN</span> <span class="n">actor</span>
+    <span class="k">ON</span> <span class="n">casting</span><span class="p">.</span><span class="n">actorid</span><span class="o">=</span><span class="n">actor</span><span class="p">.</span><span class="n">id</span>
+    <span class="k">WHERE</span> <span class="n">actor</span><span class="p">.</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;Harrison Ford&#39;</span><span class="p">;</span>
+</pre></div>
+
+</div>
+</div>
+</div></section><section>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="&#32879;&#32080;&#34920;&#26684;">&#32879;&#32080;&#34920;&#26684;<a class="anchor-link" href="#&#32879;&#32080;&#34920;&#26684;">&#182;</a></h2><p>尋找 Harrison Ford 不是主角的電影（<code>casting.ord&lt;&gt;1</code>）</p>
+<div class="highlight"><pre><span></span><span class="k">SELECT</span> <span class="n">movie</span><span class="p">.</span><span class="n">title</span>
+    <span class="k">FROM</span> <span class="n">movie</span>
+    <span class="k">JOIN</span> <span class="n">casting</span>
+    <span class="k">ON</span> <span class="n">movie</span><span class="p">.</span><span class="n">id</span> <span class="o">=</span> <span class="n">casting</span><span class="p">.</span><span class="n">movieid</span>
+    <span class="k">JOIN</span> <span class="n">actor</span>
+    <span class="k">ON</span> <span class="n">casting</span><span class="p">.</span><span class="n">actorid</span><span class="o">=</span><span class="n">actor</span><span class="p">.</span><span class="n">id</span>
+    <span class="k">WHERE</span> <span class="n">actor</span><span class="p">.</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;Harrison Ford&#39;</span> <span class="k">AND</span>
+          <span class="n">casting</span><span class="p">.</span><span class="n">ord</span><span class="o">&lt;&gt;</span><span class="mi">1</span><span class="p">;</span>
+</pre></div>
+
+</div>
+</div>
+</div></section><section>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="&#32879;&#32080;&#34920;&#26684;">&#32879;&#32080;&#34920;&#26684;<a class="anchor-link" href="#&#32879;&#32080;&#34920;&#26684;">&#182;</a></h2><p>查詢 1962 年所有電影的主角（<code>ord=1</code>）</p>
+<div class="highlight"><pre><span></span><span class="k">SELECT</span> <span class="n">movie</span><span class="p">.</span><span class="n">title</span><span class="p">,</span>
+       <span class="n">actor</span><span class="p">.</span><span class="n">name</span>
+    <span class="k">FROM</span> <span class="n">movie</span>
+    <span class="k">JOIN</span> <span class="n">casting</span>
+    <span class="k">ON</span> <span class="n">movie</span><span class="p">.</span><span class="n">id</span> <span class="o">=</span> <span class="n">casting</span><span class="p">.</span><span class="n">movieid</span>
+    <span class="k">JOIN</span> <span class="n">actor</span>
+    <span class="k">ON</span> <span class="n">casting</span><span class="p">.</span><span class="n">actorid</span><span class="o">=</span><span class="n">actor</span><span class="p">.</span><span class="n">id</span>
+    <span class="k">WHERE</span> <span class="n">movie</span><span class="p">.</span><span class="n">yr</span><span class="o">=</span><span class="mi">1962</span> <span class="k">AND</span>
+          <span class="n">casting</span><span class="p">.</span><span class="n">ord</span><span class="o">=</span><span class="mi">1</span><span class="p">;</span>
+</pre></div>
+
+</div>
+</div>
+</div></section><section>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="&#23436;&#25104;-10-&#20491;-SQLZOO-&#32244;&#32722;&#65288;1~10&#65289;">&#23436;&#25104; 10 &#20491; SQLZOO &#32244;&#32722;&#65288;1~10&#65289;<a class="anchor-link" href="#&#23436;&#25104;-10-&#20491;-SQLZOO-&#32244;&#32722;&#65288;1~10&#65289;">&#182;</a></h2><p><a href="https://sqlzoo.net/wiki/More_JOIN_operations">https://sqlzoo.net/wiki/More_JOIN_operations</a></p>
+
+</div>
+</div>
+</div></section></section><section><section>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
@@ -12297,79 +12568,6 @@ a.anchor-link {
     <span class="k">FROM</span> <span class="n">world</span><span class="p">.</span><span class="n">city</span>
     <span class="k">WHERE</span> <span class="n">CountryCode</span> <span class="o">=</span> <span class="s1">&#39;TWN&#39;</span><span class="p">;</span>
 </pre></div>
-
-</div>
-</div>
-</div></section></section><section><section>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="&#20316;&#26989;">&#20316;&#26989;<a class="anchor-link" href="#&#20316;&#26989;">&#182;</a></h1>
-</div>
-</div>
-</div></section><section>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="&#20316;&#26989;&#65288;1&#65289;">&#20316;&#26989;&#65288;1&#65289;<a class="anchor-link" href="#&#20316;&#26989;&#65288;1&#65289;">&#182;</a></h2><ul>
-<li>請寫出能夠產出以下結果的 SQL 查詢：</li>
-</ul>
-<p><img src="img/chapter0201.png" alt=""></p>
-
-</div>
-</div>
-</div></section><section>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="&#20316;&#26989;&#65288;2&#65289;">&#20316;&#26989;&#65288;2&#65289;<a class="anchor-link" href="#&#20316;&#26989;&#65288;2&#65289;">&#182;</a></h2><ul>
-<li>請寫出能夠產出以下結果的 SQL 查詢：</li>
-</ul>
-<p><img src="img/chapter0202.png" alt=""></p>
-
-</div>
-</div>
-</div></section><section>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="&#20316;&#26989;&#65288;3&#65289;">&#20316;&#26989;&#65288;3&#65289;<a class="anchor-link" href="#&#20316;&#26989;&#65288;3&#65289;">&#182;</a></h2><ul>
-<li>找出跟 Kiribati 或 Falkland Islands 屬於同洲的國家</li>
-</ul>
-
-</div>
-</div>
-</div></section><section>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="&#20316;&#26989;&#65288;4&#65289;">&#20316;&#26989;&#65288;4&#65289;<a class="anchor-link" href="#&#20316;&#26989;&#65288;4&#65289;">&#182;</a></h2><ul>
-<li>請寫出能夠產出以下結果的 SQL 查詢：</li>
-</ul>
-<p><img src="img/chapter0204.png" alt=""></p>
-
-</div>
-</div>
-</div></section><section>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="&#20316;&#26989;&#65288;5&#65289;">&#20316;&#26989;&#65288;5&#65289;<a class="anchor-link" href="#&#20316;&#26989;&#65288;5&#65289;">&#182;</a></h2><ul>
-<li>請寫出能夠產出以下結果的 SQL 查詢：</li>
-</ul>
-<p><img src="img/chapter0205.png" alt=""></p>
 
 </div>
 </div>
