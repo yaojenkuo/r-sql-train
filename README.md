@@ -25,9 +25,7 @@
 - [SQL 基礎](https://yaojenkuo.io/r-sql-train/sql_basic.slides.html)
 - [SQL 應用](https://yaojenkuo.io/r-sql-train/sql_mid.slides.html)
 - [SQL 進階](https://yaojenkuo.io/r-sql-train/sql_advanced.slides.html)
-- [建立 R 語言與資料庫的連結](https://yaojenkuo.io/r-sql-train/chapter03.slides.html)
-- [使用 R 語言讀取資料庫表格](https://yaojenkuo.io/r-sql-train/chapter04.slides.html)
-- [載入與寫出資料](https://yaojenkuo.io/r-sql-train/import_export.html)
+- [建立外部應用程式與資料庫的連結](https://yaojenkuo.io/r-sql-train/establish_connection.slides.html)
 
 ### 延伸閱讀
 
