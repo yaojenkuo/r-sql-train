@@ -26,6 +26,7 @@
 - [SQL 應用](https://yaojenkuo.io/r-sql-train/sql_mid.slides.html)
 - [SQL 進階](https://yaojenkuo.io/r-sql-train/sql_advanced.slides.html)
 - [建立外部應用程式與資料庫的連結](https://yaojenkuo.io/r-sql-train/establish_connection.slides.html)
+- [在 R 進行 SQL 操作](https://yaojenkuo.io/r-sql-train/establish_connection.slides.html)
 
 ### 延伸閱讀
 
