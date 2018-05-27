@@ -11944,9 +11944,7 @@ dbDisconnect<span class="p">(</span>con<span class="p">)</span>
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="arrange"><code>arrange</code><a class="anchor-link" href="#arrange">&#182;</a></h2><ul>
-<li>以 <code>Population</code> 排序</li>
-</ul>
+<h2 id="arrange"><code>arrange</code><a class="anchor-link" href="#arrange">&#182;</a></h2><p>以 <code>Population</code> 排序</p>
 <div class="highlight"><pre><span></span>country <span class="o">%&gt;%</span>
   filter<span class="p">(</span>Continent <span class="o">==</span> <span class="s">&#39;Asia&#39;</span><span class="p">)</span> <span class="o">%&gt;%</span>
   select<span class="p">(</span>Name<span class="p">,</span> Population<span class="p">)</span> <span class="o">%&gt;%</span>
@@ -11975,12 +11973,11 @@ dbDisconnect<span class="p">(</span>con<span class="p">)</span>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="group_by()"><code>group_by()</code><a class="anchor-link" href="#group_by()">&#182;</a></h2><p>依照洲別計算人口數</p>
-
-<pre><code>{r}
-country %&gt;%
-  group_by(Continent) %&gt;%
-  summarise(Ttl_Pop = sum(as.numeric(Population))) %&gt;%
-  arrange(desc(Ttl_Pop))</code></pre>
+<div class="highlight"><pre><span></span>country <span class="o">%&gt;%</span>
+  group_by<span class="p">(</span>Continent<span class="p">)</span> <span class="o">%&gt;%</span>
+  summarise<span class="p">(</span>Ttl_Pop <span class="o">=</span> <span class="kp">sum</span><span class="p">(</span><span class="kp">as.numeric</span><span class="p">(</span>Population<span class="p">)))</span> <span class="o">%&gt;%</span>
+  arrange<span class="p">(</span>desc<span class="p">(</span>Ttl_Pop<span class="p">))</span>
+</pre></div>
 
 </div>
 </div>
