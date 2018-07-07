@@ -12313,14 +12313,6 @@ a.anchor-link {
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="&#32879;&#32080;&#34920;&#26684;">&#32879;&#32080;&#34920;&#26684;<a class="anchor-link" href="#&#32879;&#32080;&#34920;&#26684;">&#182;</a></h2><p>取得電影 Casablanca 的演員名單</p>
-<div class="highlight"><pre><span></span><span class="k">SELECT</span> <span class="n">name</span>
-    <span class="k">FROM</span> <span class="n">actor</span>
-    <span class="k">JOIN</span> <span class="n">casting</span>
-    <span class="k">ON</span> <span class="n">actor</span><span class="p">.</span><span class="n">id</span> <span class="o">=</span> <span class="n">casting</span><span class="p">.</span><span class="n">actorid</span>
-    <span class="k">JOIN</span> <span class="n">movie</span>
-    <span class="k">ON</span> <span class="n">casting</span><span class="p">.</span><span class="n">movieid</span><span class="o">=</span><span class="n">movie</span><span class="p">.</span><span class="n">id</span>
-    <span class="k">WHERE</span> <span class="n">movie</span><span class="p">.</span><span class="n">title</span><span class="o">=</span><span class="s1">&#39;Casablanca&#39;</span><span class="p">;</span>
-</pre></div>
 
 </div>
 </div>
@@ -12331,14 +12323,6 @@ a.anchor-link {
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="&#32879;&#32080;&#34920;&#26684;">&#32879;&#32080;&#34920;&#26684;<a class="anchor-link" href="#&#32879;&#32080;&#34920;&#26684;">&#182;</a></h2><p>取得電影 Alien 的演員名單</p>
-<div class="highlight"><pre><span></span><span class="k">SELECT</span> <span class="n">actor</span><span class="p">.</span><span class="n">name</span>
-    <span class="k">FROM</span> <span class="n">actor</span>
-    <span class="k">JOIN</span> <span class="n">casting</span>
-    <span class="k">ON</span> <span class="n">actor</span><span class="p">.</span><span class="n">id</span> <span class="o">=</span> <span class="n">casting</span><span class="p">.</span><span class="n">actorid</span>
-    <span class="k">JOIN</span> <span class="n">movie</span>
-    <span class="k">ON</span> <span class="n">casting</span><span class="p">.</span><span class="n">movieid</span><span class="o">=</span><span class="n">movie</span><span class="p">.</span><span class="n">id</span>
-    <span class="k">WHERE</span> <span class="n">movie</span><span class="p">.</span><span class="n">title</span><span class="o">=</span><span class="s1">&#39;Alien&#39;</span><span class="p">;</span>
-</pre></div>
 
 </div>
 </div>
@@ -12349,14 +12333,6 @@ a.anchor-link {
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="&#32879;&#32080;&#34920;&#26684;">&#32879;&#32080;&#34920;&#26684;<a class="anchor-link" href="#&#32879;&#32080;&#34920;&#26684;">&#182;</a></h2><p>尋找 Harrison Ford 有出演的電影</p>
-<div class="highlight"><pre><span></span><span class="k">SELECT</span> <span class="n">movie</span><span class="p">.</span><span class="n">title</span>
-    <span class="k">FROM</span> <span class="n">movie</span>
-    <span class="k">JOIN</span> <span class="n">casting</span>
-    <span class="k">ON</span> <span class="n">movie</span><span class="p">.</span><span class="n">id</span> <span class="o">=</span> <span class="n">casting</span><span class="p">.</span><span class="n">movieid</span>
-    <span class="k">JOIN</span> <span class="n">actor</span>
-    <span class="k">ON</span> <span class="n">casting</span><span class="p">.</span><span class="n">actorid</span><span class="o">=</span><span class="n">actor</span><span class="p">.</span><span class="n">id</span>
-    <span class="k">WHERE</span> <span class="n">actor</span><span class="p">.</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;Harrison Ford&#39;</span><span class="p">;</span>
-</pre></div>
 
 </div>
 </div>
@@ -12367,15 +12343,6 @@ a.anchor-link {
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="&#32879;&#32080;&#34920;&#26684;">&#32879;&#32080;&#34920;&#26684;<a class="anchor-link" href="#&#32879;&#32080;&#34920;&#26684;">&#182;</a></h2><p>尋找 Harrison Ford 不是主角的電影（<code>casting.ord&lt;&gt;1</code>）</p>
-<div class="highlight"><pre><span></span><span class="k">SELECT</span> <span class="n">movie</span><span class="p">.</span><span class="n">title</span>
-    <span class="k">FROM</span> <span class="n">movie</span>
-    <span class="k">JOIN</span> <span class="n">casting</span>
-    <span class="k">ON</span> <span class="n">movie</span><span class="p">.</span><span class="n">id</span> <span class="o">=</span> <span class="n">casting</span><span class="p">.</span><span class="n">movieid</span>
-    <span class="k">JOIN</span> <span class="n">actor</span>
-    <span class="k">ON</span> <span class="n">casting</span><span class="p">.</span><span class="n">actorid</span><span class="o">=</span><span class="n">actor</span><span class="p">.</span><span class="n">id</span>
-    <span class="k">WHERE</span> <span class="n">actor</span><span class="p">.</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;Harrison Ford&#39;</span> <span class="k">AND</span>
-          <span class="n">casting</span><span class="p">.</span><span class="n">ord</span><span class="o">&lt;&gt;</span><span class="mi">1</span><span class="p">;</span>
-</pre></div>
 
 </div>
 </div>
@@ -12386,16 +12353,6 @@ a.anchor-link {
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="&#32879;&#32080;&#34920;&#26684;">&#32879;&#32080;&#34920;&#26684;<a class="anchor-link" href="#&#32879;&#32080;&#34920;&#26684;">&#182;</a></h2><p>查詢 1962 年所有電影的主角（<code>ord=1</code>）</p>
-<div class="highlight"><pre><span></span><span class="k">SELECT</span> <span class="n">movie</span><span class="p">.</span><span class="n">title</span><span class="p">,</span>
-       <span class="n">actor</span><span class="p">.</span><span class="n">name</span>
-    <span class="k">FROM</span> <span class="n">movie</span>
-    <span class="k">JOIN</span> <span class="n">casting</span>
-    <span class="k">ON</span> <span class="n">movie</span><span class="p">.</span><span class="n">id</span> <span class="o">=</span> <span class="n">casting</span><span class="p">.</span><span class="n">movieid</span>
-    <span class="k">JOIN</span> <span class="n">actor</span>
-    <span class="k">ON</span> <span class="n">casting</span><span class="p">.</span><span class="n">actorid</span><span class="o">=</span><span class="n">actor</span><span class="p">.</span><span class="n">id</span>
-    <span class="k">WHERE</span> <span class="n">movie</span><span class="p">.</span><span class="n">yr</span><span class="o">=</span><span class="mi">1962</span> <span class="k">AND</span>
-          <span class="n">casting</span><span class="p">.</span><span class="n">ord</span><span class="o">=</span><span class="mi">1</span><span class="p">;</span>
-</pre></div>
 
 </div>
 </div>
